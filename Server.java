@@ -43,15 +43,29 @@ public class Server {
         }
     }
 
-    public String showAvailableClients() {
+    public String getIdOfAvailableClients(ClientThread self) {
         String allClients = "";
         for (ClientThread client: this.clients) {
-            allClients += client.id + ", ";
+            if (client != self) {
+                allClients += client.id + ", ";
+            }
         }
-        return allClients;
+        if (allClients == "") {
+            return "Derzeit sind keine weiteren Personen im Chat.";
+        } 
+        return allClients; 
     }
 
     public void addClientThread(ClientThread client) {
         this.clients.add(client);
     }
+
+    public void sendMessageToAll(ClientThread self, String msg) {
+        for(ClientThread client: this.clients) {
+            if (client != self) {
+                client.writerThread.write(msg);
+            }
+        }
+    }
+
 }

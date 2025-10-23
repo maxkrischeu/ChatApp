@@ -4,9 +4,11 @@ import java.io.PrintWriter;
 
 public class WriteThread extends Thread {
     PrintWriter writer;
+    ClientThread client;
 
-    public WriteThread(OutputStream out) {
+    public WriteThread(OutputStream out, ClientThread client) {
         this.writer = new PrintWriter(new OutputStreamWriter(out), true);
+        this.client = client;
     }
     
 

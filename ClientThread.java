@@ -14,8 +14,8 @@ public class ClientThread extends Thread {
     public ClientThread(Server server, Socket conn, DataBase database) throws IOException {
         this.server = server;
         this.conn = conn;
-        this.writerThread = new WriteThread(conn.getOutputStream());
-        this.readerThread = new ReadThread(conn.getInputStream());
+        this.writerThread = new WriteThread(conn.getOutputStream(), this);
+        this.readerThread = new ReadThread(conn.getInputStream(), this);
         this.database = database;
         this.running = false;
     }
@@ -26,7 +26,8 @@ public class ClientThread extends Thread {
             this.logIn();
         }
         this.server.addClientThread(this);
-        writerThread.write(this.server.showAvailableClients());
+        this.writerThread.write(this.server.getIdOfAvailableClients(this));
+        this.readerThread.start();
     }
 
     public boolean logIn() {
@@ -49,7 +50,5 @@ public class ClientThread extends Thread {
         } catch (IOException e) {
             return false;
         }
-
-
     }
 }

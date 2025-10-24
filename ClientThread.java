@@ -1,11 +1,11 @@
-import java.io.IOException;
+import java.io.*;
 import java.net.Socket;
 
 public class ClientThread extends Thread {
     String id;
     Socket conn;
-    WriteThread writerThread;
-    ReadThread readerThread;
+    PrintWriter writer;
+    BufferedReader reader;
     DataBase database;
     Server server;
     Boolean running;
@@ -14,41 +14,48 @@ public class ClientThread extends Thread {
     public ClientThread(Server server, Socket conn, DataBase database) throws IOException {
         this.server = server;
         this.conn = conn;
-        this.writerThread = new WriteThread(conn.getOutputStream(), this);
-        this.readerThread = new ReadThread(conn.getInputStream(), this);
+        this.writer = new PrintWriter(new OutputStreamWriter(this.conn.getOutputStream()), true);
+        this.reader = new BufferedReader(new InputStreamReader(this.conn.getInputStream()));
         this.database = database;
-        this.running = false;
+        this.running = true;
     }
 
     public void run(){
-        this.running = true;
-        while (!this.logIn()) {
-            this.logIn();
-        }
+        while(!this.logIn() && this.running) {}
+        
         this.server.addClientThread(this);
-        this.writerThread.write(this.server.getIdOfAvailableClients(this));
-        this.readerThread.start();
+        this.write(this.server.getIdOfAvailableClients(this));
+
     }
 
     public boolean logIn() {
         try {
-            writerThread.write("Bitte gib deine Anmeldedaten ein: ");
-            String id = readerThread.nextInput();
-            writerThread.write("Passwort: ");
-            String pw = readerThread.nextInput();
+            this.write("Bitte gib deine Anmeldedaten ein: ");
+            String id = reader.readLine();
+            this.write("Passwort: ");
+            String pw = reader.readLine();
 
             Boolean result = database.checkLogIn(id, pw);
 
             if (result) {
                 this.id = id;
-                writerThread.write("Anmeldung erfolgreich");
+                this.write("Anmeldung erfolgreich");
                 return result;
             } else {
-                writerThread.write("Anmeldename oder Passwort falsch.");
+                this.write("Anmeldename oder Passwort falsch.");
                 return false;
             }
         } catch (IOException e) {
+            System.out.println(e.getMessage());
             return false;
         }
+    }
+
+    public void write(String msg) {
+        this.writer.println(msg);
+    }
+
+    public void stopp() {
+        this.running = false;
     }
 }

@@ -19,10 +19,10 @@ public class CommandDispatcher extends Thread {
                 case "stop":
                     if (this.server.running) {
                         this.server.stop();
-                        System.out.println("Server wurde heruntergefahren.");
+                        System.out.println("Der Server wurde heruntergefahren.");
                         break;
                     } else {
-                        System.out.println("Server ist schon heruntergefahren");
+                        System.out.println("DerServer ist schon heruntergefahren.");
                         break;
                     }
                 case "start":
@@ -32,20 +32,25 @@ public class CommandDispatcher extends Thread {
                                 CommandDispatcher.this.server.start();
                             }
                         }.start();
-                        System.out.println("Server wurde wieder gestartet.");
+                        System.out.println("Der Server wurde wieder gestartet.");
                         break;
                     } else {
-                        System.out.println("Server läuft schon.");
+                        System.out.println("Der Server läuft schon.");
                         break;
                     }
                 case "beenden":
                     this.running = false;
+                    CommandDispatcher.this.server.stop();
+                    this.scanner.close();
+                    break;
+                case "hilfe":
+                    System.out.println("Mögliche Eingabebefehle: 'start', 'stop', 'beenden'.");
                     break;
                 default: 
-                    System.out.println("Jo, das kenne ich nicht");
+                    System.out.println("Dies ist keine gültige Eingabe. Siehe 'hilfe' für mögliche eingaben.");
                     break;
             }
         }
-        System.out.println("Programm und server wird beendet");
+        System.out.println("Das Programm und der Server wurden beendet.");
     }
 }

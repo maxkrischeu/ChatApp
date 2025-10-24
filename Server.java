@@ -41,6 +41,10 @@ public class Server {
         } catch (IOException e) {
             System.err.println("Beim stoppen des Servers ist etwas schiefgelaufen: " + e.getMessage());
         }
+
+        for (ClientThread client: this.clients) {
+            client.stopp();
+        }
     }
 
     public String getIdOfAvailableClients(ClientThread self) {
@@ -63,9 +67,8 @@ public class Server {
     public void sendMessageToAll(ClientThread self, String msg) {
         for(ClientThread client: this.clients) {
             if (client != self) {
-                client.writerThread.write(msg);
+                client.writer.write(msg);
             }
         }
     }
-
 }

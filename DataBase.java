@@ -1,17 +1,24 @@
-import java.util.HashMap;
+import java.sql.*;
 
-public class DataBase {
-    HashMap<String, String> users;
+public class DataBase{
+    public static void main(String[] args){
+        try{
+            Connection conn = null;
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/clients", "root", "");
+            Statement stmt = conn.createStatement(); 
+            String name = "anton";
+            String passwort = "1234";
+            String sql = "INSERT INTO chatnutzer (name, passwort) VALUES ('"+name+"', '" + passwort+"')";
+            //String sql = "INSERT INTO chatnutzer (name, passwort) VALUES ('jenny', '123')";
 
-    public DataBase() {
-        this.users = new HashMap<>();
-        this.users.put("max", "1234");
-        this.users.put("jenny", "1234");
-    }
-
-    public Boolean checkLogIn(String id, String pw){
-        if (!users.containsKey(id)) return false;
-
-        return users.get(id).equals(pw);
+            stmt.executeUpdate(sql); 
+            stmt.executeQuery("SELECT * FROM chatnutzer");
+        }
+        catch (SQLException ex) {
+        // handle any errors
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
     }
 }

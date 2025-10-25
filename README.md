@@ -11,3 +11,6 @@ java -cp ".:mysql-connector-j-9.5.0.jar" Main
 Danach muss der Nutzer noch 'start' eingeben, damit der Server auch wirklich gestartet wird.
 
 Im Anschluss können ClientTest und ClientTest2 wie gewohnt kompiliert und ausgeführt werden. 
+
+Der Chatnutzer wird gefragt, ob er sich anmelden oder registrieren möchte.
+Als Antwort werden nur 'anmelden' oder 'registrieren' akzeptiert. 

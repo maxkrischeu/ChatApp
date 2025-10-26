@@ -8,8 +8,7 @@ public class ClientThread extends Thread {
     BufferedReader reader;
     DataBase database;
     Server server;
-    Boolean running;
-
+    volatile boolean running;
 
     public ClientThread(Server server, Socket conn, DataBase database) throws IOException {
         this.server = server;
@@ -20,115 +19,89 @@ public class ClientThread extends Thread {
         this.running = true;
     }
 
-    public void run(){
-<<<<<<< HEAD
-        while(!this.logIn() && this.running) {}
-        
-=======
-        this.running = true;
-        while (!this.startseite()) {
-            this.startseite();
-        }
->>>>>>> origin/jenny
+    @Override
+    public void run() {
+        while (running && !startseite()) { /* retry until success */ }
+        if (!running) return;
         this.server.addClientThread(this);
         this.write(this.server.getIdOfAvailableClients(this));
-
     }
 
-    public boolean registrieren() {
-        try {
-<<<<<<< HEAD
-            this.write("Bitte gib deine Anmeldedaten ein: ");
-            String id = reader.readLine();
-            this.write("Passwort: ");
-            String pw = reader.readLine();
-=======
-            writerThread.write("Bitte gib deinen Benutzernamen ein: "); 
-            String id = readerThread.nextInput(); //liest Eingabe ein, Funktion aus ReadThread
-
-            Boolean result = database.checkName(id);
-
-            if (!result) {
-                this.id = id;
-                writerThread.write("Passwort: ");
-                String pw = readerThread.nextInput();
-                database.registrieren(id, pw); 
-                writerThread.write("Registrierung erfolgreich.");
-                return true;
-            } else {
-                writerThread.write("Dieser Benutzername existiert bereits. Gib bitte einen neuen Benutzernamen ein.");
-                return false;
-            }
-        } catch (IOException e) {
-            return false;
-        }
-    }
-
-    public boolean anmelden(){
-        try {
-            writerThread.write("Bitte gib deinen Benutzernamen ein: "); 
-            String id = readerThread.nextInput(); //liest Eingabe ein, Funktion aus ReadThread
-
-            writerThread.write("Passwort: ");
-            String pw = readerThread.nextInput();
->>>>>>> origin/jenny
-
-            Boolean result = database.checkLogIn(id, pw);
-
-            if (result) {
-                this.id = id;
-<<<<<<< HEAD
-                this.write("Anmeldung erfolgreich");
-                return result;
-            } else {
-                this.write("Anmeldename oder Passwort falsch.");
-=======
-                writerThread.write("Anmeldung erfolgreich.");
-                return true;
-            } else {
-                writerThread.write("Der Benutzername oder das Passwort sind falsch.");
->>>>>>> origin/jenny
-                return false;
-            }
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-            return false;
-        }
-    }
-
-<<<<<<< HEAD
     public void write(String msg) {
         this.writer.println(msg);
     }
 
     public void stopp() {
         this.running = false;
-=======
-    public boolean startseite(){
-        try{
-            writerThread.write("Möchtest du dich anmelden oder registrieren?: ");
-            String antwort = readerThread.nextInput(); //Antwort besteht nur aus einem Wort 
+    }
 
-            if(antwort.equals("registrieren")){
-                while (!this.registrieren()) {
-                    this.registrieren();
-                }
+    public boolean registrieren() {
+        try {
+            this.write("Bitte gib deinen Benutzernamen ein: ");
+            String id = reader.readLine();
+            if (id == null) return false;
+
+            boolean nameExists = database.checkName(id);
+            if (!nameExists) {
+                this.id = id;
+                this.write("Passwort: ");
+                String pw = reader.readLine();
+                if (pw == null) return false;
+
+                database.registrieren(id, pw);
+                this.write("Registrierung erfolgreich.");
                 return true;
-            }
-            else if(antwort.equals("anmelden")){
-                while (!this.anmelden()) {
-                    this.anmelden();
-                }
-                return true;
-            }
-            else{
-                writerThread.write("Das ist keine zulässige Antwort");
+            } else {
+                this.write("Dieser Benutzername existiert bereits. Gib bitte einen neuen Benutzernamen ein.");
                 return false;
             }
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             return false;
         }
->>>>>>> origin/jenny
+    }
+
+    public boolean anmelden() {
+        try {
+            this.write("Bitte gib deinen Benutzernamen ein: ");
+            String id = reader.readLine();
+            if (id == null) return false;
+
+            this.write("Passwort: ");
+            String pw = reader.readLine();
+            if (pw == null) return false;
+
+            boolean ok = database.checkLogIn(id, pw);
+            if (ok) {
+                this.id = id;
+                this.write("Anmeldung erfolgreich.");
+                return true;
+            } else {
+                this.write("Der Benutzername oder das Passwort sind falsch.");
+                return false;
+            }
+        } catch (IOException e) {
+            return false;
+        }
+    }
+
+    public boolean startseite() {
+        try {
+            this.write("Möchtest du dich anmelden oder registrieren?: ");
+            String antwort = reader.readLine();
+            if (antwort == null) return false;
+
+            if (antwort.equals("registrieren")) {
+                while (!registrieren()) { /* repeat */ }
+                return true;
+            } else if (antwort.equals("anmelden")) {
+                while (!anmelden()) { /* repeat */ }
+                return true;
+            } else {
+                this.write("Das ist keine zulässige Antwort");
+                return false;
+            }
+        } catch (IOException e) {
+            return false;
+        }
     }
 }

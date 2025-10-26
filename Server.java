@@ -50,6 +50,7 @@ public class Server {
     public String getIdOfAvailableClients(ClientThread self) {
         String allClients = "";
         for (ClientThread client: this.clients) {
+            client.writer.println(self.id + " hat den Chatraum betreten.");
             if (client != self) {
                 allClients += client.id + ", ";
             }
@@ -72,3 +73,4 @@ public class Server {
         }
     }
 }
+

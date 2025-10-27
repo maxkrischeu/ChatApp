@@ -68,7 +68,7 @@ public class Server {
     public void sendMessageToAll(ClientThread self, String msg) {
         for(ClientThread client: this.clients) {
             if (client != self) {
-                client.writer.write(msg);
+                client.write(msg);
             }
         }
     }

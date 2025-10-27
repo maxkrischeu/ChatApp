@@ -25,6 +25,15 @@ public class ClientThread extends Thread {
         if (!running) return;
         this.server.addClientThread(this);
         this.write(this.server.getIdOfAvailableClients(this));
+
+
+        while(running) {
+            try {
+                this.server.sendMessageToAll(this, reader.readLine());
+            } catch (Exception e) {
+                System.err.println(e.getMessage());
+            }
+        }
     }
 
     public void write(String msg) {

@@ -48,17 +48,28 @@ public class Server {
     }
 
     public String getIdOfAvailableClients(ClientThread self) {
-        String allClients = "";
-        for (ClientThread client: this.clients) {
-            client.writer.println(self.id + " hat den Chatraum betreten.");
-            if (client != self) {
-                allClients += client.id + ", ";
-            }
-        }
-        if (allClients == "") {
+        if (this.clients.size() == 1) {
             return "Derzeit sind keine weiteren Personen im Chat.";
         } 
-        return allClients; 
+        else if (this.clients.size() == 2) {
+            String allClients = "Online: ";
+            for (ClientThread client: this.clients) {
+                if (client != self) {
+                    client.writer.println(self.id + " hat den Chatraum betreten.");
+                    allClients += client.id;
+                }
+            }
+            return allClients;
+        } else {
+            String allClients = "Online: ";
+            for (ClientThread client: this.clients) {
+                if (client != self) {
+                    client.writer.println(self.id + " hat den Chatraum betreten.");
+                    allClients += client.id + ", ";
+                }
+            }
+            return allClients;
+        }
     }
 
     public void addClientThread(ClientThread client) {

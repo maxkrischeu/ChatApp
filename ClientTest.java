@@ -4,7 +4,7 @@ import java.net.*;
 import java.io.*;
 import java.util.Scanner;
 
-public class ClientTest2 {
+public class ClientTest {
     public static void main(String[] args) {
         try {
             Socket conn = new Socket("localhost", 5001);

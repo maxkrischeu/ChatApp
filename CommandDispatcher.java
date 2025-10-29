@@ -22,7 +22,7 @@ public class CommandDispatcher extends Thread {
                         System.out.println("Der Server wurde heruntergefahren.");
                         break;
                     } else {
-                        System.out.println("DerServer ist schon heruntergefahren.");
+                        System.out.println("Der Server ist schon heruntergefahren.");
                         break;
                     }
                 case "start":

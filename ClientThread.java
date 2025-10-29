@@ -42,6 +42,12 @@ public class ClientThread extends Thread {
 
     public void stopp() {
         this.running = false;
+        try{
+            this.conn.close();
+            this.writer.close();
+            this.reader.close();
+        }
+        catch(IOException e){System.out.println("Socket konnte nicht geschlossen werden");}
     }
 
     public boolean registrieren() {

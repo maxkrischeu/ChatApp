@@ -33,10 +33,10 @@ public class Server {
 
     public void stop() {
         this.running = false;
-
         try {
             if(this.serverSocket != null) {
                 this.serverSocket.close();
+                this.database.clear(); 
             }
         } catch (IOException e) {
             System.err.println("Beim stoppen des Servers ist etwas schiefgelaufen: " + e.getMessage());

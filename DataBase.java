@@ -61,4 +61,19 @@ public class DataBase{
             System.out.println("VendorError: " + ex.getErrorCode());
         }
     }
+
+    public void clear(){
+        try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/clients", "root", "")){
+            try(PreparedStatement ps = conn.prepareStatement("DELETE FROM chatnutzer")){
+                ps.executeUpdate();
+                System.out.println("Datenbank wurde geleert");
+                }
+            }
+        catch (SQLException ex) {
+        // handle any errors
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
+    }
 }

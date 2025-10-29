@@ -21,9 +21,11 @@ public class ClientTest2 {
                 }
             }.start();
 
-            while(true) {
-                System.out.println(in.readLine());
+            String line;
+            while((line = in.readLine()) != null) {
+                System.out.println(line);
             }
+            System.out.println("Ich bin draußen!");
 
         } catch(Exception e) {
             System.out.println("Das hat nicht geklappt:" + e.getMessage());

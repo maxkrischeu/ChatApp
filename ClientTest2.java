@@ -14,8 +14,8 @@ public class ClientTest2 {
             new Thread() {
                 public void run() {
                     Scanner scanner = new Scanner(System.in);
-                    while(true) {
-                        String msg = scanner.nextLine();
+                    String msg;
+                    while((msg = scanner.nextLine()) != null) {
                         out.println(msg);
                     }
                 }

@@ -29,11 +29,12 @@ public class ClientThread extends Thread {
 
         while(running) {
             try {
-                this.server.sendMessageToAll(this, reader.readLine());
+                this.server.sendMessageToAll(this, this.id  + ": " + reader.readLine());
             } catch (Exception e) {
                 System.err.println(e.getMessage());
             }
         }
+
     }
 
     public void write(String msg) {

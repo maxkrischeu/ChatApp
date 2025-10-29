@@ -62,13 +62,18 @@ public class Server {
             return allClients;
         } else {
             String allClients = "Online: ";
+            int i = 1;
             for (ClientThread client: this.clients) {
                 if (client != self) {
                     client.writer.println(self.id + " hat den Chatraum betreten.");
-                    allClients += client.id + ", ";
+                    allClients += client.id;
+                    if (i + 1 < this.clients.size()) {
+                        allClients += ", ";
+                    }
                 }
+                i++;
             }
-            return allClients;
+            return (allClients + ".");
         }
     }
 

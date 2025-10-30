@@ -29,7 +29,10 @@ public class ClientThread extends Thread {
 
         while(running) {
             try {
-                this.server.sendMessageToAll(this, this.id  + ": " + reader.readLine());
+                String msg;
+                if ((msg = reader.readLine()) != null) {
+                    this.server.sendMessageToAll(this, this.id  + ": " + msg);
+                }
             } catch (Exception e) {
                 System.err.println(e.getMessage());
             }

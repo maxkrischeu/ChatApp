@@ -21,9 +21,9 @@ public class ClientThread extends Thread {
 
     @Override
     public void run() {
+        this.server.addClientThread(this);
         while (running && !startseite()) { /* retry until success */ }
         if (!running) return;
-        this.server.addClientThread(this);
         this.write(this.server.getIdOfAvailableClients(this));
 
 

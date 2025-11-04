@@ -42,6 +42,9 @@ public class CommandDispatcher extends Thread {
                 case "beenden":
                     this.running = false;
                     CommandDispatcher.this.server.stop();
+                    for (ClientThread client: CommandDispatcher.this.server.clients) {
+                        client.stopp();
+                    }
                     this.scanner.close();
                     break;
                 case "hilfe":

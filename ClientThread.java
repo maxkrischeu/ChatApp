@@ -36,7 +36,12 @@ public class ClientThread extends Thread {
             } catch (Exception e) {
                 System.err.println(e.getMessage());
             }
-            this.server.removeClientThread(this);
+            try{
+                this.writer.close(); 
+                this.reader.close();
+                this.server.removeClientThread(this);
+            }
+            catch(Exception e){}
         }
     }
 

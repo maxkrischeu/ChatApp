@@ -36,8 +36,8 @@ public class ClientThread extends Thread {
             } catch (Exception e) {
                 System.err.println(e.getMessage());
             }
+            this.server.removeClientThread(this);
         }
-
     }
 
     public void write(String msg) {

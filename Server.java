@@ -81,6 +81,10 @@ public class Server {
         this.clients.add(client);
     }
 
+    public void removeClientThread(ClientThread client) {
+        this.clients.remove(client);
+    }
+
     public void sendMessageToAll(ClientThread self, String msg) {
         for(ClientThread client: this.clients) {
             if (client != self) {

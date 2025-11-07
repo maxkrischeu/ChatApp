@@ -16,18 +16,27 @@ public class Server {
     }
 
     public void start() {
+        this.running = true;
+        this.clients  = new ArrayList<>();
+
         try {
             this.serverSocket = new ServerSocket(this.port);
-            this.running = true;
-            this.clients  = new ArrayList<>();
+            System.out.println("Server erfolgreich gestartet.");
+        } catch (IOException e) {
+            System.err.println("Fehler beim Erstellen des ServerSockets: " + e.getMessage());
+        }
 
-            while(running) {
+        try {
+            while(this.running) {
                 ClientThread client = new ClientThread(this, serverSocket.accept(), this.database);
                 client.start();
             }
-            
         } catch (IOException e) {
-            System.err.println("Beim starten des Servers ist etwas schiefgelaufen: " + e.getMessage());
+            if (!this.running && this.serverSocket.isClosed()) {
+                System.out.println("Server erfolgreich heruntergefahren.");
+            } else {
+                System.err.println("Beim Akzeptieren einer Verbindung ist etwas schiefgelaufen: " + e.getMessage());
+            }
         }
     }
 

@@ -34,14 +34,14 @@ public class ClientThread extends Thread {
                     this.server.sendMessageToAll(this, this.id  + ": " + msg);
                 }
             } catch (Exception e) {
-                System.err.println(e.getMessage());
+                System.err.println("jooo:" + e.getMessage());
             }
-            try{
-                this.writer.close(); 
-                this.reader.close();
-                this.server.removeClientThread(this);
-            }
-            catch(Exception e){}
+            // try{
+            //     this.writer.close(); 
+            //     this.reader.close();
+            //     this.server.removeClientThread(this);
+            // }
+            // catch(Exception e){}
         }
     }
 

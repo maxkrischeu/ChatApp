@@ -30,20 +30,12 @@ public class ClientTest {
             new Thread() {
                 public void run() {
                     ClientTest.this.write();
-                    if(ClientTest.this.running == false ){
-                        System.out.println("running ist hier auch false");
-                        return; 
-                    }
                 }
             }.start();
 
             new Thread() {
                 public void run() {
                     ClientTest.this.read();
-                    if(ClientTest.this.running == false){
-                        System.out.println("running ist false");
-                        return;
-                    }
                 }
             }.start();
         }
@@ -73,7 +65,6 @@ public class ClientTest {
     }
 
     public void stop(){
-            
         this.running = false;
 
         try { if (this.out != null) this.out.flush(); } catch (Exception ignore) {}
@@ -83,13 +74,12 @@ public class ClientTest {
         try { if (this.conn != null && !this.conn.isClosed()) this.conn.shutdownOutput(); } catch (Exception ignore) {}
         try { if (this.conn != null && !this.conn.isClosed()) this.conn.shutdownInput();  } catch (Exception ignore) {}
 
-        // Streams/Sockel schließen
+        // Streams/Socket schließen
         try { if (this.in  != null) this.in.close(); }  catch (Exception ignore) {}
         try { if (this.out != null) this.out.close(); } catch (Exception ignore) {}
         try { if (this.conn!= null && !this.conn.isClosed()) this.conn.close(); } catch (Exception ignore) {}
 
         System.out.println("Chat wurde beendet.");
-
     }
 
     public static void main(String[] args) {
@@ -97,68 +87,3 @@ public class ClientTest {
         client.start();
     }
 }
-
-//     public static void main(String[] args) {
-//         // ClientTest client = new ClientTest();
-//         // client.start(); 
-
-//         try {
-//             Socket conn = new Socket("localhost", 5001);
-//             BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-//             PrintWriter out = new PrintWriter(conn.getOutputStream(), true);
-
-//             new Thread() {
-//                 // class ThreadKlasse extends Thread{...}
-//                 // public void ThreadKlasse(CLientTest client) ...
-//                 public void run() {
-//                     Scanner scanner = new Scanner(System.in);
-//                     Boolean running = true; 
-//                     while(running) {
-//                         String msg = scanner.nextLine();
-//                         out.println(msg);
-//                         //quit soll nicht an alle gesendet werden
-//                         if(msg.equals("quit")){
-//                             try{
-//                                 conn.close(); 
-//                                 scanner.close();
-//                                 running = false; 
-//                                 System.out.println("Chat wurde beendet."); 
-//                             }
-//                             catch(Exception e){}
-//                         }
-//                     }
-//                 }
-//             }.start();
-
-
-
-//             String line;
-//             while((line = in.readLine()) != null) {
-//                 System.out.println(line);
-//             }
-
-
-//             System.out.println("Server wurde heruntergefahren!");
-//             in.close();
-//             out.close();
-//             System.out.println("Möchtest du die Verbindung wieder herstellen?"); 
-
-//             Scanner scanner = new Scanner(System.in);
-//             String msg = scanner.nextLine(); 
-//             if(msg.equals("ja")){
-//                 System.out.println("Verbindung wird beendet.");
-//                 if(in.readLine()==null){
-//                     System.out.println("Verbindung kann nicht wieder hergestellt werden."); 
-//                 }
-//                 else{
-//                     System.out.println("Verbindung konnte wieder hergestellt werden.");
-//                 }
-//             }
-//             System.out.println("moin");
-
-
-//         } catch(Exception e) {
-//             System.out.println("Das hat nicht geklappt:" + e.getMessage());
-//         }
-//     }
-// }

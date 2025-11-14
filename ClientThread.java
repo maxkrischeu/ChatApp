@@ -9,6 +9,7 @@ public class ClientThread extends Thread {
     DataBase database;
     Server server;
     volatile boolean running;
+    boolean angemeldet;
 
     public ClientThread(Server server, Socket conn, DataBase database) throws IOException {
         this.server = server;
@@ -17,6 +18,7 @@ public class ClientThread extends Thread {
         this.reader = new BufferedReader(new InputStreamReader(this.conn.getInputStream()));
         this.database = database;
         this.running = true;
+        this.angemeldet = false;
     }
 
     @Override
@@ -32,6 +34,11 @@ public class ClientThread extends Thread {
                 String msg;
                 if ((msg = reader.readLine()) != null) {
                     this.server.sendMessageToAll(this, this.id  + ": " + msg);
+                }
+                else{
+                    this.server.removeOnline_clients(this);
+                    this.server.sendMessageToAll(this, this.id + " hat den Chatraum verlassen");
+                    break;
                 }
             } catch (Exception e) {
                 System.err.println("jooo:" + e.getMessage());
@@ -73,6 +80,7 @@ public class ClientThread extends Thread {
                 if (pw == null) return false;
 
                 database.registrieren(id, pw);
+                this.server.addOnline_clients(this);
                 this.write("Registrierung erfolgreich.");
                 return true;
             } else {
@@ -98,6 +106,9 @@ public class ClientThread extends Thread {
             if (ok) {
                 this.id = id;
                 this.write("Anmeldung erfolgreich.");
+                if(!(this.server.online_clients.contains(this))){
+                    this.server.addOnline_clients(this);
+                }
                 return true;
             } else {
                 this.write("Der Benutzername oder das Passwort sind falsch.");

@@ -7,8 +7,9 @@ public class Server {
     ServerSocket serverSocket;
     volatile boolean running;
     ArrayList<ClientThread> clients;
+    // Namenskonvetion beachten
     ArrayList<ClientThread> online_clients;
-    //zweite Liste versuchen 
+    //zweite Liste versuchen -> wofür genau? Wir nutzen die andere Liste jetzt literally gar nicht mehr
     DataBase database;
 
     public Server(int port) {
@@ -20,6 +21,7 @@ public class Server {
     public void start() {
         this.running = true;
         this.clients  = new ArrayList<>();
+        // Namenskonvetion
         this.online_clients = new ArrayList<>();
 
         try {
@@ -59,10 +61,12 @@ public class Server {
         }
     }
 
+    // Methoden sollten der üblichen Namenskonvention folgen
     public void addOnline_clients(ClientThread client){
         this.online_clients.add(client);
     }
 
+    // selbe hier
     public void removeOnline_clients(ClientThread client){
         this.online_clients.remove(client);
     }
@@ -79,7 +83,8 @@ public class Server {
                     allClients += client.id;
                 }
             }
-            return (allClients.replace(self.id, "")+"."); //bis hier funktioniert
+            // ich verstehe nicht ganz, warum du self.id ersetzt. Die ist doch nie in dem String gelandet? (if (client.id != self.id))
+            return (allClients.replace(self.id, "")+"."); //bis hier funktioniert -> was genau?
         } else {
             String allClients = "Online: ";
             int i = 1;

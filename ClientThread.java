@@ -1,5 +1,7 @@
 import java.io.*;
 import java.net.Socket;
+import java.awt.*;
+import java.awt.event.*;
 
 public class ClientThread extends Thread {
     String id;
@@ -9,7 +11,6 @@ public class ClientThread extends Thread {
     DataBase database;
     Server server;
     volatile boolean running;
-    boolean angemeldet;
 
     public ClientThread(Server server, Socket conn, DataBase database) throws IOException {
         this.server = server;
@@ -59,38 +60,38 @@ public class ClientThread extends Thread {
         catch(IOException e){System.out.println("Socket konnte nicht geschlossen werden");}
     }
 
-    public boolean registrieren() {
+    public void registrieren() {
         try {
-            this.write("Bitte gib deinen Benutzernamen ein: ");
+            //this.write("Bitte gib deinen Benutzernamen ein: ");
             String id = reader.readLine();
-            if (id == null) return false;
+            //if (id == null) return false;
 
             boolean nameExists = database.checkName(id);
             if (!nameExists) {
                 this.id = id;
-                this.write("Passwort: ");
+                //this.write("Passwort: ");
                 String pw = reader.readLine();
-                if (pw == null) return false;
+                //if (pw == null) return false;
 
                 database.registrieren(id, pw);
                 this.write("Registrierung erfolgreich.");
-                return true;
+                //return true;
             } else {
                 this.write("Dieser Benutzername existiert bereits. Gib bitte einen neuen Benutzernamen ein.");
-                return false;
+                //return false;
             }
         } catch (IOException e) {
-            return false;
+            //return false;
         }
     }
 
     public boolean anmelden() {
         try {
-            this.write("Bitte gib deinen Benutzernamen ein: ");
+            //this.write("Bitte gib deinen Benutzernamen ein: ");
             String id = reader.readLine();
             if (id == null) return false;
 
-            this.write("Passwort: ");
+            //this.write("Passwort: ");
             String pw = reader.readLine();
             if (pw == null) return false;
 
@@ -110,21 +111,41 @@ public class ClientThread extends Thread {
 
     public boolean startseite() {
         try {
-            this.write("Möchtest du dich anmelden oder registrieren?: ");
+            //this.write("Möchtest du dich anmelden oder registrieren?: ");
             String antwort = reader.readLine();
             if (antwort == null) return false;
 
-            if (antwort.equals("registrieren")) {
-                while (!registrieren()) { /* repeat */ }
-                return true;
-            } else if (antwort.equals("anmelden")) {
-                while (!anmelden()) { /* repeat */ }
-                return true;
-            } else {
-                this.write("Das ist keine zulässige Antwort");
-                return false;
+            switch(antwort) {
+                case "registrieren":
+                    registrieren();
+                    return false;
+                
+                case "anmelden":
+                    if(!anmelden()) { return false; }
+                    else{
+                        return true;
+                    }
+                default:
+                    return false;
             }
-        } catch (IOException e) {
+        }
+            // if (antwort == null) return false;
+
+            // if (antwort.equals("registrieren")) {
+            //     if (!registrieren()){
+            //         return false;
+            //     }
+            //     return false;
+            // } else if (antwort.equals("anmelden")) {
+            //     if(!anmelden()) { return false; }
+            //     else{
+            //         return true;
+            //     }
+            // } //else {
+            // //     this.write("Das ist keine zulässige Antwort");
+            // //     return false;
+            // // }
+        catch (IOException e) {
             return false;
         }
     }

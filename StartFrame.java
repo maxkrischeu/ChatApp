@@ -1,0 +1,92 @@
+import java.awt.*;
+import java.awt.event.*;
+
+public class StartFrame{
+    Frame frame;
+    ClientTest client;
+    Rueckmeldung meldung;
+
+    public StartFrame(ClientTest client){
+        this.frame = new Frame("Chat-Client");
+        this.client = client;
+        this.meldung = new Rueckmeldung(client);
+    }
+
+    public void frameStart(){
+        //ganzes Startframe
+        GridBagLayout frame_layout = new GridBagLayout();
+        frame.setLayout(frame_layout);
+
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.anchor = GridBagConstraints.CENTER;
+
+        //Organisiere Texteingabe etc. als Panel, das zentriert in frame_layout soll
+        Panel startPanel = new Panel(); 
+        GridLayout startPanel_layout = new GridLayout(0, 1); //1 Spalte, mehrere Zeilen
+        startPanel.setLayout(startPanel_layout);
+        
+        //Chat Anmeldung
+        Label chatanmeldung = new Label("Chat Anmeldung", 1); //1 steht für zentrieren
+        chatanmeldung.setFont(new Font("SansSerif", Font.BOLD, 14));
+        startPanel.add(chatanmeldung); 
+
+        //Label Benutzername
+        Panel eingabePanel = new Panel(); 
+        GridLayout eingabe_layout = new GridLayout(2, 2, 0, 10);
+        eingabePanel.setLayout(eingabe_layout);
+        Label benutzername = new Label("Benutzername: ", 1); 
+        TextField bEingabe = new TextField(20); 
+        eingabePanel.add(benutzername);
+        eingabePanel.add(bEingabe);
+
+        //Label Passwort + Textfeld
+        Label passwort = new Label("Passwort: ", 1); 
+        TextField pEingabe = new TextField(20); 
+        pEingabe.setEchoChar('*');
+        eingabePanel.add(passwort);
+        eingabePanel.add(pEingabe);
+        startPanel.add(eingabePanel);
+
+        //Anmeldebutton und Registrierenbutton
+        Panel buttonPanel = new Panel(new FlowLayout());
+
+        Button anmeldeButton = new Button("Anmelden"); 
+        anmeldeButton.addActionListener(e -> {
+            this.client.write("anmelden");
+            this.client.write(bEingabe.getText()); 
+            this.client.write(pEingabe.getText());
+            String msg = this.client.read();
+            System.out.println(msg);
+            if(msg.equals("Anmeldung erfolgreich.")){
+                this.meldung.meldungErfolgAnmelden();
+            }
+            else{
+                this.meldung.meldungErrorAnmelden();
+            }
+            });
+
+        Button registrierenButton = new Button("Registrieren");
+        registrierenButton.addActionListener(e -> {
+            this.client.write("registrieren");
+            this.client.write(bEingabe.getText());
+            this.client.write(pEingabe.getText());
+            //System.out.println(this.client.read());
+            if(this.client.read().equals("Registrierung erfolgreich.")){
+                this.meldung.meldungErfolgRegistrieren();
+            }
+            else{
+                this.meldung.meldungErrorRegistrieren();
+            }
+        });
+
+        buttonPanel.add(anmeldeButton);
+        buttonPanel.add(registrierenButton);
+        startPanel.add(buttonPanel);
+
+        frame.add(startPanel, gbc);
+        frame.setSize(800,600);
+        frame.setVisible(true);
+    }
+}

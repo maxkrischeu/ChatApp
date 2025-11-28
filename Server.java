@@ -68,6 +68,7 @@ public class Server {
                     allClients += client.id;
                 }
             }
+            //ohne replace ging nicht, weil null in der Hand
             return (allClients.replace(self.id, "")+".");
         } else {
             String allClients = "Online: ";

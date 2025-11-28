@@ -3,6 +3,7 @@ import java.io.InputStreamReader;
 import java.net.*;
 import java.io.*;
 import java.util.Scanner;
+import java.awt.*;
 
 public class ClientTest {
     volatile boolean running;
@@ -10,6 +11,8 @@ public class ClientTest {
     BufferedReader in;
     PrintWriter out;
     Scanner scanner;
+    StartFrame startframe;
+    Rueckmeldung meldung;
 
     public ClientTest(){
         try{
@@ -18,6 +21,8 @@ public class ClientTest {
             this.out = new PrintWriter(conn.getOutputStream(), true);
             this.scanner = new Scanner(System.in);
             this.running = false;
+            this.startframe = new StartFrame(this);
+            this.meldung = new Rueckmeldung(this);
             }
         catch(Exception e) {
             System.out.println("Das hat nicht geklappt:" + e.getMessage());
@@ -26,42 +31,49 @@ public class ClientTest {
 
     public void start(){
         this.running = true;
-        try{
-            new Thread() {
-                public void run() {
-                    ClientTest.this.write();
-                }
-            }.start();
+        this.startframe.frameStart();
 
-            new Thread() {
-                public void run() {
-                    ClientTest.this.read();
-                }
-            }.start();
+        // try{
+        //     // new Thread() {
+        //     //     public void run() {
+        //     //         ClientTest.this.write();
+        //     //     }
+        //     // }.start();
+
+        //     System.out.println("Wir lesen");
+
+        //     new Thread() {
+        //         public void run() {
+        //             ClientTest.this.read();
+        //         }
+        //     }.start();
+        // }
+        // catch(Exception e) {
+        //     System.out.println("Das hat nicht geklappt:" + e.getMessage());
+        // }
+    }
+
+    public String read(){
+        try{
+            String line = this.in.readLine();
+            //while((line = this.in.readLine()) != null && this.startframe.lesen == true) {
+                return line;
+            //}
+            //return "";
         }
-        catch(Exception e) {
-            System.out.println("Das hat nicht geklappt:" + e.getMessage());
+        catch(Exception e){
+            System.out.println("ich bin im catch");
+            return "";
         }
     }
 
-    public void read(){
-        try{
-            String line;
-            while((line = this.in.readLine()) != null) {
-                System.out.println(line);
-            }
-        }
-        catch(Exception e){}
-    }
-
-    public void write() {
-            String msg;
-            while(this.running && (msg = this.scanner.nextLine()) != null) {
+    public void write(String msg) {
+            // while(this.running) {
                 this.out.println(msg);
-                if(msg.equals("quit")){
-                    this.stop();
-                }
-            }
+                // if(msg.equals("quit")){
+                //     this.stop();
+                // }
+            
     }
 
     public void stop(){

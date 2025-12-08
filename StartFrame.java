@@ -89,4 +89,8 @@ public class StartFrame{
         frame.setSize(800,600);
         frame.setVisible(true);
     }
+
+    public void frameEnd(){
+        frame.setVisible(false);
+    }
 }

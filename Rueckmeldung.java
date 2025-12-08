@@ -45,6 +45,7 @@ public class Rueckmeldung{
         this.button.addActionListener(e -> {
             this.frame.setVisible(false);
             this.frame.remove(erfolgsmeldungA);
+            this.client.startframe.frameEnd();
             this.chat.anzeigen();
         });
     }

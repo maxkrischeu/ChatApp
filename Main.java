@@ -7,3 +7,7 @@ public class Main {
         dispatcher.start();
     }
 }
+
+//javac -d out -cp "mysql-connector-j-9.5.0.jar" $(find . -name "*.java")
+//java -cp "out:mysql-connector-j-9.5.0.jar" ClientTest                  
+//java -cp "out:mysql-connector-j-9.5.0.jar" Main                        

@@ -5,11 +5,21 @@ public class StartFrame{
     Frame frame;
     ClientTest client;
     Rueckmeldung meldung;
+    Panel eingabePanel;
+    TextField bEingabe;
+    TextField pEingabe;
+    Button anmeldeButton;
+    Button registrierenButton;
 
     public StartFrame(ClientTest client){
         this.frame = new Frame("Chat-Client");
         this.client = client;
         this.meldung = new Rueckmeldung(client);
+        this.eingabePanel = new Panel();
+        this.bEingabe = new TextField(20);
+        this.pEingabe = new TextField(20);
+        this.anmeldeButton = new Button("Anmelden"); 
+        this.registrierenButton = new Button("Registrieren"); 
     }
 
     public void frameStart(){
@@ -33,26 +43,40 @@ public class StartFrame{
         startPanel.add(chatanmeldung); 
 
         //Label Benutzername
-        Panel eingabePanel = new Panel(); 
         GridLayout eingabe_layout = new GridLayout(2, 2, 0, 10);
         eingabePanel.setLayout(eingabe_layout);
-        Label benutzername = new Label("Benutzername: ", 1); 
-        TextField bEingabe = new TextField(20); 
-        eingabePanel.add(benutzername);
-        eingabePanel.add(bEingabe);
-
-        //Label Passwort + Textfeld
-        Label passwort = new Label("Passwort: ", 1); 
-        TextField pEingabe = new TextField(20); 
-        pEingabe.setEchoChar('*');
-        eingabePanel.add(passwort);
-        eingabePanel.add(pEingabe);
+        setEingabepanel();
         startPanel.add(eingabePanel);
 
         //Anmeldebutton und Registrierenbutton
         Panel buttonPanel = new Panel(new FlowLayout());
+        setAnmeldeButton();
+        setRegistrierenButton();
+        buttonPanel.add(anmeldeButton);
+        buttonPanel.add(registrierenButton);
+        startPanel.add(buttonPanel);
 
-        Button anmeldeButton = new Button("Anmelden"); 
+        frame.add(startPanel, gbc);
+        frame.setSize(800,600);
+        frame.setVisible(true);
+    }
+
+    public void frameEnd(){
+        frame.setVisible(false);
+    }
+
+    public void setEingabepanel(){
+        Label benutzername = new Label("Benutzername: ", 1); 
+        eingabePanel.add(benutzername);
+        eingabePanel.add(bEingabe);
+        
+        Label passwort = new Label("Passwort: ", 1); 
+        pEingabe.setEchoChar('*');
+        eingabePanel.add(passwort);
+        eingabePanel.add(pEingabe);
+    }
+
+    public void setAnmeldeButton(){
         anmeldeButton.addActionListener(e -> {
             this.client.write("anmelden");
             this.client.write(bEingabe.getText()); 
@@ -65,9 +89,10 @@ public class StartFrame{
             else{
                 this.meldung.meldungErrorAnmelden();
             }
-            });
+        });
+    }
 
-        Button registrierenButton = new Button("Registrieren");
+    public void setRegistrierenButton(){
         registrierenButton.addActionListener(e -> {
             this.client.write("registrieren");
             this.client.write(bEingabe.getText());
@@ -80,17 +105,9 @@ public class StartFrame{
                 this.meldung.meldungErrorRegistrieren();
             }
         });
-
-        buttonPanel.add(anmeldeButton);
-        buttonPanel.add(registrierenButton);
-        startPanel.add(buttonPanel);
-
-        frame.add(startPanel, gbc);
-        frame.setSize(800,600);
-        frame.setVisible(true);
     }
 
-    public void frameEnd(){
-        frame.setVisible(false);
+    public String getUsername(){
+        return bEingabe.getText();
     }
 }

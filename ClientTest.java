@@ -13,6 +13,8 @@ public class ClientTest {
     Scanner scanner;
     StartFrame startframe;
     Rueckmeldung meldung;
+    Chatfenster chat;
+    RaumErstellenFrame raumerstellen;
 
     public ClientTest(){
         try{
@@ -23,6 +25,8 @@ public class ClientTest {
             this.running = false;
             this.startframe = new StartFrame(this);
             this.meldung = new Rueckmeldung(this);
+            this.chat = new Chatfenster(this);
+            this.raumerstellen = new RaumErstellenFrame(this);
             }
         catch(Exception e) {
             System.out.println("Das hat nicht geklappt:" + e.getMessage());

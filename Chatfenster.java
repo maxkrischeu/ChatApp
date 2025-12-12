@@ -4,9 +4,11 @@ import java.awt.event.*;
 public class Chatfenster {
     Frame frame;
     ClientTest client;
+    StartFrame startframe;
+    RaumErstellenFrame raumerstellen;
 
     public Chatfenster(ClientTest client) {
-
+        this.startframe = client.startframe;
         this.frame = new Frame("Chatfenster-Client");
         this.frame.setSize(800, 600);
         this.frame.setLayout(new GridBagLayout());
@@ -63,6 +65,10 @@ public class Chatfenster {
         Panel chatPanel = new Panel(new FlowLayout());
         TextField chateingabe = new TextField(20);
         Button senden = new Button("Senden");
+        senden.addActionListener(e -> {
+            chatanzeige.append("[" + client.startframe.getUsername() + "]" + ": " + chateingabe.getText() +"\n");
+            chateingabe.setText("");
+        });
         chatPanel.add(chateingabe);
         chatPanel.add(senden);
         chatverwaltung.add(chatPanel, c3);
@@ -142,6 +148,9 @@ public class Chatfenster {
 
         Button raumErstellen = new Button("Raum erstellen"); 
         buttons.add(raumErstellen);
+        raumErstellen.addActionListener(e -> {
+            this.raumerstellen = new RaumErstellenFrame(client);
+        });
 
         Button raumBeitreten = new Button("Raum beitreten"); 
         buttons.add(raumBeitreten);

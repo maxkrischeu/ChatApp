@@ -6,8 +6,8 @@ public class CommandDispatcher extends Thread {
     private Scanner scanner;
 
     public CommandDispatcher(Server server) {
-        this.running = true;
         this.server = server;
+        this.running = true;
         this.scanner = new Scanner(System.in);
     }
 

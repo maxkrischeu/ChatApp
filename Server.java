@@ -1,9 +1,12 @@
 import java.io.IOException;
 import java.net.ServerSocket;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.function.Consumer;
 import java.util.HashMap;
 import java.util.Map;
+import java.nio.file.*;
+import java.util.List;
 
 public class Server {
     private ServerSocket serverSocket;
@@ -17,6 +20,7 @@ public class Server {
     private Consumer<String> roomAdded = name -> {};
     private Consumer<String> roomRemoved = name -> {};
     private Map<String, Room> rooms = new HashMap<>();
+    private Path logFile = Paths.get("server-log.txt");
 
     public Server(int port) {
         this.port = port;
@@ -137,6 +141,7 @@ public class Server {
                 client.write(msg);
             }
         }
+        this.log("[" + roomName + "]" + msg);
     }
 
     public boolean createRoom(String name) {
@@ -174,6 +179,12 @@ public class Server {
     private void log(String msg) {
         System.out.println(msg);
         logListener.accept(msg);
+
+        try {
+            Files.writeString(this.logFile, msg + "\n", StandardOpenOption.APPEND);
+        } catch (IOException e) {
+            System.err.println("Konnte nicht loggen:" + e.getMessage());
+        }
     }
 
     public void joinRoom(ClientThread client, String newRoom) {
@@ -229,7 +240,7 @@ public class Server {
             lobby.addMember(client);
             client.setCurrentRoom("Lobby");
 
-            client.write("Raum" + roomName + " wurde gelöscht. Du bist jetzt in der Lobby.")
+            client.write("Raum" + roomName + " wurde gelöscht. Du bist jetzt in der Lobby.");
         }
 
         this.rooms.remove(roomName);

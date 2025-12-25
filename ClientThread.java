@@ -93,6 +93,12 @@ public class ClientThread extends Thread {
             String id = reader.readLine();
             if (id == null) return false;
 
+            if (server.isBanned(id)) {
+                write("Du bist gebannt und kannst dich nicht anmelden.");
+                stopp();
+                return false;
+            }
+
             this.write("Passwort: ");
             String pw = reader.readLine();
             if (pw == null) return false;

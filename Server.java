@@ -7,6 +7,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.nio.file.*;
 import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Server {
     private ServerSocket serverSocket;
@@ -21,6 +23,7 @@ public class Server {
     private Consumer<String> roomRemoved = name -> {};
     private Map<String, Room> rooms = new HashMap<>();
     private Path logFile = Paths.get("server-log.txt");
+    private Set<String> bannedUsers = new HashSet<>();
 
     public Server(int port) {
         this.port = port;
@@ -181,7 +184,7 @@ public class Server {
         logListener.accept(msg);
 
         try {
-            Files.writeString(this.logFile, msg + "\n", StandardOpenOption.APPEND);
+            Files.writeString(this.logFile, msg + "\n", StandardOpenOption.APPEND, StandardOpenOption.CREATE);
         } catch (IOException e) {
             System.err.println("Konnte nicht loggen:" + e.getMessage());
         }
@@ -219,6 +222,25 @@ public class Server {
         this.removeClientThread(target);
         target.stopp();
         this.log("Nutzer entfernt: " + id);
+    }
+
+    public boolean isBanned(String id) {
+        if (id == null) return false;
+        return bannedUsers.contains(id.trim());
+    }
+
+    public boolean banUser(String id){
+        if (id == null) return false;
+        id = id.trim();
+        if (id.isEmpty()) return false;
+
+        boolean added = bannedUsers.add(id);
+        if (added) {
+            this.log("Nutzer gebannt: " + id);
+            this.kickUser(id);
+        }
+
+        return added;
     }
 
     public boolean deleteRoom(String roomName) {

@@ -1,6 +1,5 @@
 import java.awt.*;
-
-import javax.swing.border.Border;
+import javax.swing.JOptionPane;
 
 public class ServerGui {
     private Server server;
@@ -119,8 +118,25 @@ public class ServerGui {
         if (selected == null) {
             return;
         }
-        
-        this.server.kickUser(selected);
+
+        Object[] options = {"Kicken", "Bannen", "Abbrechen"};
+
+        int choice = JOptionPane.showOptionDialog(
+                null,
+                "Was möchtest du mit \"" + selected + "\" machen?",
+                "Nutzer entfernen",
+                JOptionPane.DEFAULT_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                options,
+                options[0]
+        );
+
+        if (choice == 0) {          
+            this.server.kickUser(selected);
+        } else if (choice == 1) {
+            this.server.banUser(selected);
+        }
     }
 
     public static void main(String[] args) {

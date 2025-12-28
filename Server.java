@@ -211,8 +211,14 @@ public class Server {
         for (ClientThread client: this.clients) {
             if (id.equals(client.getID())) {
                 target = client;
+                break;
             }
         }
+        if (target == null) {
+            this.log("Kick fehlgeschlagen: Nutzer nicht online: " + id);
+            return;
+        }
+
         String room = target.getCurrentRoom();
         Room r = this.rooms.get(room);
         r.removeMember(target);
@@ -269,6 +275,31 @@ public class Server {
 
         this.log("Raum gelöscht: " + roomName);
         roomRemoved.accept(roomName);
+
+        return true;
+    }
+
+    public boolean sendAdminMessageToUser(String id, String message) {
+        if (id == null || message == null) return false;
+    
+        id = id.trim();
+        message = message.trim();
+    
+        if (id.isEmpty() || message.isEmpty()) return false;
+    
+        ClientThread target = null;
+        for (ClientThread client : this.clients) {
+            if (id.equals(client.getID())) {
+                target = client;
+                break;
+            }
+        }
+    
+        if (target == null) {
+            this.log("[ADMIN] Nachricht nicht gesendet: Nutzer \"" + id + "\" ist nicht online.");
+            return false;
+        }
+        target.write("[ADMIN] " + message);
 
         return true;
     }

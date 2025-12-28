@@ -1,5 +1,10 @@
 import java.awt.*;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.SwingUtilities;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class ServerGui {
     private Server server;
@@ -69,6 +74,17 @@ public class ServerGui {
         right.add(new Label("Angemeldete Nutzer"), c);
 
         this.userList = new java.awt.List(8, false); // 8 sichtbare Zeilen, single-select
+        this.userList.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                if (e.getClickCount() == 2) {
+                    String selected = userList.getSelectedItem();
+                    if (selected != null) {
+                        openMessageDialog(selected);
+                    }
+                }
+            }
+        });
         c.gridy = 1;
         c.weighty = 0.55; // nimmt etwas mehr Platz als Rooms
         right.add(this.userList, c);
@@ -119,7 +135,7 @@ public class ServerGui {
             return;
         }
 
-        Object[] options = {"Kicken", "Bannen", "Abbrechen"};
+        Object[] options = {"Kicken", "Kicken + Bannen", "Abbrechen"};
 
         int choice = JOptionPane.showOptionDialog(
                 null,
@@ -136,6 +152,34 @@ public class ServerGui {
             this.server.kickUser(selected);
         } else if (choice == 1) {
             this.server.banUser(selected);
+        }
+    }
+
+    private void openMessageDialog(String userId) {
+        JTextArea textArea = new JTextArea(8, 30);
+        textArea.setLineWrap(true);
+        textArea.setWrapStyleWord(true);
+
+        JScrollPane scrollPane = new JScrollPane(textArea);
+
+        int result = JOptionPane.showConfirmDialog(
+                frame,
+                scrollPane,
+                "Nachricht an \"" + userId + "\"",
+                JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.PLAIN_MESSAGE
+        );
+
+        if (result == JOptionPane.OK_OPTION) {
+            String msg = textArea.getText();
+            if (msg != null) msg = msg.trim();
+
+            if (msg == null || msg.isEmpty()) {
+                return;
+            }
+            this.server.sendAdminMessageToUser(userId, msg);
+
+            writeServerLog("[ADMIN -> " + userId + "]: " + msg);
         }
     }
 

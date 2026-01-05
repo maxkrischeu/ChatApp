@@ -44,37 +44,40 @@ public class ClientThread extends Thread {
 
     public boolean startseite() {
         try {
-            this.write("Möchtest du dich anmelden oder registrieren?: ");
+            //this.write("Möchtest du dich anmelden oder registrieren?: ");
             String antwort = reader.readLine();
             if (antwort == null) return false;
-
-            if (antwort.equals("registrieren")) {
-                while (!registrieren()) {}
-                return true;
-            } else if (antwort.equals("anmelden")) {
-                while (!anmelden()) {}
-                return true;
-            } else {
-                this.write("Das ist keine zulässige Antwort.");
-                return false;
+            switch(antwort) {
+                case "registrieren":
+                    if(!registrieren()) { return false; }
+                    else{
+                        return false;
+                    }
+                case "anmelden":
+                    if(!anmelden()) { return false; }
+                    else{
+                        return true;
+                    }
+                default:
+                    return false;
             }
         } catch (IOException e) {
             return false;
         }
     }
 
-    public void registrieren() {
+    public boolean registrieren() {
         try {
             //this.write("Bitte gib deinen Benutzernamen ein: ");
             String id = reader.readLine();
-            //if (id == null) return false;
+            if (id == null) return false;
 
             boolean nameExists = this.server.checkName(id);
             if (!nameExists) {
                 this.id = id;
                 //this.write("Passwort: ");
                 String pw = reader.readLine();
-                //if (pw == null) return false;
+                if (pw == null) return false;
 
                 this.server.registrieren(id, pw);
                 this.write("Registrierung erfolgreich.");
@@ -82,10 +85,10 @@ public class ClientThread extends Thread {
                 return true;
             } else {
                 this.write("Dieser Benutzername existiert bereits. Gib bitte einen neuen Benutzernamen ein.");
-                //return false;
+                return false;
             }
         } catch (IOException e) {
-            //return false;
+            return false;
         }
     }
 

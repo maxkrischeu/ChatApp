@@ -36,6 +36,9 @@ public class RaumErstellenFrame{
         setOk();
         this.frame.add(buttonPanel, gbc);
 
+    }
+
+    public void raumErstellen(){
         this.frame.setVisible(true); 
     }
 

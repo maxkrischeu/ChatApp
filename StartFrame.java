@@ -97,7 +97,6 @@ public class StartFrame{
             this.client.write("registrieren");
             this.client.write(bEingabe.getText());
             this.client.write(pEingabe.getText());
-            //System.out.println(this.client.read());
             if(this.client.read().equals("Registrierung erfolgreich.")){
                 this.meldung.meldungErfolgRegistrieren();
             }

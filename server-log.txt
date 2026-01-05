@@ -1,0 +1,108 @@
+Raum erstellt: Java
+Raum erstellt: Offtopic
+Server erfolgreich gestartet.
+[Lobby]null: BigCock
+[Lobby]null: hbc
+[Lobby]null: anmelden
+[Lobby]null: BigCock
+[Lobby]null: hbc
+[Lobby]null: registrieren
+[Lobby]null: BigCock
+[Lobby]null: hbc
+Abmeldung erfolgreich: null
+[Lobby]null hat den Chatraum verlassen.
+Raum erstellt: Java
+Raum erstellt: Offtopic
+Server erfolgreich gestartet.
+Anmeldung erfolgreich: da
+[Lobby]da: registrieren
+[Lobby]da: da
+[Lobby]da: fdsa
+[Lobby]da: registrieren
+[Lobby]da: da
+[Lobby]da: fdsa
+[Lobby]da: registrieren
+[Lobby]da: ko
+[Lobby]da: fdsa
+[Lobby]da: anmelden
+[Lobby]da: ko
+[Lobby]da: fdsa
+Server erfolgreich heruntergefahren.
+Raum erstellt: Java
+Raum erstellt: Offtopic
+Server erfolgreich gestartet.
+Anmeldung erfolgreich: hi
+[Lobby]hi: registrieren
+[Lobby]hi: hi
+[Lobby]hi: 123
+[Lobby]hi: registrieren
+[Lobby]hi: hi
+[Lobby]hi: 123
+[Lobby]hi: registrieren
+[Lobby]hi: hi
+[Lobby]hi: 123
+Server erfolgreich heruntergefahren.
+Raum erstellt: Java
+Raum erstellt: Offtopic
+Server erfolgreich gestartet.
+Anmeldung erfolgreich: hi
+[Lobby]hi: anmelden
+[Lobby]hi: hi
+[Lobby]hi: 123
+[Lobby]hi: registrieren
+[Lobby]hi: hi
+[Lobby]hi: 123
+[Lobby]hi: anmelden
+[Lobby]hi: hi
+[Lobby]hi: 123
+Server erfolgreich heruntergefahren.
+Raum erstellt: Java
+Raum erstellt: Offtopic
+Server erfolgreich gestartet.
+Anmeldung erfolgreich: hi
+[Lobby]hi: anmelden
+[Lobby]hi: hi
+[Lobby]hi: 123
+[Lobby]hi: anmelden
+[Lobby]hi: hi
+[Lobby]hi: 123
+Abmeldung erfolgreich: hi
+[Lobby]hi hat den Chatraum verlassen.
+Anmeldung erfolgreich: m
+[Lobby]m: anmelden
+[Lobby]m: m
+[Lobby]m: as
+[Lobby]m: registrieren
+[Lobby]m: m
+[Lobby]m: as
+Abmeldung erfolgreich: m
+[Lobby]m hat den Chatraum verlassen.
+Anmeldung erfolgreich: ew
+[Lobby]ew: anmelden
+[Lobby]ew: ew
+[Lobby]ew: we
+Server erfolgreich heruntergefahren.
+Raum erstellt: Java
+Raum erstellt: Offtopic
+Server erfolgreich gestartet.
+Anmeldung erfolgreich: hi
+Anmeldung erfolgreich: hi
+Server erfolgreich heruntergefahren.
+Raum erstellt: Java
+Raum erstellt: Offtopic
+Server erfolgreich gestartet.
+Anmeldung erfolgreich: BigCockHBC
+Anmeldung erfolgreich: BigCockHBC
+Server erfolgreich heruntergefahren.
+Raum erstellt: Java
+Raum erstellt: Offtopic
+Server erfolgreich gestartet.
+Anmeldung erfolgreich: hi
+Anmeldung erfolgreich: hi
+Server erfolgreich heruntergefahren.
+Raum erstellt: Java
+Raum erstellt: Offtopic
+Server erfolgreich gestartet.
+Anmeldung erfolgreich: hi
+Anmeldung erfolgreich: hi
+Server erfolgreich heruntergefahren.

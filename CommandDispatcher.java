@@ -6,8 +6,8 @@ public class CommandDispatcher extends Thread {
     private Scanner scanner;
 
     public CommandDispatcher(Server server) {
-        this.running = true;
         this.server = server;
+        this.running = true;
         this.scanner = new Scanner(System.in);
     }
 
@@ -15,7 +15,7 @@ public class CommandDispatcher extends Thread {
     public void run() {
         System.out.println("Herzlich Willkommen in unserem kleinen Chatsystem. Sie befinden sich im Adminbereich. Für mögliche Befehle bitte 'hilfe' eingeben.");
 
-        while(running) {
+        while(this.running) {
             String cmd = scanner.nextLine();
 
             switch(cmd) {
@@ -55,6 +55,6 @@ public class CommandDispatcher extends Thread {
                     break;
             }
         }
-        System.out.println("Das Programm und der Server wurden beendet.");
+        System.out.println("Das Programm wurde beendet.");
     }
 }

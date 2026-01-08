@@ -22,12 +22,16 @@ public class ClientThread extends Thread {
     public void run() {
         while (!startseite()) {}
 
-        this.write(this.server.getIdOfAvailableClients(this));
+        //this.write(this.server.getIdOfAvailableClients(this));
 
         while(true) {
             try {
-                String msg;
-                if ((msg = reader.readLine()) != null) {
+                String msg = reader.readLine();
+                System.out.println(msg);
+                if(msg.equals("Button gedrückt")){
+                    RoomClient();
+                }
+                else if(msg != null) {
                     this.server.sendMessageToRoom(this.getCurrentRoom(), this, this.id  + ": " + msg);
                 }
                 else {
@@ -147,4 +151,37 @@ public class ClientThread extends Thread {
     public void setCurrentRoom(String room) {
         this.currentRoom = room;
     }
+
+    public void RoomClient(){
+        try{
+            String msg = reader.readLine(); 
+            switch(msg) {
+                case "Raum Erstellen":
+                    String newName = reader.readLine();
+                    boolean ok = this.server.createRoom(newName);
+                    if(ok) { 
+                        this.write("Raum Erstellen erfolgreich");
+                        break;
+                    }
+                    else{
+                        this.write("Ich akzeptiere den neuen Raum nicht");
+                        break;
+                    }
+                case "Raum Beitreten":
+                    String existingName = reader.readLine();
+                    this.server.joinRoom(this, existingName);
+                    break;
+                // case "Raum Verlassen":
+                //     if(!anmelden()) { return false; }
+                //     else{
+                //         return true;
+                //     }
+                default:
+                    this.write("Etwas ist schief gelaufen");
+            }
+        } catch (IOException e) {
+            this.write("Es konnte keine Raumaktion durchgeführt werden");
+        }
+    }
+    
 }

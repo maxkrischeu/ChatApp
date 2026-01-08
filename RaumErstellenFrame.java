@@ -11,9 +11,9 @@ public class RaumErstellenFrame{
     TextField raumname;
     Panel buttonPanel;
 
-    public RaumErstellenFrame(ClientTest client){
+    public RaumErstellenFrame(ClientTest client, Chatfenster chat){
         this.client = client;
-        this.chat = new Chatfenster(this.client);
+        this.chat = chat;
 
         this.frame = new Frame("Neuen Raum erstellen"); 
         this.frame.setSize(400,200);
@@ -28,7 +28,7 @@ public class RaumErstellenFrame{
         this.frame.add(new Label("Raumname eingeben: ", Label.CENTER), this.gbc);
 
         this.gbc.gridy = 1;
-        setRaumname();
+        enterRoomName();
 
         this.gbc.gridy = 2;
         this.buttonPanel = new Panel(new FlowLayout(FlowLayout.CENTER, 15, 0));
@@ -38,24 +38,25 @@ public class RaumErstellenFrame{
 
     }
 
-    public void raumErstellen(){
+    public void visible(){
         this.frame.setVisible(true); 
     }
 
-    public void okay(){
-        this.frame.setVisible(false);
-    }
-
-    public void abbrechen(){
-        this.frame.setVisible(false);
-    }
 
     public void setOk(){
         this.ok = new Button("OK");
         this.ok.setSize(10,30);
         gbc.gridx = 0;
         this.ok.addActionListener(e -> {
-            okay();
+            this.client.write("Button gedrückt");
+            this.frame.setVisible(false);
+            this.client.write("Raum Erstellen");
+            this.client.write(this.getRoomName());
+            String msg = this.client.read();
+            System.out.println(msg);
+            if(msg.equals("Raum Erstellen erfolgreich")){
+                this.chat.addRoomName(this.getRoomName());
+            }
         });
         this.buttonPanel.add(this.ok);
     }
@@ -65,17 +66,17 @@ public class RaumErstellenFrame{
         this.abbrechen.setSize(10,30);
          gbc.gridx = 1;
         this.abbrechen.addActionListener(e -> {
-            abbrechen();
+            this.frame.setVisible(false);
         });
         this.buttonPanel.add(this.abbrechen);
     }
 
-    public void setRaumname(){
+    public void enterRoomName(){
         this.raumname = new TextField(20); 
         this.frame.add(raumname, gbc);
     }
 
-    public String getRaumname(){
+    public String getRoomName(){
         return this.raumname.getText();
     }
 }

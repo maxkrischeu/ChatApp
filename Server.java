@@ -38,8 +38,6 @@ public class Server {
         this.rooms.put("Lobby", new Room("Lobby"));
         this.roomAdded.accept("Lobby");
 
-        this.createRoom("Java");
-        this.createRoom("Offtopic");
 
         try {
             this.serverSocket = new ServerSocket(this.port);
@@ -197,11 +195,11 @@ public class Server {
 
         Room oldRoom = this.rooms.get(client.getCurrentRoom());
         oldRoom.removeMember(client);
-
         rooms.get(newRoom).addMember(client);
         client.setCurrentRoom(newRoom);
+        getCurrentRoomMembers(client, newRoom);
 
-        this.log(client.getID() + "wechselt von " + oldRoom + " nach " + newRoom);
+        this.log(client.getID() + " wechselt von " + oldRoom + " nach " + newRoom);
         this.sendMessageToRoom(oldRoom.getName(), client, "[INFO] " + client.getID() + " hat den Raum verlassen.");
         sendMessageToRoom(newRoom, client, "[INFO] " + client.getID() + " ist beigetreten.");
     }
@@ -302,6 +300,15 @@ public class Server {
         target.write("[ADMIN] " + message);
 
         return true;
+    }
+
+    public void getCurrentRoomMembers(ClientThread client, String newRoom){
+        List<ClientThread> members = rooms.get(newRoom).getMembers();
+        for(ClientThread member: members){
+            client.write("for Schleife fängt an");
+            client.write(member.getID());
+        }
+        client.write("Ende");
     }
 }
 

@@ -26,7 +26,7 @@ public class ClientTest {
             this.startframe = new StartFrame(this);
             this.meldung = new Rueckmeldung(this);
             this.chat = new Chatfenster(this);
-            this.raumerstellen = new RaumErstellenFrame(this);
+            this.raumerstellen = new RaumErstellenFrame(this, this.chat);
             }
         catch(Exception e) {
             System.out.println("Das hat nicht geklappt:" + e.getMessage());

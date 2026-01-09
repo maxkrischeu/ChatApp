@@ -7,6 +7,7 @@ public class StartFrame{
     Rueckmeldung meldung;
     Panel eingabePanel;
     TextField bEingabe;
+    String benutzername;
     TextField pEingabe;
     Button anmeldeButton;
     Button registrierenButton;

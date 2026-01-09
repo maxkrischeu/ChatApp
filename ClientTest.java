@@ -64,27 +64,35 @@ public class ClientTest {
                     }
                 }
             }
-            if(msg.startsWith("Neuer Raum wurde erstellt:")){
+
+            else if(msg.startsWith("Mitglieder:")){
+                this.chat.user.removeAll();
+                String roomMembers = msg.substring("Mitglieder:".length());
+                String[] members = roomMembers.split(",");
+                for(int i=0; i<members.length; i++){
+                    if(!(members[i].equals(this.startframe.getUsername()))){
+                        this.chat.user.add(members[i]);
+                    }
+                }
+            }
+
+            else if(msg.startsWith("Neuer Raum wurde erstellt:")){
                 String newRoom = msg.substring("Neuer Raum wurde erstellt:".length());
                 this.chat.addRoomName(newRoom); 
             }
 
-            
-            // int index;
-            // String substring;
-            // String roomName;
-            // if(msg.contains(":")){
-            //     index = msg.indexOf(":");
-            //     substring = msg.substring(0, index);
-            //     roomName = msg.substring(index+1);
-            //     switch(substring) {
-            //         case "Neuer Raum wurde erstellt:":
-            //             this.chat.addRoomName(roomName);
-            //             break;
-            //         default:
-            //             System.out.println("Beim Lesen im ClientTest ist etwas schief gelaufen");
-            //     }
-            // }
+            else if(msg.startsWith("[INFO]") && msg.contains("beigetreten")){
+                int ende = msg.indexOf(" ist beigetreten");
+                String newMember = msg.substring("[INFO] ".length(), ende);
+                this.chat.user.add(newMember);
+            }
+
+            else if(msg.startsWith("[INFO]") && msg.contains("verlassen")){
+                int ende = msg.indexOf(" hat den Raum verlassen");
+                String oldMember = msg.substring("[INFO] ".length(), ende);
+                System.out.println(oldMember);
+                this.chat.user.remove(oldMember);
+            }
         }
 
 

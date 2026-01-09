@@ -169,17 +169,11 @@ public class Chatfenster {
             String name = this.rooms.getSelectedItem();
             this.client.write(name);
             setRoomName(name);
-            //this.user.removeAll();
-            while(this.client.read().equals("for Schleife fängt an")){
-                String msg = this.client.read();
-                this.user.add(this.client.read() + "\n"); 
-            }
         });
 
         this.raumVerlassen.addActionListener(e -> {
             this.client.write("Button gedrückt");
             this.client.write("Raum Verlassen");
-
         });
 
         buttons.add(this.raumErstellen);
@@ -203,7 +197,6 @@ public class Chatfenster {
 
     public void setRoomName(String roomName){
         this.roomLabel.setText("Aktueller Raum: " + roomName);
-        //this.user.add(client.startframe.getUsername());
     }
 
     public void addRoomName(String roomName) {

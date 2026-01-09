@@ -208,7 +208,10 @@ public class Server {
         getCurrentRoomMembers(client, newRoom);
 
         this.log(client.getID() + " wechselt von " + oldRoom + " nach " + newRoom);
-        this.sendMessageToRoom(oldRoom.getName(), client, "[INFO] " + client.getID() + " hat den Raum verlassen.");
+        if(!(oldRoom.getName().equals("Lobby"))){
+            this.sendMessageToRoom(oldRoom.getName(), client, "[INFO] " + client.getID() + " hat den Raum verlassen.");
+        }
+        //this.sendMessageToRoom(oldRoom.getName(), client, "[INFO] " + client.getID() + " hat den Raum verlassen.");
         sendMessageToRoom(newRoom, client, "[INFO] " + client.getID() + " ist beigetreten.");
     }
 
@@ -323,13 +326,12 @@ public class Server {
         return true;
     }
 
-    public void getCurrentRoomMembers(ClientThread client, String newRoom){
-        List<ClientThread> members = rooms.get(newRoom).getMembers();
-        for(ClientThread member: members){
-            client.write("for Schleife fängt an");
-            client.write(member.getID());
+    public void getCurrentRoomMembers(ClientThread client, String roomName){
+        String roomMembers ="";
+        for(ClientThread roomMember: rooms.get(roomName).getMembers()){
+            roomMembers += roomMember.getID() + ",";
         }
-        client.write("Ende");
+        client.write("Mitglieder:" + roomMembers);
     }
 
     public void getCurrentRooms(ClientThread client){ 

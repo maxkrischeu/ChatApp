@@ -37,25 +37,24 @@ public class ClientTest {
         while(true) {
             String msg = read();
             System.out.println(msg);
-            switch(msg) {
-                case "Registrierung erfolgreich.": 
-                    this.meldung.meldungErfolgRegistrieren();
-                    break;
-                case "Dieser Benutzername existiert bereits. Gib bitte einen neuen Benutzernamen ein.":
-                    this.meldung.meldungErrorRegistrieren();
-                    break;
-                case "Anmeldung erfolgreich.":
-                    this.meldung.meldungErfolgAnmelden();
-                    break;
-                case "Der Benutzername oder das Passwort sind falsch.":
-                    this.meldung.meldungErrorAnmelden();
-                    break;
-                //TODO: "Du bist gebannt und kannst dich nicht anmelden."
-                case "Raum Erstellen erfolgreich":
-                    this.chat.addRoomName(this.chat.raumerstellen.getRoomName());
-                    break;
+            if(msg.equals("Registrierung erfolgreich.")){
+                this.meldung.meldungErfolgRegistrieren();
             }
-            if(msg.startsWith("Raumnamen:")){
+            else if(msg.equals("Dieser Benutzername existiert bereits. Gib bitte einen neuen Benutzernamen ein.")){
+                this.meldung.meldungErrorRegistrieren();
+            } 
+            else if(msg.equals("Anmeldung erfolgreich.")){
+                this.meldung.meldungErfolgAnmelden();
+            } 
+            else if(msg.equals("Der Benutzername oder das Passwort sind falsch.")){
+                this.meldung.meldungErrorAnmelden();
+            }     
+            //TODO: "Du bist gebannt und kannst dich nicht anmelden."
+            else if(msg.equals( "Raum Erstellen erfolgreich")){
+                this.chat.addRoomName(this.chat.raumerstellen.getRoomName());
+            }  
+            
+            else if(msg.startsWith("Raumnamen:")){
                 String roomNames = msg.substring("Raumnamen:".length());
                 String[] rooms = roomNames.split(",");
                 for(int i=0; i<rooms.length; i++){
@@ -92,6 +91,9 @@ public class ClientTest {
                 String oldMember = msg.substring("[INFO] ".length(), ende);
                 System.out.println(oldMember);
                 this.chat.user.remove(oldMember);
+            }
+            else{
+                this.chat.chatanzeige.add(msg);
             }
         }
 

@@ -1670,3 +1670,16 @@ jenny wechselt von Room@3ade4d33 nach mathe
 [mathe][INFO] jenny ist beigetreten.
 [mathe]jenny: 
 Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von f
+Anmeldung erfolgreich von f
+Raum erstellt: 1
+Anmeldung erfolgreich von rr
+Anmeldung erfolgreich von rr
+rr wechselt von Room@269ba665 nach 1
+[1][INFO] rr ist beigetreten.
+[1]rr: 
+f wechselt von Room@269ba665 nach 1
+[1][INFO] f ist beigetreten.
+[1]f: 
+Server erfolgreich heruntergefahren.

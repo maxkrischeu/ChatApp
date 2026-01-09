@@ -33,7 +33,7 @@ public class ClientThread extends Thread {
                     RoomClient();
                 }
                 else if(msg != null) {
-                    this.server.sendMessageToRoom(this.getCurrentRoom(), this, this.id  + ": " + msg);
+                    this.server.sendMessageToRoom(this.getCurrentRoom(), this, "[" + this.id + "]"  + ": " + msg);
                 }
                 else {
                     this.server.removeClientThread(this);

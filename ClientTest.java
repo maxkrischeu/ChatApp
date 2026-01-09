@@ -84,6 +84,7 @@ public class ClientTest {
                 int ende = msg.indexOf(" ist beigetreten");
                 String newMember = msg.substring("[INFO] ".length(), ende);
                 this.chat.user.add(newMember);
+                this.chat.chatanzeige.add(msg);
             }
 
             else if(msg.startsWith("[INFO]") && msg.contains("verlassen")){
@@ -91,6 +92,7 @@ public class ClientTest {
                 String oldMember = msg.substring("[INFO] ".length(), ende);
                 System.out.println(oldMember);
                 this.chat.user.remove(oldMember);
+                this.chat.chatanzeige.add(msg);
             }
             else{
                 this.chat.chatanzeige.add(msg);

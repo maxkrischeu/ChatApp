@@ -86,7 +86,9 @@ public class Chatfenster {
         TextField chateingabe = new TextField(20);
         Button senden = new Button("Senden");
         senden.addActionListener(e -> {
-            this.chatanzeige.add("[" + client.startframe.getUsername() + "]" + ": " + chateingabe.getText() +"\n");
+            String msg = "[" + client.startframe.getUsername() + "]" + ": " + chateingabe.getText();
+            this.chatanzeige.add(msg +"\n");
+            this.client.write(chateingabe.getText());
             chateingabe.setText("");
         });
         chatPanel.add(chateingabe);

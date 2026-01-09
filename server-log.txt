@@ -1683,3 +1683,61 @@ f wechselt von Room@269ba665 nach 1
 [1][INFO] f ist beigetreten.
 [1]f: 
 Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von r
+Anmeldung erfolgreich von r
+Raum erstellt: 1
+Anmeldung erfolgreich von e
+Anmeldung erfolgreich von e
+Raum erstellt: 2
+e wechselt von Room@40cf6735 nach 1
+[1][INFO] e ist beigetreten.
+[1]e: 
+r wechselt von Room@40cf6735 nach 1
+[1][INFO] r ist beigetreten.
+[1]r: 
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von f
+Anmeldung erfolgreich von f
+Anmeldung erfolgreich von g
+Anmeldung erfolgreich von g
+Raum erstellt: 2
+f wechselt von Room@37971efe nach 2
+[2][INFO] f ist beigetreten.
+[2]f: 
+g wechselt von Room@37971efe nach 2
+[2][INFO] g ist beigetreten.
+[2]g: 
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von e
+Anmeldung erfolgreich von e
+Raum erstellt: 1
+Raum erstellt: 2
+Anmeldung erfolgreich von w
+Anmeldung erfolgreich von w
+w wechselt von Room@589ea9f3 nach 1
+[1][INFO] w ist beigetreten.
+[1]w: 
+e wechselt von Room@589ea9f3 nach 1
+[1][INFO] e ist beigetreten.
+[1]e: 
+[1]w: hi
+[1]e: moin
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von d
+Anmeldung erfolgreich von d
+Anmeldung erfolgreich von f
+Anmeldung erfolgreich von f
+Raum erstellt: 1
+f wechselt von Room@15ab1a00 nach 1
+[1][INFO] f ist beigetreten.
+[1][f]: 
+d wechselt von Room@15ab1a00 nach 1
+[1][INFO] d ist beigetreten.
+[1][d]: 
+[1][f]: hi
+[1][d]: moin
+Server erfolgreich heruntergefahren.

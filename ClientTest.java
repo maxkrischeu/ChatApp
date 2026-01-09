@@ -64,6 +64,10 @@ public class ClientTest {
                     }
                 }
             }
+            if(msg.startsWith("Neuer Raum wurde erstellt:")){
+                String newRoom = msg.substring("Neuer Raum wurde erstellt:".length());
+                this.chat.addRoomName(newRoom); 
+            }
 
             
             // int index;

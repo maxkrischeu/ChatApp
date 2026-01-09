@@ -121,10 +121,14 @@ public class Server {
     }
     
     public void addClientThread(ClientThread client) {
+        int count = 0;
         for(ClientThread member: this.clients){
-            if(member != client){
-                this.clients.add(client);
+            if(client == member){
+                count++;
             }
+        }
+        if(count==0){
+            this.clients.add(client);
         }
         this.log("Anmeldung erfolgreich von " + client.getID());
         this.userAdded.accept(client.getID());
@@ -342,6 +346,6 @@ public class Server {
                 client.write(msg);
             }
         }
-        this.log("[" + self.getID() + "]" + msg);
+        //this.log("[" + self.getID() + "]" + msg);
     }
 }

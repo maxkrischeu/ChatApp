@@ -23,6 +23,7 @@ public class ClientThread extends Thread {
         while (!startseite()) {}
 
         //this.write(this.server.getIdOfAvailableClients(this));
+        this.server.getCurrentRooms(this);
 
         while(true) {
             try {
@@ -148,8 +149,8 @@ public class ClientThread extends Thread {
         return this.currentRoom;
     }
 
-    public void setCurrentRoom(String room) {
-        this.currentRoom = room;
+    public void setCurrentRoom(String newName) {
+        this.currentRoom = newName;
     }
 
     public void RoomClient(){
@@ -161,6 +162,7 @@ public class ClientThread extends Thread {
                     boolean ok = this.server.createRoom(newName);
                     if(ok) { 
                         this.write("Raum Erstellen erfolgreich");
+                        this.server.sendMessageToAll(this, "Neuer Raum wurde erstellt:" + newName);
                         break;
                     }
                     else{
@@ -168,14 +170,13 @@ public class ClientThread extends Thread {
                         break;
                     }
                 case "Raum Beitreten":
-                    String existingName = reader.readLine();
-                    this.server.joinRoom(this, existingName);
+                    String joinName = reader.readLine();
+                    this.server.joinRoom(this, joinName);
                     break;
-                // case "Raum Verlassen":
-                //     if(!anmelden()) { return false; }
-                //     else{
-                //         return true;
-                //     }
+                case "Raum Verlassen":
+                    String quitName = reader.readLine();
+                    this.server.quitRoom(this ,quitName);
+                    break;
                 default:
                     this.write("Etwas ist schief gelaufen");
             }

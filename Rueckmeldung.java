@@ -6,7 +6,6 @@ public class Rueckmeldung{
     Button button;
     ClientTest client;
     GridBagConstraints gbc;
-    Chatfenster chat;
     
     public Rueckmeldung(ClientTest client){
         this.frame = new Frame("Meldung"); 
@@ -21,7 +20,6 @@ public class Rueckmeldung{
         this.button.setSize(10,10);
         this.frame.add(this.button, this.gbc);
         this.client = client;
-        this.chat = new Chatfenster(this.client);
     }
 
     public void meldungErfolgRegistrieren(){
@@ -46,7 +44,7 @@ public class Rueckmeldung{
             this.frame.setVisible(false);
             this.frame.remove(erfolgsmeldungA);
             this.client.startframe.frameEnd();
-            this.chat.anzeigen();
+            this.client.chat.anzeigen();
         });
     }
 

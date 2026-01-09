@@ -13,6 +13,10 @@ public class Room {
         return this.name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public List<ClientThread> getMembers() {
         return this.members;
     }

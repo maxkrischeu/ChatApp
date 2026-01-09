@@ -14,7 +14,6 @@ public class ClientTest {
     StartFrame startframe;
     Rueckmeldung meldung;
     Chatfenster chat;
-    RaumErstellenFrame raumerstellen;
 
     public ClientTest(){
         try{
@@ -26,8 +25,7 @@ public class ClientTest {
             this.startframe = new StartFrame(this);
             this.meldung = new Rueckmeldung(this);
             this.chat = new Chatfenster(this);
-            this.raumerstellen = new RaumErstellenFrame(this, this.chat);
-            }
+        }            
         catch(Exception e) {
             System.out.println("Das hat nicht geklappt:" + e.getMessage());
         }
@@ -36,13 +34,55 @@ public class ClientTest {
     public void start(){
         this.running = true;
         this.startframe.frameStart();
+        while(true) {
+            String msg = read();
+            System.out.println(msg);
+            switch(msg) {
+                case "Registrierung erfolgreich.": 
+                    this.meldung.meldungErfolgRegistrieren();
+                    break;
+                case "Dieser Benutzername existiert bereits. Gib bitte einen neuen Benutzernamen ein.":
+                    this.meldung.meldungErrorRegistrieren();
+                    break;
+                case "Anmeldung erfolgreich.":
+                    this.meldung.meldungErfolgAnmelden();
+                    break;
+                case "Der Benutzername oder das Passwort sind falsch.":
+                    this.meldung.meldungErrorAnmelden();
+                    break;
+                //TODO: "Du bist gebannt und kannst dich nicht anmelden."
+                case "Raum Erstellen erfolgreich":
+                    this.chat.addRoomName(this.chat.raumerstellen.getRoomName());
+                    break;
+            }
+            if(msg.startsWith("Raumnamen:")){
+                String roomNames = msg.substring("Raumnamen:".length());
+                String[] rooms = roomNames.split(",");
+                for(int i=0; i<rooms.length; i++){
+                    if(!(rooms[i].equals("Lobby"))){
+                        this.chat.addRoomName(rooms[i]);
+                    }
+                }
+            }
 
-        // try{
-        //     // new Thread() {
-        //     //     public void run() {
-        //     //         ClientTest.this.write();
-        //     //     }
-        //     // }.start();
+            
+            // int index;
+            // String substring;
+            // String roomName;
+            // if(msg.contains(":")){
+            //     index = msg.indexOf(":");
+            //     substring = msg.substring(0, index);
+            //     roomName = msg.substring(index+1);
+            //     switch(substring) {
+            //         case "Neuer Raum wurde erstellt:":
+            //             this.chat.addRoomName(roomName);
+            //             break;
+            //         default:
+            //             System.out.println("Beim Lesen im ClientTest ist etwas schief gelaufen");
+            //     }
+            // }
+        }
+
 
         //     System.out.println("Wir lesen");
 

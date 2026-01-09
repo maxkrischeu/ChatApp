@@ -121,8 +121,12 @@ public class Server {
     }
     
     public void addClientThread(ClientThread client) {
-        this.clients.add(client);
-        this.log("Anmeldung erfolgreich: " + client.getID());
+        for(ClientThread member: this.clients){
+            if(member != client){
+                this.clients.add(client);
+            }
+        }
+        this.log("Anmeldung erfolgreich von " + client.getID());
         this.userAdded.accept(client.getID());
 
         client.setCurrentRoom("Lobby");
@@ -131,7 +135,7 @@ public class Server {
 
     public void removeClientThread(ClientThread client) {
         this.clients.remove(client);
-        this.log("Abmeldung erfolgreich: " + client.getID());
+        this.log("Abmeldung erfolgreich von " + client.getID());
         this.userRemoved.accept(client.getID());
     }
 
@@ -277,6 +281,19 @@ public class Server {
         return true;
     }
 
+    public void quitRoom(ClientThread client, String roomName){
+        Room room = this.rooms.get(roomName);
+        Room lobby = this.rooms.get("Lobby");
+        room.removeMember(client);
+        lobby.addMember(client);
+        client.setCurrentRoom("Lobby");
+
+        this.log(client.getID() + "hat den Raum " + roomName + " verlassen");
+        if(room.getMembers().size() == 0){
+            boolean delete = deleteRoom(roomName);
+        }
+    }
+
     public boolean sendAdminMessageToUser(String id, String message) {
         if (id == null || message == null) return false;
     
@@ -310,5 +327,21 @@ public class Server {
         }
         client.write("Ende");
     }
-}
 
+    public void getCurrentRooms(ClientThread client){ 
+        String roomNames ="";
+        for(String roomName: this.rooms.keySet()){
+            roomNames += roomName + ",";
+        }
+        client.write("Raumnamen:" + roomNames);
+    }
+
+    public void sendMessageToAll(ClientThread self, String msg) {
+        for(ClientThread client: this.clients) {
+            if (client != self) {
+                client.write(msg);
+            }
+        }
+        this.log("[" + self.getID() + "]" + msg);
+    }
+}

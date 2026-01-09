@@ -81,14 +81,6 @@ public class StartFrame{
             this.client.write("anmelden");
             this.client.write(bEingabe.getText()); 
             this.client.write(pEingabe.getText());
-            String msg = this.client.read();
-            System.out.println(msg);
-            if(msg.equals("Anmeldung erfolgreich.")){
-                this.meldung.meldungErfolgAnmelden();
-            }
-            else{
-                this.meldung.meldungErrorAnmelden();
-            }
         });
     }
 
@@ -97,12 +89,6 @@ public class StartFrame{
             this.client.write("registrieren");
             this.client.write(bEingabe.getText());
             this.client.write(pEingabe.getText());
-            if(this.client.read().equals("Registrierung erfolgreich.")){
-                this.meldung.meldungErfolgRegistrieren();
-            }
-            else{
-                this.meldung.meldungErrorRegistrieren();
-            }
         });
     }
 

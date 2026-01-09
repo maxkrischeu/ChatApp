@@ -803,3 +803,427 @@ re wechselt von Room@c4ac2f6 nach 3
 [3][INFO] re ist beigetreten.
 [3]re: 
 Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich: k
+Anmeldung erfolgreich: k
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich: d
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich: f
+Anmeldung erfolgreich: f
+Raum erstellt: 1
+f wechselt von Room@23b8665c nach 1
+[Lobby][INFO] f hat den Raum verlassen.
+[1][INFO] f ist beigetreten.
+[1]f: 
+Raum erstellt: 2
+f wechselt von Room@32e88d3f nach 2
+[1][INFO] f hat den Raum verlassen.
+[2][INFO] f ist beigetreten.
+[2]f: 
+Anmeldung erfolgreich: t
+Anmeldung erfolgreich: t
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich: d
+Anmeldung erfolgreich: d
+[Lobby]d: registrieren
+[Lobby]d: d
+[Lobby]d: d
+[Lobby]d: anmelden
+[Lobby]d: d
+[Lobby]d: d
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich: e
+Anmeldung erfolgreich: e
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich: f
+Anmeldung erfolgreich: f
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich: f
+Anmeldung erfolgreich: f
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich: f
+Anmeldung erfolgreich: f
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich: d
+Anmeldung erfolgreich: d
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich: f
+Anmeldung erfolgreich: f
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich: d
+Anmeldung erfolgreich: d
+Raum erstellt: 1
+Raum erstellt: 2
+Anmeldung erfolgreich: s
+Anmeldung erfolgreich: s
+s wechselt von Room@7e672e21 nach 2
+[Lobby][INFO] s hat den Raum verlassen.
+[2][INFO] s ist beigetreten.
+[2]s: 
+d wechselt von Room@7e672e21 nach 2
+[Lobby][INFO] d hat den Raum verlassen.
+[2][INFO] d ist beigetreten.
+[2]d: 
+d wechselt von Room@57580e0 nach 2
+[2][INFO] d hat den Raum verlassen.
+[2][INFO] d ist beigetreten.
+[2]d: 
+d wechselt von Room@57580e0 nach 1
+[2][INFO] d hat den Raum verlassen.
+[1][INFO] d ist beigetreten.
+[1]d: 
+s wechselt von Room@57580e0 nach 1
+[2][INFO] s hat den Raum verlassen.
+[1][INFO] s ist beigetreten.
+[1]s: 
+d wechselt von Room@67f172dd nach 2
+[1][INFO] d hat den Raum verlassen.
+[2][INFO] d ist beigetreten.
+[2]d: 
+d wechselt von Room@57580e0 nach 1
+[2][INFO] d hat den Raum verlassen.
+[1][INFO] d ist beigetreten.
+[1]d: 
+d wechselt von Room@67f172dd nach Lobby
+[1][INFO] d hat den Raum verlassen.
+[Lobby][INFO] d ist beigetreten.
+[Lobby]d: 
+d wechselt von Room@7e672e21 nach 2
+[Lobby][INFO] d hat den Raum verlassen.
+[2][INFO] d ist beigetreten.
+[2]d: 
+d wechselt von Room@57580e0 nach 1
+[2][INFO] d hat den Raum verlassen.
+[1][INFO] d ist beigetreten.
+[1]d: 
+d wechselt von Room@67f172dd nach 2
+[1][INFO] d hat den Raum verlassen.
+[2][INFO] d ist beigetreten.
+[2]d: 
+s wechselt von Room@67f172dd nach 2
+[1][INFO] s hat den Raum verlassen.
+[2][INFO] s ist beigetreten.
+[2]s: 
+s wechselt von Room@57580e0 nach 1
+[2][INFO] s hat den Raum verlassen.
+[1][INFO] s ist beigetreten.
+[1]s: 
+s wechselt von Room@67f172dd nach Lobby
+[1][INFO] s hat den Raum verlassen.
+[Lobby][INFO] s ist beigetreten.
+[Lobby]s: 
+s wechselt von Room@7e672e21 nach 1
+[Lobby][INFO] s hat den Raum verlassen.
+[1][INFO] s ist beigetreten.
+[1]s: 
+s wechselt von Room@67f172dd nach 2
+[1][INFO] s hat den Raum verlassen.
+[2][INFO] s ist beigetreten.
+[2]s: 
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich: d
+Anmeldung erfolgreich: d
+Anmeldung erfolgreich: t
+Anmeldung erfolgreich: t
+Raum erstellt: 1
+Raum erstellt: 2
+t wechselt von Room@198ebac3 nach 1
+[Lobby][INFO] t hat den Raum verlassen.
+[1][INFO] t ist beigetreten.
+[1]t: 
+t wechselt von Room@222eb238 nach 2
+[1][INFO] t hat den Raum verlassen.
+[2][INFO] t ist beigetreten.
+[2]t: 
+Raum erstellt: 3
+Raum erstellt: 4
+Raum erstellt: fds
+d wechselt von Room@198ebac3 nach fds
+[Lobby][INFO] d hat den Raum verlassen.
+[fds][INFO] d ist beigetreten.
+[fds]d: 
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich: f
+Anmeldung erfolgreich: f
+Raum erstellt: 1
+Raum erstellt: 2
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich: d
+Anmeldung erfolgreich: d
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich: d
+Anmeldung erfolgreich: d
+Raum erstellt: q
+Raum erstellt: 1
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich: f
+Anmeldung erfolgreich: f
+Raum erstellt: 1
+Raum erstellt: 2
+Raum erstellt: 3
+Anmeldung erfolgreich: e
+Anmeldung erfolgreich: e
+Raum erstellt: 4
+Raum erstellt: 6
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich: w
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von k
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von kj
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von f
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von d
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von dd
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von k
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von 23
+Anmeldung erfolgreich von 23
+Abmeldung erfolgreich von 23
+Nutzer entfernt: 23
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von hi
+Anmeldung erfolgreich von hi
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von ds
+Anmeldung erfolgreich von ds
+Raum erstellt: hallo
+[ds]Neuer Raum wurde erstellt:hallo
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von fd
+Anmeldung erfolgreich von fd
+Anmeldung erfolgreich von fsd
+Anmeldung erfolgreich von fsd
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von gfs
+Anmeldung erfolgreich von gfs
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von fd
+Anmeldung erfolgreich von fd
+Raum erstellt: 12
+[fd]Neuer Raum wurde erstellt:12
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von fd
+Anmeldung erfolgreich von fd
+Raum erstellt: 12
+[fd]Neuer Raum wurde erstellt:12
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von o
+Anmeldung erfolgreich von o
+Raum erstellt: 12
+[o]Neuer Raum wurde erstellt:12
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von d
+Anmeldung erfolgreich von d
+Raum erstellt: d
+[d]Neuer Raum wurde erstellt:d
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von e
+Anmeldung erfolgreich von e
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von d
+Anmeldung erfolgreich von d
+Raum erstellt: d
+[d]Neuer Raum wurde erstellt:d
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von ds
+Anmeldung erfolgreich von ds
+Raum erstellt: d
+[ds]Neuer Raum wurde erstellt:d
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von f
+Anmeldung erfolgreich von f
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von f3
+Anmeldung erfolgreich von f3
+Raum erstellt: 3
+[f3]Neuer Raum wurde erstellt:3
+Server erfolgreich gestartet.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von f2
+Anmeldung erfolgreich von po
+Anmeldung erfolgreich von po
+Raum erstellt: 0
+[po]Neuer Raum wurde erstellt:0
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von s
+Anmeldung erfolgreich von s
+Raum erstellt: 1
+[s]Neuer Raum wurde erstellt:1
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von f
+Anmeldung erfolgreich von f
+Raum erstellt: e
+[f]Neuer Raum wurde erstellt:e
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von f
+Anmeldung erfolgreich von f
+Raum erstellt: 1
+[f]Neuer Raum wurde erstellt:1
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von e
+Anmeldung erfolgreich von e
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von f
+Anmeldung erfolgreich von f
+Raum erstellt: 2
+[f]Neuer Raum wurde erstellt:2
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von f
+Anmeldung erfolgreich von f
+Raum erstellt: 1
+[f]Neuer Raum wurde erstellt:1
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von s
+Anmeldung erfolgreich von s
+Raum erstellt: 1
+[s]Neuer Raum wurde erstellt:1
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von e
+Anmeldung erfolgreich von e
+Raum erstellt: 1
+[e]Neuer Raum wurde erstellt:1
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von q
+Anmeldung erfolgreich von q
+Raum erstellt: w
+[q]Neuer Raum wurde erstellt:w
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von 2
+Anmeldung erfolgreich von 2
+Raum erstellt: 3
+[2]Neuer Raum wurde erstellt:3
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von w
+Anmeldung erfolgreich von w
+Raum erstellt: 2
+[w]Neuer Raum wurde erstellt:2
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von e
+Anmeldung erfolgreich von e
+Raum erstellt: 1
+[e]Neuer Raum wurde erstellt:1
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von e
+Anmeldung erfolgreich von e
+Raum erstellt: 3
+[e]Neuer Raum wurde erstellt:3
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von f
+Anmeldung erfolgreich von f
+Raum erstellt: 2
+[f]Neuer Raum wurde erstellt:2
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von kor
+Anmeldung erfolgreich von kor
+Raum erstellt: r
+[kor]Neuer Raum wurde erstellt:r
+Raum erstellt: 1
+[kor]Neuer Raum wurde erstellt:1
+Raum erstellt: 10
+[kor]Neuer Raum wurde erstellt:10
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von f
+Anmeldung erfolgreich von f
+Raum erstellt: 1
+[f]Neuer Raum wurde erstellt:1
+Raum erstellt: 2
+[f]Neuer Raum wurde erstellt:2
+Raum erstellt: 3
+[f]Neuer Raum wurde erstellt:3
+Anmeldung erfolgreich von p
+Anmeldung erfolgreich von p
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von g
+Anmeldung erfolgreich von g
+Raum erstellt: 1
+[g]Neuer Raum wurde erstellt:1
+Raum erstellt: 2
+[g]Neuer Raum wurde erstellt:2
+Raum erstellt: 3
+[g]Neuer Raum wurde erstellt:3
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von d
+Anmeldung erfolgreich von d
+Raum erstellt: 1
+[d]Neuer Raum wurde erstellt:1
+Raum erstellt: 2
+[d]Neuer Raum wurde erstellt:2
+Raum erstellt: 3
+[d]Neuer Raum wurde erstellt:3
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von f
+Anmeldung erfolgreich von f
+Raum erstellt: 1
+[f]Neuer Raum wurde erstellt:1
+Raum erstellt: 2
+[f]Neuer Raum wurde erstellt:2
+Raum erstellt: 3
+[f]Neuer Raum wurde erstellt:3
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von f
+Anmeldung erfolgreich von f
+Raum erstellt: 1
+[f]Neuer Raum wurde erstellt:1
+Raum erstellt: 2
+[f]Neuer Raum wurde erstellt:2
+Raum erstellt: 3
+[f]Neuer Raum wurde erstellt:3
+Anmeldung erfolgreich von w
+Anmeldung erfolgreich von w
+Raum erstellt: 5
+[w]Neuer Raum wurde erstellt:5
+Server erfolgreich heruntergefahren.

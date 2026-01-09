@@ -52,11 +52,6 @@ public class RaumErstellenFrame{
             this.frame.setVisible(false);
             this.client.write("Raum Erstellen");
             this.client.write(this.getRoomName());
-            String msg = this.client.read();
-            System.out.println(msg);
-            if(msg.equals("Raum Erstellen erfolgreich")){
-                this.chat.addRoomName(this.getRoomName());
-            }
         });
         this.buttonPanel.add(this.ok);
     }

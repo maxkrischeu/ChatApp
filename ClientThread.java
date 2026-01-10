@@ -24,6 +24,7 @@ public class ClientThread extends Thread {
 
         //this.write(this.server.getIdOfAvailableClients(this));
         this.server.getCurrentRooms(this);
+        //this.server.getCurrentRoomMembers(this, "Lobby");
 
         while(true) {
             try {
@@ -32,10 +33,10 @@ public class ClientThread extends Thread {
                 if(msg.equals("Button gedrückt")){
                     RoomClient();
                 }
-                else if(msg != null) {
+                else if(msg != null && msg.length()>0) {
                     this.server.sendMessageToRoom(this.getCurrentRoom(), this, "[" + this.id + "]"  + ": " + msg);
                 }
-                else {
+                else if(msg == null){                    
                     this.server.removeClientThread(this);
                     this.server.sendMessageToRoom(this.getCurrentRoom(), this, this.id + " hat den Chatraum verlassen.");
                     break;

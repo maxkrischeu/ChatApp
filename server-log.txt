@@ -1741,3 +1741,114 @@ d wechselt von Room@15ab1a00 nach 1
 [1][f]: hi
 [1][d]: moin
 Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von f
+Anmeldung erfolgreich von f
+Anmeldung erfolgreich von g
+Anmeldung erfolgreich von g
+Raum erstellt: 1
+f wechselt von Room@262b6e45 nach 1
+[1][INFO] f ist beigetreten.
+g wechselt von Room@262b6e45 nach 1
+[1][INFO] g ist beigetreten.
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von d
+Anmeldung erfolgreich von d
+Anmeldung erfolgreich von f
+Anmeldung erfolgreich von f
+Raum erstellt: 1
+f wechselt von Room@65985e0c nach 1
+[1][INFO] f ist beigetreten.
+[1][f]: 
+d wechselt von Room@65985e0c nach 1
+[1][INFO] d ist beigetreten.
+[1][d]: 
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von w
+Anmeldung erfolgreich von w
+Anmeldung erfolgreich von e
+Anmeldung erfolgreich von e
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von w
+Anmeldung erfolgreich von w
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von 4
+Anmeldung erfolgreich von 4
+Anmeldung erfolgreich von k
+Anmeldung erfolgreich von k
+Raum erstellt: 1
+k wechselt von Room@71697685 nach 1
+[1][INFO] k ist beigetreten.
+[1][k]: 
+4 wechselt von Room@71697685 nach 1
+[1][INFO] 4 ist beigetreten.
+[1][4]: 
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von q
+Anmeldung erfolgreich von q
+Anmeldung erfolgreich von pw
+Anmeldung erfolgreich von pw
+Raum erstellt: 1
+pw wechselt von Room@768fd47c nach 1
+[1][INFO] pw ist beigetreten.
+[1][pw]: 
+q wechselt von Room@768fd47c nach 1
+[1][INFO] q ist beigetreten.
+[1][q]: 
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von u
+Anmeldung erfolgreich von u
+Anmeldung erfolgreich von e
+Anmeldung erfolgreich von e
+Raum erstellt: 1
+e wechselt von Room@5e2793bb nach 1
+[1][INFO] e ist beigetreten.
+[1][e]: 
+u wechselt von Room@5e2793bb nach 1
+[1][INFO] u ist beigetreten.
+[1][u]: 
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von f
+Anmeldung erfolgreich von f
+Anmeldung erfolgreich von h
+Anmeldung erfolgreich von h
+Raum erstellt: 1
+f wechselt von Room@5406b920 nach 1
+[1][INFO] f ist beigetreten.
+Abmeldung erfolgreich von f
+[1]f hat den Chatraum verlassen.
+h wechselt von Room@5406b920 nach 1
+[1][INFO] h ist beigetreten.
+Abmeldung erfolgreich von h
+[1]h hat den Chatraum verlassen.
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von r
+Anmeldung erfolgreich von r
+Anmeldung erfolgreich von t
+Anmeldung erfolgreich von t
+Raum erstellt: 1
+r wechselt von Room@6ed9d046 nach 1
+[1][INFO] r ist beigetreten.
+t wechselt von Room@6ed9d046 nach 1
+[1][INFO] t ist beigetreten.
+Raum erstellt: 2
+r wechselt von Room@6f46eeb0 nach 2
+[1][INFO] r hat den Raum verlassen.
+[2][INFO] r ist beigetreten.
+r wechselt von Room@3a352d47 nach 1
+[2][INFO] r hat den Raum verlassen.
+[1][INFO] r ist beigetreten.
+[1][t]: hi
+[1][r]: moin
+t wechselt von Room@6f46eeb0 nach 2
+[1][INFO] t hat den Raum verlassen.
+[2][INFO] t ist beigetreten.
+Server erfolgreich heruntergefahren.

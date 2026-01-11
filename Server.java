@@ -276,7 +276,6 @@ public class Server {
             room.removeMember(client);
             lobby.addMember(client);
             client.setCurrentRoom("Lobby");
-
             client.write("Raum" + roomName + " wurde gelöscht. Du bist jetzt in der Lobby.");
         }
 
@@ -295,10 +294,14 @@ public class Server {
         lobby.addMember(client);
         client.setCurrentRoom("Lobby");
 
-        this.log(client.getID() + "hat den Raum " + roomName + " verlassen");
+        this.log(client.getID() + " hat den Raum " + roomName + " verlassen");
+        client.write("[INFO] Du bist in der Lobby");
+
         if(room.getMembers().size() == 0){
-            boolean delete = deleteRoom(roomName);
+            client.write("Soll dieser Raum gelöscht werden:" + roomName);
         }
+        //this.getCurrentRoomMembers(client, "Lobby");
+        this.sendMessageToRoom(roomName, client, "[INFO] " + client.getID() + " hat den Raum verlassen.");
     }
 
     public boolean sendAdminMessageToUser(String id, String message) {

@@ -14,6 +14,7 @@ public class ClientTest {
     StartFrame startframe;
     Rueckmeldung meldung;
     Chatfenster chat;
+    RaumVerlassen raumVerlassenBestätigen;
 
     public ClientTest(){
         try{
@@ -90,9 +91,31 @@ public class ClientTest {
             else if(msg.startsWith("[INFO]") && msg.contains("verlassen")){
                 int ende = msg.indexOf(" hat den Raum verlassen");
                 String oldMember = msg.substring("[INFO] ".length(), ende);
-                System.out.println(oldMember);
                 this.chat.user.remove(oldMember);
                 this.chat.chatanzeige.add(msg);
+            }
+            else if(msg.contains("wurde gelöscht. Du bist jetzt in der Lobby.")){
+                int start = msg.indexOf("Raum".length());
+                int end = msg.indexOf(" wurde gelöscht. Du bist jetzt in der Lobby");
+                String oldRoom = msg.substring(start, end);
+                this.chat.roomLabel.setText("Aktueller Raum: Lobby");
+                this.chat.rooms.remove(oldRoom);
+            }
+            else if(msg.equals("[INFO] Du bist in der Lobby")){
+                this.chat.roomLabel.setText("Aktueller Raum: Lobby");
+                this.chat.user.removeAll();
+                this.chat.chatanzeige.removeAll();
+            }
+            else if(msg.startsWith("Soll dieser Raum gelöscht werden:")){
+                int start = msg.indexOf("Soll dieser Raum gelöscht werden:".length());
+                this.raumVerlassenBestätigen = new RaumVerlassen(this);
+            }
+            else if(msg.startsWith("[INFO] Raum ") && msg.endsWith(" gelöscht")){
+                String prefix = "[INFO] Raum ";
+                String suffix = " gelöscht";
+                String oldRoom = msg.substring(prefix.length(), msg.length() - suffix.length());
+                oldRoom = oldRoom.trim();
+                this.chat.rooms.remove(oldRoom);
             }
             else{
                 this.chat.chatanzeige.add(msg);

@@ -176,6 +176,8 @@ public class Chatfenster {
         this.raumVerlassen.addActionListener(e -> {
             this.client.write("Button gedrückt");
             this.client.write("Raum Verlassen");
+            String name = this.rooms.getSelectedItem();
+            this.client.write(name);
         });
 
         buttons.add(this.raumErstellen);
@@ -202,6 +204,6 @@ public class Chatfenster {
     }
 
     public void addRoomName(String roomName) {
-        this.rooms.add(roomName + "\n");
+        this.rooms.add(roomName.trim());
     }
 }

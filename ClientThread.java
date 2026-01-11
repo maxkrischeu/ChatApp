@@ -178,6 +178,13 @@ public class ClientThread extends Thread {
                     String quitName = reader.readLine();
                     this.server.quitRoom(this ,quitName);
                     break;
+                case "Lösche den Raum":
+                    String oldRoom = reader.readLine();
+                    boolean delete = this.server.deleteRoom(oldRoom);
+                    if(delete){
+                        this.server.sendMessageToAll(this, "[INFO] Raum " + oldRoom + " gelöscht");
+                    }
+                    break;
                 default:
                     this.write("Etwas ist schief gelaufen");
             }

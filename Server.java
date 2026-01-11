@@ -197,22 +197,24 @@ public class Server {
     }
 
     public void joinRoom(ClientThread client, String newRoom) {
-        if (!this.rooms.containsKey(newRoom)) {
-            this.createRoom(newRoom);
+        System.out.println("newRoom:" + newRoom);
+        if(newRoom.equals("null")){
+            client.write("Es wurde kein Raum ausgewählt.");
         }
+        else{
+            Room oldRoom = this.rooms.get(client.getCurrentRoom());
+            oldRoom.removeMember(client);
+            rooms.get(newRoom).addMember(client);
+            client.setCurrentRoom(newRoom);
+            getCurrentRoomMembers(client, newRoom);
 
-        Room oldRoom = this.rooms.get(client.getCurrentRoom());
-        oldRoom.removeMember(client);
-        rooms.get(newRoom).addMember(client);
-        client.setCurrentRoom(newRoom);
-        getCurrentRoomMembers(client, newRoom);
-
-        this.log(client.getID() + " wechselt von " + oldRoom + " nach " + newRoom);
-        if(!(oldRoom.getName().equals("Lobby"))){
-            this.sendMessageToRoom(oldRoom.getName(), client, "[INFO] " + client.getID() + " hat den Raum verlassen.");
+            this.log(client.getID() + " wechselt von " + oldRoom + " nach " + newRoom);
+            if(!(oldRoom.getName().equals("Lobby"))){
+                this.sendMessageToRoom(oldRoom.getName(), client, "[INFO] " + client.getID() + " hat den Raum verlassen.");
+            }
+            //this.sendMessageToRoom(oldRoom.getName(), client, "[INFO] " + client.getID() + " hat den Raum verlassen.");
+            sendMessageToRoom(newRoom, client, "[INFO] " + client.getID() + " ist beigetreten.");
         }
-        //this.sendMessageToRoom(oldRoom.getName(), client, "[INFO] " + client.getID() + " hat den Raum verlassen.");
-        sendMessageToRoom(newRoom, client, "[INFO] " + client.getID() + " ist beigetreten.");
     }
 
     public void kickUser(String id) {

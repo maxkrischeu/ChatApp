@@ -44,6 +44,9 @@ public class ClientTest {
             else if(msg.equals("Dieser Benutzername existiert bereits. Gib bitte einen neuen Benutzernamen ein.")){
                 this.meldung.meldungErrorRegistrieren();
             } 
+            else if(msg.equals("Kein Passwort eingegeben.")){
+                this.meldung.meldungErrorRegistrierenP();
+            }
             else if(msg.equals("Anmeldung erfolgreich.")){
                 this.meldung.meldungErfolgAnmelden();
             } 
@@ -54,6 +57,10 @@ public class ClientTest {
             else if(msg.equals( "Raum Erstellen erfolgreich")){
                 this.chat.addRoomName(this.chat.raumerstellen.getRoomName());
             }  
+            else if(msg.equals("Es wurde kein Raum ausgewählt.")){
+                this.meldung.meldungErrorBeitreten();
+                this.chat.setRoomName("Lobby");
+            }
             
             else if(msg.startsWith("Raumnamen:")){
                 String roomNames = msg.substring("Raumnamen:".length());

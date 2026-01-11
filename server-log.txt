@@ -2090,3 +2090,148 @@ we hat den Raum 1 verlassen
 [1][INFO] we hat den Raum verlassen.
 Raum gelöscht: 1
 Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von client1
+Anmeldung erfolgreich von client1
+Anmeldung erfolgreich von client2
+Anmeldung erfolgreich von client2
+Raum erstellt: 1
+Raum erstellt: 2
+client2 wechselt von Room@7af8b4f3 nach 1
+[1][INFO] client2 ist beigetreten.
+client1 wechselt von Room@7af8b4f3 nach 1
+[1][INFO] client1 ist beigetreten.
+[1][client2]: hi
+[1][client1]: moin
+client1 hat den Raum 1 verlassen
+[1][INFO] client1 hat den Raum verlassen.
+client1 wechselt von Room@7af8b4f3 nach 1
+[1][INFO] client1 ist beigetreten.
+client2 hat den Raum 1 verlassen
+[1][INFO] client2 hat den Raum verlassen.
+client1 hat den Raum 1 verlassen
+[1][INFO] client1 hat den Raum verlassen.
+Raum gelöscht: 1
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von d
+Anmeldung erfolgreich von d
+Anmeldung erfolgreich von f
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von d
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von r
+Anmeldung erfolgreich von r
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von k
+Anmeldung erfolgreich von k
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von registrieren
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von registrieren
+Anmeldung erfolgreich von f
+Anmeldung erfolgreich von f
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von w
+[Lobby][w]: anmelden
+[Lobby][w]: w
+[Lobby][w]: e
+[Lobby][w]: registrieren
+[Lobby][w]: w
+[Lobby][w]: e
+[Lobby][w]: anmelden
+[Lobby][w]: w
+[Lobby][w]: e
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von w
+[Lobby][w]: anmelden
+[Lobby][w]: w
+[Lobby][w]: e
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von pr
+[Lobby][pr]: anmelden
+[Lobby][pr]: pr
+[Lobby][pr]: r
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von f
+Anmeldung erfolgreich von f
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von f
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von r
+Anmeldung erfolgreich von r
+Raum erstellt: 1
+Raum erstellt: 2
+Raum erstellt: 3
+Anmeldung erfolgreich von o
+Anmeldung erfolgreich von o
+Anmeldung erfolgreich von t
+Anmeldung erfolgreich von t
+t wechselt von Room@720a45a0 nach 1
+[1][INFO] t ist beigetreten.
+Raum erstellt: null
+o wechselt von Room@720a45a0 nach null
+[null][INFO] o ist beigetreten.
+o wechselt von Room@618d11f4 nach 1
+[null][INFO] o hat den Raum verlassen.
+[1][INFO] o ist beigetreten.
+r wechselt von Room@720a45a0 nach 1
+[1][INFO] r ist beigetreten.
+[1][r]: hi
+[1][o]: moin
+o hat den Raum 1 verlassen
+[1][INFO] o hat den Raum verlassen.
+r hat den Raum 1 verlassen
+[1][INFO] r hat den Raum verlassen.
+t hat den Raum 1 verlassen
+[1][INFO] t hat den Raum verlassen.
+Raum gelöscht: 1
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von e
+Anmeldung erfolgreich von e
+Raum erstellt: 1
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von e
+Anmeldung erfolgreich von e
+Raum erstellt: 1
+Raum erstellt: 2
+e wechselt von Room@63f09d45 nach 1
+[1][INFO] e ist beigetreten.
+e hat den Raum 1 verlassen
+[1][INFO] e hat den Raum verlassen.
+Raum gelöscht: 1
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von e
+Anmeldung erfolgreich von e
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von r
+Anmeldung erfolgreich von r
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von r
+Anmeldung erfolgreich von r
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von e
+Anmeldung erfolgreich von e
+Server erfolgreich heruntergefahren.

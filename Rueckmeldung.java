@@ -48,7 +48,6 @@ public class Rueckmeldung{
         });
     }
 
-    //Wenn Registrierung nicht erfolgreich, dann muss ich noch Dinge ändern
     public void meldungErrorRegistrieren(){
         Label errorR = new Label("Dieser Benutzername existiert bereits. Gib bitte einen neuen Benutzernamen ein.");
         this.gbc.gridx = 0;
@@ -59,6 +58,18 @@ public class Rueckmeldung{
             this.frame.setVisible(false);
             this.frame.remove(errorR);
         });
+    }
+
+    public void meldungErrorRegistrierenP(){
+    Label errorP = new Label("Du hast kein Passwort eingegeben.");
+    this.gbc.gridx = 0;
+    this.gbc.gridy = 0;
+    this.frame.add(errorP, this.gbc); 
+    this.frame.setVisible(true);
+    this.button.addActionListener(e -> {
+        this.frame.setVisible(false);
+        this.frame.remove(errorP);
+    });
     }
 
     public void meldungErrorAnmelden(){
@@ -72,4 +83,16 @@ public class Rueckmeldung{
             this.frame.remove(errorA);
         });
     }
+
+    public void meldungErrorBeitreten(){
+    this.gbc.gridx = 0;
+    this.gbc.gridy = 0;
+    Label errorRaum = new Label("Es wurde kein Raum ausgewählt. Bitte wähle einen Raum aus.");
+    this.frame.add(errorRaum, this.gbc); 
+    this.frame.setVisible(true);
+    this.button.addActionListener(e -> {
+        this.frame.setVisible(false);
+        this.frame.remove(errorRaum);
+    });
+}
 }

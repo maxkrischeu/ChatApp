@@ -83,7 +83,9 @@ public class ClientThread extends Thread {
                 this.id = id;
                 //this.write("Passwort: ");
                 String pw = reader.readLine();
-                if (pw == null) return false;
+                if (pw.length() == 0) {
+                    this.write("Kein Passwort eingegeben.");
+                    return false;}
 
                 this.server.registrieren(id, pw);
                 this.write("Registrierung erfolgreich.");
@@ -164,10 +166,6 @@ public class ClientThread extends Thread {
                     if(ok) { 
                         this.write("Raum Erstellen erfolgreich");
                         this.server.sendMessageToAll(this, "Neuer Raum wurde erstellt:" + newName);
-                        break;
-                    }
-                    else{
-                        this.write("Ich akzeptiere den neuen Raum nicht");
                         break;
                     }
                 case "Raum Beitreten":

@@ -4,6 +4,9 @@ import java.net.*;
 import java.io.*;
 import java.util.Scanner;
 import java.awt.*;
+import java.util.HashSet;
+import java.util.Set;
+
 
 public class ClientTest {
     volatile boolean running;
@@ -15,6 +18,8 @@ public class ClientTest {
     Rueckmeldung meldung;
     Chatfenster chat;
     RaumVerlassen raumVerlassenBestätigen;
+    Set<String> knownUsers;
+    Set<String> knownRooms;
 
     public ClientTest(){
         try{
@@ -26,6 +31,8 @@ public class ClientTest {
             this.startframe = new StartFrame(this);
             this.meldung = new Rueckmeldung(this);
             this.chat = new Chatfenster(this);
+            this.knownUsers = new HashSet<>();
+            this.knownRooms = new HashSet<>();
         }            
         catch(Exception e) {
             System.out.println("Das hat nicht geklappt:" + e.getMessage());
@@ -55,7 +62,7 @@ public class ClientTest {
             }     
             //TODO: "Du bist gebannt und kannst dich nicht anmelden."
             else if(msg.equals( "Raum Erstellen erfolgreich")){
-                this.chat.addRoomName(this.chat.raumerstellen.getRoomName());
+                this.chat.addRoomName(this.chat.raumerstellen.getRoomName().trim());
             }  
             else if(msg.equals("Es wurde kein Raum ausgewählt.")){
                 this.meldung.meldungErrorBeitreten();
@@ -67,38 +74,42 @@ public class ClientTest {
                 String[] rooms = roomNames.split(",");
                 for(int i=0; i<rooms.length; i++){
                     if(!(rooms[i].equals("Lobby"))){
-                        this.chat.addRoomName(rooms[i]);
+                        this.chat.addRoomName(rooms[i].trim());
                     }
                 }
             }
 
             else if(msg.startsWith("Mitglieder:")){
                 this.chat.user.removeAll();
+                this.knownUsers.clear();
                 String roomMembers = msg.substring("Mitglieder:".length());
                 String[] members = roomMembers.split(",");
                 for(int i=0; i<members.length; i++){
-                    if(!(members[i].equals(this.startframe.getUsername()))){
-                        this.chat.user.add(members[i]);
+                    if(!(members[i].trim().equals(this.startframe.getUsername()))){
+                        if(this.knownUsers.add(members[i].trim())){
+                            this.chat.addUser(members[i].trim());
+                        }
                     }
                 }
             }
 
             else if(msg.startsWith("Neuer Raum wurde erstellt:")){
                 String newRoom = msg.substring("Neuer Raum wurde erstellt:".length());
-                this.chat.addRoomName(newRoom); 
+                this.chat.addRoomName(newRoom.trim()); 
             }
 
             else if(msg.startsWith("[INFO]") && msg.contains("beigetreten")){
                 int ende = msg.indexOf(" ist beigetreten");
                 String newMember = msg.substring("[INFO] ".length(), ende);
-                this.chat.user.add(newMember);
+                if(this.knownUsers.add(newMember.trim())){
+                    this.chat.addUser(newMember.trim());
+                }
                 this.chat.chatanzeige.add(msg);
             }
 
             else if(msg.startsWith("[INFO]") && msg.contains("verlassen")){
                 int ende = msg.indexOf(" hat den Raum verlassen");
                 String oldMember = msg.substring("[INFO] ".length(), ende);
-                this.chat.user.remove(oldMember);
                 this.chat.chatanzeige.add(msg);
             }
             else if(msg.contains("wurde gelöscht. Du bist jetzt in der Lobby.")){
@@ -106,11 +117,11 @@ public class ClientTest {
                 int end = msg.indexOf(" wurde gelöscht. Du bist jetzt in der Lobby");
                 String oldRoom = msg.substring(start, end);
                 this.chat.roomLabel.setText("Aktueller Raum: Lobby");
-                this.chat.rooms.remove(oldRoom);
+                this.chat.removeRoomName(oldRoom.trim());
             }
             else if(msg.equals("[INFO] Du bist in der Lobby")){
                 this.chat.roomLabel.setText("Aktueller Raum: Lobby");
-                this.chat.user.removeAll();
+                System.out.println(this.chat.roomLabel.getText());
                 this.chat.chatanzeige.removeAll();
             }
             else if(msg.startsWith("Soll dieser Raum gelöscht werden:")){
@@ -122,7 +133,7 @@ public class ClientTest {
                 String suffix = " gelöscht";
                 String oldRoom = msg.substring(prefix.length(), msg.length() - suffix.length());
                 oldRoom = oldRoom.trim();
-                this.chat.rooms.remove(oldRoom);
+                this.chat.removeRoomName(oldRoom.trim());
             }
             else{
                 this.chat.chatanzeige.add(msg);
@@ -183,6 +194,8 @@ public class ClientTest {
 
         System.out.println("Chat wurde beendet.");
     }
+
+
 
     public static void main(String[] args) {
         ClientTest client = new ClientTest();

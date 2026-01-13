@@ -23,10 +23,7 @@ public class RaumVerlassen {
         gbc.gridy = 0;
         gbc.weighty = 1.0;
 
-        Label errorL = new Label(
-            "Du bist die letzte Person in diesem Raum. Das Verlassen wird den Raum löschen. Fortfahren?",
-            Label.CENTER
-        );
+        Label errorL = new Label("Du bist die letzte Person in diesem Raum. Das Verlassen wird den Raum löschen. Fortfahren?",Label.CENTER);
         this.frame.add(errorL, gbc);
 
         // -------- Button-Panel --------

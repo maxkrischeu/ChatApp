@@ -15,13 +15,13 @@ public class Server {
     private int port;
     volatile boolean running;
     private DataBase database;
-    private ArrayList<ClientThread> clients;
     private Consumer<String> logListener = msg -> {};
     private Consumer<String> userAdded = id -> {};
     private Consumer<String> userRemoved = id -> {};
     private Consumer<String> roomAdded = name -> {};
     private Consumer<String> roomRemoved = name -> {};
     private Map<String, Room> rooms = new HashMap<>();
+    private Map<String, ClientThread> clients;
     private Path logFile = Paths.get("server-log.txt");
     private Set<String> bannedUsers = new HashSet<>();
 
@@ -33,7 +33,7 @@ public class Server {
 
     public void start() {
         this.running = true;
-        this.clients  = new ArrayList<>();
+        this.clients  = new HashMap<>();
 
         this.rooms.put("Lobby", new Room("Lobby"));
         this.roomAdded.accept("Lobby");
@@ -84,7 +84,7 @@ public class Server {
             this.log("Beim stoppen des Servers ist etwas schiefgelaufen: " + e.getMessage());
         }
 
-        for (ClientThread client: this.clients) {
+        for (ClientThread client: this.clients.values()) {
             // hier eventuell noch Name anpassen?
             client.stopp();
         }
@@ -96,7 +96,7 @@ public class Server {
         } 
         else if (this.clients.size() == 2) {
             String allClients = "Online: ";
-            for (ClientThread client: this.clients) {
+            for (ClientThread client: this.clients.values()) {
                 if (client.getID() != self.getID()) {
                     client.write(self.getID() + " hat den Chatraum betreten.");
                     allClients += client.getID();
@@ -106,7 +106,7 @@ public class Server {
         } else {
             String allClients = "Online: ";
             int i = 1;
-            for (ClientThread client: this.clients) {
+            for (ClientThread client: this.clients.values()) {
                 if (client.getID() != self.getID()) {
                     client.write(self.getID() + " hat den Chatraum betreten.");
                     allClients += client.getID();
@@ -121,15 +121,12 @@ public class Server {
     }
     
     public void addClientThread(ClientThread client) {
-        int count = 0;
-        for(ClientThread member: this.clients){
-            if(client == member){
-                count++;
-            }
+        this.clients.putIfAbsent(client.getID(), client);
+        String clientNames = "";
+        for(String clientName: this.clients.keySet()){
+            clientNames+=clientName;
         }
-        if(count==0){
-            this.clients.add(client);
-        }
+        System.out.println("Clients: " + clientNames);
         this.log("Anmeldung erfolgreich von " + client.getID());
         this.userAdded.accept(client.getID());
 
@@ -151,18 +148,6 @@ public class Server {
             }
         }
         this.log("[" + roomName + "]" + msg);
-    }
-
-    public boolean createRoom(String name) {
-        if (name == null) return false;
-        name = name.trim();
-        if (name.isEmpty()) return false;
-        if (this.rooms.containsKey(name)) return false;
-
-        this.rooms.put(name, new Room(name));
-        this.log("Raum erstellt: " + name);
-        this.roomAdded.accept(name);
-        return true;
     }
 
     public void setLogListener(Consumer<String> logListener) {
@@ -196,30 +181,9 @@ public class Server {
         }
     }
 
-    public void joinRoom(ClientThread client, String newRoom) {
-        System.out.println("newRoom:" + newRoom);
-        if(newRoom.equals("null")){
-            client.write("Es wurde kein Raum ausgewählt.");
-        }
-        else{
-            Room oldRoom = this.rooms.get(client.getCurrentRoom());
-            oldRoom.removeMember(client);
-            rooms.get(newRoom).addMember(client);
-            client.setCurrentRoom(newRoom);
-            getCurrentRoomMembers(client, newRoom);
-
-            this.log(client.getID() + " wechselt von " + oldRoom + " nach " + newRoom);
-            if(!(oldRoom.getName().equals("Lobby"))){
-                this.sendMessageToRoom(oldRoom.getName(), client, "[INFO] " + client.getID() + " hat den Raum verlassen.");
-            }
-            //this.sendMessageToRoom(oldRoom.getName(), client, "[INFO] " + client.getID() + " hat den Raum verlassen.");
-            sendMessageToRoom(newRoom, client, "[INFO] " + client.getID() + " ist beigetreten.");
-        }
-    }
-
     public void kickUser(String id) {
         ClientThread target = null;
-        for (ClientThread client: this.clients) {
+        for (ClientThread client: this.clients.values()) {
             if (id.equals(client.getID())) {
                 target = client;
                 break;
@@ -260,8 +224,48 @@ public class Server {
         return added;
     }
 
-    public boolean deleteRoom(String roomName) {
-        if (roomName == null) return false;
+    public boolean createRoom(String name) {
+        if (name == null) return false;
+        name = name.trim();
+        if (name.isEmpty()) return false;
+        if (this.rooms.containsKey(name)) return false;
+
+        this.rooms.put(name, new Room(name));
+        this.log("Raum erstellt: " + name);
+        this.roomAdded.accept(name);
+        return true;
+    }
+
+    public void joinRoom(ClientThread client, String newRoom) {
+        if(newRoom.equals("null")){
+            client.write("Es wurde kein Raum ausgewählt.");
+        }
+        else{
+            Room oldRoom = this.rooms.get(client.getCurrentRoom());
+            oldRoom.removeMember(client);
+            System.out.println("Alter Raum: " + client.getCurrentRoom());
+            rooms.get(newRoom).addMember(client);
+            client.setCurrentRoom(newRoom);
+            this.getCurrentRoomMembers(client, newRoom);
+            this.UpdateCurrentRoomMembers(client, oldRoom.getName());
+
+            String roomMembers ="";
+            for(ClientThread roomMember: rooms.get(newRoom).getMembers()){
+                roomMembers += roomMember.getID() + ",";
+            }
+            System.out.println("Neuer Raum: " +newRoom);
+            this.sendMessageToRoom(newRoom, client, "Mitglieder:" + roomMembers);
+
+            this.log(client.getID() + " wechselt von " + oldRoom + " nach " + newRoom);
+            if(!(oldRoom.getName().equals("Lobby"))){
+                this.sendMessageToRoom(oldRoom.getName(), client, "[INFO] " + client.getID() + " hat den Raum verlassen.");
+            }
+            sendMessageToRoom(newRoom, client, "[INFO] " + client.getID() + " ist beigetreten.");
+        }
+    }
+
+    public boolean deleteRoom(ClientThread client, String roomName) {
+        if (roomName.equals("null")) return false;
         roomName = roomName.trim();
         if (roomName.isEmpty()) return false;
 
@@ -271,18 +275,11 @@ public class Server {
 
         Room room = this.rooms.get(roomName);
 
-        Room lobby = this.rooms.get("Lobby");
-
-        List<ClientThread> copy = new ArrayList<>(room.getMembers());
-        for (ClientThread client: copy) {
-            room.removeMember(client);
-            lobby.addMember(client);
-            client.setCurrentRoom("Lobby");
-            client.write("Raum" + roomName + " wurde gelöscht. Du bist jetzt in der Lobby.");
-        }
+       // Room lobby = this.rooms.get("Lobby");
+        this.joinRoom(client, "Lobby");
+        client.write("[INFO] Du bist in der Lobby");
 
         this.rooms.remove(roomName);
-
         this.log("Raum gelöscht: " + roomName);
         roomRemoved.accept(roomName);
 
@@ -291,19 +288,18 @@ public class Server {
 
     public void quitRoom(ClientThread client, String roomName){
         Room room = this.rooms.get(roomName);
-        Room lobby = this.rooms.get("Lobby");
-        room.removeMember(client);
-        lobby.addMember(client);
-        client.setCurrentRoom("Lobby");
+        // Room lobby = this.rooms.get("Lobby");
+        // room.removeMember(client);
+        // lobby.addMember(client);
 
-        this.log(client.getID() + " hat den Raum " + roomName + " verlassen");
-        client.write("[INFO] Du bist in der Lobby");
-
-        if(room.getMembers().size() == 0){
+        if((room.getMembers().size()>1)){
+            this.joinRoom(client, "Lobby");
+            this.log(client.getID() + " hat den Raum " + roomName + " verlassen");
+            client.write("[INFO] Du bist in der Lobby");
+        }
+        else if(room.getMembers().size() == 1){
             client.write("Soll dieser Raum gelöscht werden:" + roomName);
         }
-        //this.getCurrentRoomMembers(client, "Lobby");
-        this.sendMessageToRoom(roomName, client, "[INFO] " + client.getID() + " hat den Raum verlassen.");
     }
 
     public boolean sendAdminMessageToUser(String id, String message) {
@@ -315,7 +311,7 @@ public class Server {
         if (id.isEmpty() || message.isEmpty()) return false;
     
         ClientThread target = null;
-        for (ClientThread client : this.clients) {
+        for (ClientThread client : this.clients.values()) {
             if (id.equals(client.getID())) {
                 target = client;
                 break;
@@ -339,6 +335,14 @@ public class Server {
         client.write("Mitglieder:" + roomMembers);
     }
 
+    public void UpdateCurrentRoomMembers(ClientThread client, String roomName){
+        String roomMembers ="";
+        for(ClientThread roomMember: rooms.get(roomName).getMembers()){
+            roomMembers += roomMember.getID() + ",";
+        }
+        this.sendMessageToRoom(roomName, client, "Mitglieder:" + roomMembers);
+    }
+
     public void getCurrentRooms(ClientThread client){ 
         String roomNames ="";
         for(String roomName: this.rooms.keySet()){
@@ -348,11 +352,15 @@ public class Server {
     }
 
     public void sendMessageToAll(ClientThread self, String msg) {
-        for(ClientThread client: this.clients) {
+        for(ClientThread client: this.clients.values()) {
             if (client != self) {
                 client.write(msg);
             }
         }
-        //this.log("[" + self.getID() + "]" + msg);
+        this.log("[" + self.getID() + "]" + msg);
+    }
+
+    public Map<String, ClientThread> getClients(){
+        return this.clients;
     }
 }

@@ -23,8 +23,10 @@ public class ClientThread extends Thread {
         while (!startseite()) {}
 
         //this.write(this.server.getIdOfAvailableClients(this));
+
         this.server.getCurrentRooms(this);
-        //this.server.getCurrentRoomMembers(this, "Lobby");
+        this.server.getCurrentRoomMembers(this, "Lobby");
+        this.server.UpdateCurrentRoomMembers(this, "Lobby");
 
         while(true) {
             try {
@@ -120,7 +122,9 @@ public class ClientThread extends Thread {
             if (ok) {
                 this.id = id;
                 this.write("Anmeldung erfolgreich.");
-                this.server.addClientThread(this);
+                if(!(this.server.getClients().containsKey(id))){
+                    this.server.addClientThread(this);
+                }
                 return true;
             } else {
                 this.write("Der Benutzername oder das Passwort sind falsch.");
@@ -178,7 +182,7 @@ public class ClientThread extends Thread {
                     break;
                 case "Lösche den Raum":
                     String oldRoom = reader.readLine();
-                    boolean delete = this.server.deleteRoom(oldRoom);
+                    boolean delete = this.server.deleteRoom(this, oldRoom);
                     if(delete){
                         this.server.sendMessageToAll(this, "[INFO] Raum " + oldRoom + " gelöscht");
                     }

@@ -2235,3 +2235,1677 @@ Server erfolgreich gestartet.
 Anmeldung erfolgreich von e
 Anmeldung erfolgreich von e
 Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von d
+Anmeldung erfolgreich von d
+Raum erstellt: 1
+Anmeldung erfolgreich von w
+Anmeldung erfolgreich von w
+w wechselt von Room@766fe66 nach 1
+[1][INFO] w ist beigetreten.
+d wechselt von Room@766fe66 nach 1
+[1][INFO] d ist beigetreten.
+d hat den Raum 1 verlassen
+[1][INFO] d hat den Raum verlassen.
+w hat den Raum 1 verlassen
+[1][INFO] w hat den Raum verlassen.
+Raum gelöscht: 1
+Raum erstellt: 1
+w wechselt von Room@766fe66 nach 1
+[1][INFO] w ist beigetreten.
+d wechselt von Room@766fe66 nach 1
+[1][INFO] d ist beigetreten.
+d hat den Raum 1 verlassen
+[1][INFO] d hat den Raum verlassen.
+w hat den Raum 1 verlassen
+[1][INFO] w hat den Raum verlassen.
+Raum gelöscht: 1
+Raum erstellt: 1
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von d
+Anmeldung erfolgreich von d
+Raum erstellt: 1
+d wechselt von Room@4be3d132 nach 1
+[1][INFO] d ist beigetreten.
+Anmeldung erfolgreich von q
+Anmeldung erfolgreich von q
+q wechselt von Room@4be3d132 nach 1
+[1][INFO] q ist beigetreten.
+d hat den Raum 1 verlassen
+[1][INFO] d hat den Raum verlassen.
+q hat den Raum 1 verlassen
+[1][INFO] q hat den Raum verlassen.
+Raum gelöscht: 1
+Raum erstellt: 2
+Raum erstellt: 3
+d wechselt von Room@4be3d132 nach 3
+[3][INFO] d ist beigetreten.
+q wechselt von Room@4be3d132 nach 3
+[3][INFO] q ist beigetreten.
+[3][q]: hi
+[3][d]: moin
+d hat den Raum 3 verlassen
+[3][INFO] d hat den Raum verlassen.
+q hat den Raum 3 verlassen
+[3][INFO] q hat den Raum verlassen.
+Raum gelöscht: 3
+q wechselt von Room@4be3d132 nach 2
+[2][INFO] q ist beigetreten.
+Raum erstellt: 3
+d wechselt von Room@4be3d132 nach 3
+[3][INFO] d ist beigetreten.
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von f
+Anmeldung erfolgreich von f
+Anmeldung erfolgreich von g
+Anmeldung erfolgreich von g
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von jenny
+Anmeldung erfolgreich von jenny
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von e
+Anmeldung erfolgreich von e
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von f
+Anmeldung erfolgreich von f
+Raum erstellt: 1
+Anmeldung erfolgreich von e
+e wechselt von Room@77c30502 nach 1
+[1][INFO] e ist beigetreten.
+f wechselt von Room@77c30502 nach 1
+[1][INFO] f ist beigetreten.
+e hat den Raum 1 verlassen
+[1][INFO] e hat den Raum verlassen.
+f hat den Raum 1 verlassen
+[1][INFO] f hat den Raum verlassen.
+Raum gelöscht: 1
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von d
+Anmeldung erfolgreich von d
+Anmeldung erfolgreich von f
+Anmeldung erfolgreich von f
+Raum erstellt: 1
+d wechselt von Room@2b58ba6b nach 1
+[1][INFO] d ist beigetreten.
+f wechselt von Room@2b58ba6b nach 1
+[1][INFO] f ist beigetreten.
+f hat den Raum 1 verlassen
+[1][INFO] f hat den Raum verlassen.
+d hat den Raum 1 verlassen
+[1][INFO] d hat den Raum verlassen.
+Raum gelöscht: 1
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von q
+Anmeldung erfolgreich von q
+Anmeldung erfolgreich von e
+Anmeldung erfolgreich von e
+Raum erstellt: 1
+Raum erstellt: 2
+q wechselt von Room@10a95260 nach 1
+[1][INFO] q ist beigetreten.
+e wechselt von Room@10a95260 nach 1
+[1][INFO] e ist beigetreten.
+q wechselt von Room@72555907 nach Lobby
+[1][INFO] q hat den Raum verlassen.
+[Lobby][INFO] q ist beigetreten.
+q hat den Raum 1 verlassen
+[1][INFO] q hat den Raum verlassen.
+e wechselt von Room@72555907 nach Lobby
+[1][INFO] e hat den Raum verlassen.
+[Lobby][INFO] e ist beigetreten.
+e hat den Raum 1 verlassen
+[1][INFO] e hat den Raum verlassen.
+Raum gelöscht: 1
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von d
+Anmeldung erfolgreich von d
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von e
+Anmeldung erfolgreich von e
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von f
+Anmeldung erfolgreich von f
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von f
+Anmeldung erfolgreich von f
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von f
+Anmeldung erfolgreich von d
+Raum erstellt: 1
+[f]Neuer Raum wurde erstellt:1
+d wechselt von Room@c012940 nach 1
+[1][INFO] d ist beigetreten.
+f wechselt von Room@c012940 nach 1
+[1][INFO] f ist beigetreten.
+[1][f]: hi
+[1][d]: moin
+d wechselt von Room@16d6fea4 nach Lobby
+[1][INFO] d hat den Raum verlassen.
+[Lobby][INFO] d ist beigetreten.
+d hat den Raum 1 verlassen
+[1][INFO] d hat den Raum verlassen.
+f wechselt von Room@16d6fea4 nach Lobby
+[1][INFO] f hat den Raum verlassen.
+[Lobby][INFO] f ist beigetreten.
+f hat den Raum 1 verlassen
+[1][INFO] f hat den Raum verlassen.
+f wechselt von Room@c012940 nach Lobby
+[Lobby][INFO] f ist beigetreten.
+f hat den Raum 1 verlassen
+[1][INFO] f hat den Raum verlassen.
+f wechselt von Room@c012940 nach Lobby
+[Lobby][INFO] f ist beigetreten.
+f hat den Raum 1 verlassen
+[1][INFO] f hat den Raum verlassen.
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von f
+Anmeldung erfolgreich von d
+Raum erstellt: 1
+[d]Neuer Raum wurde erstellt:1
+f wechselt von Room@31af885c nach 1
+[1][INFO] f ist beigetreten.
+d wechselt von Room@31af885c nach 1
+[1][INFO] d ist beigetreten.
+d wechselt von Room@4f5e2130 nach Lobby
+[1][INFO] d hat den Raum verlassen.
+[Lobby][INFO] d ist beigetreten.
+d hat den Raum 1 verlassen
+[1][INFO] d hat den Raum verlassen.
+f wechselt von Room@4f5e2130 nach Lobby
+[1][INFO] f hat den Raum verlassen.
+[Lobby][INFO] f ist beigetreten.
+f hat den Raum 1 verlassen
+[1][INFO] f hat den Raum verlassen.
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von 1
+Raum erstellt: 1
+[1]Neuer Raum wurde erstellt:1
+Anmeldung erfolgreich von w
+1 wechselt von Room@6fe35a86 nach 1
+[1][INFO] 1 ist beigetreten.
+w wechselt von Room@6fe35a86 nach 1
+[1][INFO] w ist beigetreten.
+w wechselt von Room@712d1f0f nach Lobby
+[1][INFO] w hat den Raum verlassen.
+[Lobby][INFO] w ist beigetreten.
+w hat den Raum 1 verlassen
+[1][INFO] w hat den Raum verlassen.
+1 wechselt von Room@712d1f0f nach Lobby
+[1][INFO] 1 hat den Raum verlassen.
+[Lobby][INFO] 1 ist beigetreten.
+1 hat den Raum 1 verlassen
+[1][INFO] 1 hat den Raum verlassen.
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von v
+Anmeldung erfolgreich von s
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von t
+[t]Mitglieder:t,
+Anmeldung erfolgreich von p
+[p]Mitglieder:t,p,
+Raum erstellt: 1
+[t]Neuer Raum wurde erstellt:1
+Raum erstellt: 2
+[t]Neuer Raum wurde erstellt:2
+[t]Mitglieder:t,
+t wechselt von Room@63a150da nach 1
+[1][INFO] t ist beigetreten.
+[p]Mitglieder:t,p,
+p wechselt von Room@63a150da nach 1
+[1][INFO] p ist beigetreten.
+[t]Mitglieder:t,
+t wechselt von Room@6eb30a99 nach Lobby
+[1][INFO] t hat den Raum verlassen.
+[Lobby][INFO] t ist beigetreten.
+t hat den Raum 1 verlassen
+[1][INFO] t hat den Raum verlassen.
+[p]Mitglieder:t,p,
+p wechselt von Room@6eb30a99 nach Lobby
+[1][INFO] p hat den Raum verlassen.
+[Lobby][INFO] p ist beigetreten.
+p hat den Raum 1 verlassen
+[1][INFO] p hat den Raum verlassen.
+[p]Mitglieder:t,p,
+p wechselt von Room@63a150da nach Lobby
+[Lobby][INFO] p ist beigetreten.
+p hat den Raum 1 verlassen
+[1][INFO] p hat den Raum verlassen.
+[p]Mitglieder:t,p,
+p wechselt von Room@63a150da nach Lobby
+[Lobby][INFO] p ist beigetreten.
+p hat den Raum 1 verlassen
+[1][INFO] p hat den Raum verlassen.
+[t]Mitglieder:t,
+t wechselt von Room@63a150da nach 1
+[1][INFO] t ist beigetreten.
+[p]Mitglieder:t,p,
+p wechselt von Room@63a150da nach 1
+[1][INFO] p ist beigetreten.
+[p]Mitglieder:p,
+p wechselt von Room@6eb30a99 nach 2
+[1][INFO] p hat den Raum verlassen.
+[2][INFO] p ist beigetreten.
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von e
+[e]Mitglieder:e,
+Raum erstellt: 1
+[e]Neuer Raum wurde erstellt:1
+[e]Mitglieder:e,
+e wechselt von Room@63a1e874 nach 1
+[1][INFO] e ist beigetreten.
+[e]Mitglieder:e,
+e wechselt von Room@5e7a46d7 nach Lobby
+[1][INFO] e hat den Raum verlassen.
+[Lobby][INFO] e ist beigetreten.
+e hat den Raum 1 verlassen
+[1][INFO] e hat den Raum verlassen.
+Raum gelöscht: 1
+[e][INFO] Raum 1 gelöscht
+Anmeldung erfolgreich von p
+[p]Mitglieder:e,p,
+Raum erstellt: 1
+[p]Neuer Raum wurde erstellt:1
+[p]Mitglieder:p,
+p wechselt von Room@63a1e874 nach 1
+[1][INFO] p ist beigetreten.
+[e]Mitglieder:e,p,
+e wechselt von Room@63a1e874 nach 1
+[1][INFO] e ist beigetreten.
+[p]Mitglieder:p,
+p wechselt von Room@5e7f3612 nach Lobby
+[1][INFO] p hat den Raum verlassen.
+[Lobby][INFO] p ist beigetreten.
+p hat den Raum 1 verlassen
+[1][INFO] p hat den Raum verlassen.
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von w
+[w]Mitglieder:w,
+Anmeldung erfolgreich von f
+[f]Mitglieder:w,f,
+Raum erstellt: 1
+[w]Neuer Raum wurde erstellt:1
+[f]Mitglieder:f,
+f wechselt von Room@150f92a3 nach 1
+[1][INFO] f ist beigetreten.
+[w]Mitglieder:w,f,
+w wechselt von Room@150f92a3 nach 1
+[1][INFO] w ist beigetreten.
+[1][f]: hi
+[1][w]: moin
+[w]Mitglieder:w,
+w wechselt von Room@dd9e950 nach Lobby
+[1][INFO] w hat den Raum verlassen.
+[Lobby][INFO] w ist beigetreten.
+w hat den Raum 1 verlassen
+[f]Mitglieder:w,f,
+f wechselt von Room@dd9e950 nach Lobby
+[1][INFO] f hat den Raum verlassen.
+[Lobby][INFO] f ist beigetreten.
+f hat den Raum 1 verlassen
+Raum gelöscht: 1
+[f][INFO] Raum 1 gelöscht
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von f
+[f]Mitglieder:f,
+Raum erstellt: 1
+[f]Neuer Raum wurde erstellt:1
+Anmeldung erfolgreich von e
+[e]Mitglieder:f,e,
+[f]Mitglieder:f,
+f wechselt von Room@b53e168 nach 1
+[1][INFO] f ist beigetreten.
+[e]Mitglieder:f,e,
+e wechselt von Room@b53e168 nach 1
+[1][INFO] e ist beigetreten.
+[e]Mitglieder:e,
+e wechselt von Room@1ecc1682 nach Lobby
+[1][INFO] e hat den Raum verlassen.
+[Lobby][INFO] e ist beigetreten.
+e hat den Raum 1 verlassen
+[f]Mitglieder:f,e,
+f wechselt von Room@1ecc1682 nach Lobby
+[1][INFO] f hat den Raum verlassen.
+[Lobby][INFO] f ist beigetreten.
+f hat den Raum 1 verlassen
+Raum gelöscht: 1
+[f][INFO] Raum 1 gelöscht
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von e
+[e]Mitglieder:e,
+Anmeldung erfolgreich von r
+[r]Mitglieder:r,e,
+Raum erstellt: 1
+[e]Neuer Raum wurde erstellt:1
+[e]Mitglieder:e,
+e wechselt von Room@3432511e nach 1
+[1][INFO] e ist beigetreten.
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von f
+[f]Mitglieder:f,
+Anmeldung erfolgreich von h
+[h]Mitglieder:f,h,
+Raum erstellt: 1
+[f]Neuer Raum wurde erstellt:1
+f wechselt von Room@150fccfb nach 1
+[1][INFO] f ist beigetreten.
+h wechselt von Room@150fccfb nach 1
+[1][INFO] h ist beigetreten.
+Anmeldung erfolgreich von p
+[p]Mitglieder:p,
+p wechselt von Room@150fccfb nach 1
+[1][INFO] p ist beigetreten.
+[f]Mitglieder:f,
+f wechselt von Room@50dc32d5 nach Lobby
+[1][INFO] f hat den Raum verlassen.
+[Lobby][INFO] f ist beigetreten.
+f hat den Raum 1 verlassen
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von v
+Anmeldung erfolgreich von r
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von f
+[f]Mitglieder:f,
+Anmeldung erfolgreich von g
+[g]Mitglieder:g,f,
+Raum erstellt: 1
+[f]Neuer Raum wurde erstellt:1
+[g]Mitglieder:f,
+g wechselt von Room@56ee12fb nach 1
+[1][INFO] g ist beigetreten.
+[f]Mitglieder:
+f wechselt von Room@56ee12fb nach 1
+[1][INFO] f ist beigetreten.
+[f]Mitglieder:g,
+f wechselt von Room@23dd23b9 nach Lobby
+[1][INFO] f hat den Raum verlassen.
+[Lobby][INFO] f ist beigetreten.
+f hat den Raum 1 verlassen
+[g]Mitglieder:
+g wechselt von Room@23dd23b9 nach Lobby
+[1][INFO] g hat den Raum verlassen.
+[Lobby][INFO] g ist beigetreten.
+g hat den Raum 1 verlassen
+[g]Mitglieder:g,f,
+g wechselt von Room@56ee12fb nach Lobby
+[Lobby][INFO] g ist beigetreten.
+g hat den Raum 1 verlassen
+[f]Mitglieder:g,f,
+f wechselt von Room@56ee12fb nach Lobby
+[Lobby][INFO] f ist beigetreten.
+f hat den Raum 1 verlassen
+Raum gelöscht: 1
+[f][INFO] Raum 1 gelöscht
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von d
+[d]Mitglieder:d,
+Anmeldung erfolgreich von e
+[e]Mitglieder:e,d,
+Raum erstellt: 1
+[d]Neuer Raum wurde erstellt:1
+Raum erstellt: 2
+[e]Neuer Raum wurde erstellt:2
+[d]Mitglieder:e,
+d wechselt von Room@504950d4 nach 1
+[1][INFO] d ist beigetreten.
+[e]Mitglieder:
+e wechselt von Room@504950d4 nach 1
+[1][INFO] e ist beigetreten.
+[d]Mitglieder:e,
+d wechselt von Room@ee74f5c nach 2
+[1][INFO] d hat den Raum verlassen.
+[2][INFO] d ist beigetreten.
+[e]Mitglieder:
+e wechselt von Room@ee74f5c nach 2
+[1][INFO] e hat den Raum verlassen.
+[2][INFO] e ist beigetreten.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von ee
+[ee]Mitglieder:ee,
+Anmeldung erfolgreich von t
+[t]Mitglieder:t,ee,
+Raum erstellt: 1
+[ee]Neuer Raum wurde erstellt:1
+[ee]Mitglieder:t,
+ee wechselt von Room@26accdda nach 1
+[1][INFO] ee ist beigetreten.
+[t]Mitglieder:
+t wechselt von Room@26accdda nach 1
+[1][INFO] t ist beigetreten.
+[1][t]: hi
+[1][ee]: moin
+[ee]Mitglieder:t,
+ee wechselt von Room@5859b658 nach Lobby
+[1][INFO] ee hat den Raum verlassen.
+[Lobby][INFO] ee ist beigetreten.
+ee hat den Raum 1 verlassen
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von w
+[w]Mitglieder:w,
+Anmeldung erfolgreich von r
+[r]Mitglieder:w,r,
+Raum erstellt: 1
+[w]Neuer Raum wurde erstellt:1
+[w]Mitglieder:r,
+w wechselt von Room@7451c03b nach 1
+[1][INFO] w ist beigetreten.
+[r]Mitglieder:
+r wechselt von Room@7451c03b nach 1
+[1][INFO] r ist beigetreten.
+[r]Mitglieder:w,
+r wechselt von Room@785b5f36 nach Lobby
+[1][INFO] r hat den Raum verlassen.
+[Lobby][INFO] r ist beigetreten.
+r hat den Raum 1 verlassen
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von f
+[f]Mitglieder:f,
+Anmeldung erfolgreich von g
+[g]Mitglieder:f,g,
+Raum erstellt: 1
+[f]Neuer Raum wurde erstellt:1
+[f]Mitglieder:g,
+f wechselt von Room@737655d3 nach 1
+[1][INFO] f ist beigetreten.
+[g]Mitglieder:
+g wechselt von Room@737655d3 nach 1
+[1][INFO] g ist beigetreten.
+[g]Mitglieder:f,
+g wechselt von Room@13081293 nach Lobby
+[1][INFO] g hat den Raum verlassen.
+[Lobby][INFO] g ist beigetreten.
+g hat den Raum 1 verlassen
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von f
+[f]Mitglieder:f,
+Anmeldung erfolgreich von g
+[g]Mitglieder:f,g,
+Raum erstellt: 1
+[f]Neuer Raum wurde erstellt:1
+[f]Mitglieder:g,
+f wechselt von Room@44f763c nach 1
+[1][INFO] f ist beigetreten.
+[g]Mitglieder:
+g wechselt von Room@44f763c nach 1
+[1][INFO] g ist beigetreten.
+[f]Mitglieder:g,
+f wechselt von Room@56dbefd0 nach Lobby
+[1][INFO] f hat den Raum verlassen.
+[Lobby][INFO] f ist beigetreten.
+f hat den Raum 1 verlassen
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von t
+[t]Mitglieder:t,
+Anmeldung erfolgreich von k
+[k]Mitglieder:k,t,
+Raum erstellt: 1
+[t]Neuer Raum wurde erstellt:1
+[t]Mitglieder:k,
+t wechselt von Room@42c1b040 nach 1
+[1][INFO] t ist beigetreten.
+[k]Mitglieder:
+k wechselt von Room@42c1b040 nach 1
+[1][INFO] k ist beigetreten.
+[k]Mitglieder:t,
+k wechselt von Room@b80f808 nach Lobby
+[1][INFO] k hat den Raum verlassen.
+[Lobby][INFO] k ist beigetreten.
+k hat den Raum 1 verlassen
+[t]Mitglieder:
+t wechselt von Room@b80f808 nach Lobby
+[1][INFO] t hat den Raum verlassen.
+[Lobby][INFO] t ist beigetreten.
+t hat den Raum 1 verlassen
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von g
+[g]Mitglieder:g,
+Anmeldung erfolgreich von h
+[h]Mitglieder:h,g,
+Raum erstellt: 1
+[g]Neuer Raum wurde erstellt:1
+[g]Mitglieder:h,
+g wechselt von Room@3e52fbc9 nach 1
+[1][INFO] g ist beigetreten.
+[h]Mitglieder:h,
+h wechselt von Room@3e52fbc9 nach Lobby
+[Lobby][INFO] h ist beigetreten.
+h hat den Raum 1 verlassen
+[h]Mitglieder:
+h wechselt von Room@3e52fbc9 nach 1
+[1][INFO] h ist beigetreten.
+[g]Mitglieder:h,
+g wechselt von Room@7a2805b2 nach Lobby
+[1][INFO] g hat den Raum verlassen.
+[Lobby][INFO] g ist beigetreten.
+g hat den Raum 1 verlassen
+[h]Mitglieder:
+h wechselt von Room@7a2805b2 nach Lobby
+[1][INFO] h hat den Raum verlassen.
+[Lobby][INFO] h ist beigetreten.
+h hat den Raum 1 verlassen
+Raum gelöscht: 1
+[h][INFO] Raum 1 gelöscht
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von g
+[g]Mitglieder:g,
+Anmeldung erfolgreich von o
+[o]Mitglieder:o,g,
+Raum erstellt: 1
+[g]Neuer Raum wurde erstellt:1
+[g]Mitglieder:o,
+g wechselt von Room@601793eb nach 1
+[1][INFO] g ist beigetreten.
+[o]Mitglieder:
+o wechselt von Room@601793eb nach 1
+[1][INFO] o ist beigetreten.
+[g]Mitglieder:o,
+g wechselt von Room@4f461074 nach Lobby
+[1][INFO] g hat den Raum verlassen.
+[Lobby][INFO] g ist beigetreten.
+g hat den Raum 1 verlassen
+[o]Mitglieder:
+o wechselt von Room@4f461074 nach Lobby
+[1][INFO] o hat den Raum verlassen.
+[Lobby][INFO] o ist beigetreten.
+o hat den Raum 1 verlassen
+Raum gelöscht: 1
+[o][INFO] Raum 1 gelöscht
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von g
+[g]Mitglieder:g,
+Anmeldung erfolgreich von e
+[e]Mitglieder:g,e,
+Raum erstellt: 1
+[g]Neuer Raum wurde erstellt:1
+[g]Mitglieder:e,
+g wechselt von Room@b426e30 nach 1
+[1][INFO] g ist beigetreten.
+[e]Mitglieder:
+e wechselt von Room@b426e30 nach 1
+[1][INFO] e ist beigetreten.
+[1][e]: hi
+[1][g]: moin
+[g]Mitglieder:e,
+g wechselt von Room@74b89ee9 nach Lobby
+[1][INFO] g hat den Raum verlassen.
+[Lobby][INFO] g ist beigetreten.
+g hat den Raum 1 verlassen
+[e]Mitglieder:
+e wechselt von Room@74b89ee9 nach Lobby
+[1][INFO] e hat den Raum verlassen.
+[Lobby][INFO] e ist beigetreten.
+e hat den Raum 1 verlassen
+Raum gelöscht: 1
+[e][INFO] Raum 1 gelöscht
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von f
+[f]Mitglieder:f,
+Raum erstellt: 1
+[f]Neuer Raum wurde erstellt:1
+[f]Mitglieder:
+f wechselt von Room@7f4fbee8 nach 1
+[1][INFO] f ist beigetreten.
+Anmeldung erfolgreich von e
+[e]Mitglieder:e,
+[e]Mitglieder:
+e wechselt von Room@7f4fbee8 nach 1
+[1][INFO] e ist beigetreten.
+[f]Mitglieder:e,
+f wechselt von Room@7804d6b4 nach Lobby
+[1][INFO] f hat den Raum verlassen.
+[Lobby][INFO] f ist beigetreten.
+f hat den Raum 1 verlassen
+[e]Mitglieder:
+e wechselt von Room@7804d6b4 nach Lobby
+[1][INFO] e hat den Raum verlassen.
+[Lobby][INFO] e ist beigetreten.
+e hat den Raum 1 verlassen
+Raum gelöscht: 1
+[e][INFO] Raum 1 gelöscht
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von f
+[f]Mitglieder:f,
+Anmeldung erfolgreich von d
+[d]Mitglieder:d,f,
+Raum erstellt: 1
+[f]Neuer Raum wurde erstellt:1
+[f]Mitglieder:d,
+f wechselt von Room@4c7fe9f7 nach 1
+[1][INFO] f ist beigetreten.
+[d]Mitglieder:
+d wechselt von Room@4c7fe9f7 nach 1
+[1][INFO] d ist beigetreten.
+[f]Mitglieder:d,
+f wechselt von Room@45fb3e27 nach Lobby
+[1][INFO] f hat den Raum verlassen.
+[Lobby][INFO] f ist beigetreten.
+f hat den Raum 1 verlassen
+[d]Mitglieder:
+d wechselt von Room@45fb3e27 nach Lobby
+[1][INFO] d hat den Raum verlassen.
+[Lobby][INFO] d ist beigetreten.
+d hat den Raum 1 verlassen
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von j
+[j]Mitglieder:j,
+Anmeldung erfolgreich von l
+[l]Mitglieder:l,j,
+Raum erstellt: 1
+[j]Neuer Raum wurde erstellt:1
+[j]Mitglieder:l,
+j wechselt von Room@49d73a86 nach 1
+[1][INFO] j ist beigetreten.
+[l]Mitglieder:
+l wechselt von Room@49d73a86 nach 1
+[1][INFO] l ist beigetreten.
+[l]Mitglieder:j,
+l wechselt von Room@5a87b812 nach Lobby
+[1][INFO] l hat den Raum verlassen.
+[Lobby][INFO] l ist beigetreten.
+l hat den Raum 1 verlassen
+[j]Mitglieder:
+j wechselt von Room@5a87b812 nach Lobby
+[1][INFO] j hat den Raum verlassen.
+[Lobby][INFO] j ist beigetreten.
+j hat den Raum 1 verlassen
+Raum gelöscht: 1
+[j][INFO] Raum 1 gelöscht
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von f
+[f]Mitglieder:f,
+Raum erstellt: 1
+[f]Neuer Raum wurde erstellt:1
+Anmeldung erfolgreich von t
+[t]Mitglieder:f,t,
+[f]Mitglieder:t,
+f wechselt von Room@13a67fc2 nach 1
+[1][INFO] f ist beigetreten.
+[t]Mitglieder:
+t wechselt von Room@13a67fc2 nach 1
+[1][INFO] t ist beigetreten.
+[t]Mitglieder:f,
+t wechselt von Room@2e4d6e74 nach Lobby
+[1][INFO] t hat den Raum verlassen.
+[Lobby][INFO] t ist beigetreten.
+t hat den Raum 1 verlassen
+[f]Mitglieder:
+f wechselt von Room@2e4d6e74 nach Lobby
+[1][INFO] f hat den Raum verlassen.
+[Lobby][INFO] f ist beigetreten.
+f hat den Raum 1 verlassen
+Raum gelöscht: 1
+[f][INFO] Raum 1 gelöscht
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von g
+[g]Mitglieder:g,
+Anmeldung erfolgreich von h
+[h]Mitglieder:g,h,
+Raum erstellt: 1
+[g]Neuer Raum wurde erstellt:1
+[g]Mitglieder:h,
+g wechselt von Room@5d782549 nach 1
+[1][INFO] g ist beigetreten.
+[h]Mitglieder:
+h wechselt von Room@5d782549 nach 1
+[1][INFO] h ist beigetreten.
+[h]Mitglieder:g,
+h wechselt von Room@630d092d nach Lobby
+[1][INFO] h hat den Raum verlassen.
+[Lobby][INFO] h ist beigetreten.
+h hat den Raum 1 verlassen
+Raum gelöscht: 1
+[g][INFO] Raum 1 gelöscht
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von v
+[v]Mitglieder:v,
+Anmeldung erfolgreich von b
+[b]Mitglieder:v,b,
+Raum erstellt: 1
+[v]Neuer Raum wurde erstellt:1
+[v]Mitglieder:b,
+v wechselt von Room@db4985e nach 1
+[1][INFO] v ist beigetreten.
+[b]Mitglieder:
+b wechselt von Room@db4985e nach 1
+[1][INFO] b ist beigetreten.
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von d
+[d]Mitglieder:d,
+Anmeldung erfolgreich von e
+[e]Mitglieder:d,e,
+Raum erstellt: 1
+[d]Neuer Raum wurde erstellt:1
+[e]Mitglieder:d,
+e wechselt von Room@1d7f06c2 nach 1
+[1][INFO] e ist beigetreten.
+[d]Mitglieder:
+d wechselt von Room@1d7f06c2 nach 1
+[1][INFO] d ist beigetreten.
+[d]Mitglieder:e,
+d wechselt von Room@6bef9437 nach Lobby
+[1][INFO] d hat den Raum verlassen.
+[Lobby][INFO] d ist beigetreten.
+d hat den Raum 1 verlassen
+[e]Mitglieder:
+e wechselt von Room@6bef9437 nach Lobby
+[1][INFO] e hat den Raum verlassen.
+[Lobby][INFO] e ist beigetreten.
+e hat den Raum 1 verlassen
+[e]Mitglieder:d,e,
+e wechselt von Room@1d7f06c2 nach Lobby
+[Lobby][INFO] e ist beigetreten.
+Raum gelöscht: 1
+[e][INFO] Raum 1 gelöscht
+Raum erstellt: 2
+[d]Neuer Raum wurde erstellt:2
+[d]Mitglieder:e,
+d wechselt von Room@1d7f06c2 nach 2
+[2][INFO] d ist beigetreten.
+[e]Mitglieder:
+e wechselt von Room@1d7f06c2 nach 2
+[2][INFO] e ist beigetreten.
+[d]Mitglieder:e,
+d wechselt von Room@297a5ff3 nach Lobby
+[2][INFO] d hat den Raum verlassen.
+[Lobby][INFO] d ist beigetreten.
+d hat den Raum 2 verlassen
+[e]Mitglieder:
+e wechselt von Room@297a5ff3 nach Lobby
+[2][INFO] e hat den Raum verlassen.
+[Lobby][INFO] e ist beigetreten.
+e hat den Raum 2 verlassen
+[e]Mitglieder:d,e,
+e wechselt von Room@1d7f06c2 nach Lobby
+[Lobby][INFO] e ist beigetreten.
+Raum gelöscht: 2
+[e][INFO] Raum 2 gelöscht
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von c
+[c]Mitglieder:c,
+Anmeldung erfolgreich von v
+[v]Mitglieder:c,v,
+Raum erstellt: 1
+[c]Neuer Raum wurde erstellt:1
+[c]Mitglieder:v,
+c wechselt von Room@66510654 nach 1
+[1][INFO] c ist beigetreten.
+[v]Mitglieder:
+v wechselt von Room@66510654 nach 1
+[1][INFO] v ist beigetreten.
+[v]Mitglieder:c,
+v wechselt von Room@2f9e504c nach Lobby
+[1][INFO] v hat den Raum verlassen.
+[Lobby][INFO] v ist beigetreten.
+v hat den Raum 1 verlassen
+[c]Mitglieder:
+c wechselt von Room@2f9e504c nach Lobby
+[1][INFO] c hat den Raum verlassen.
+[Lobby][INFO] c ist beigetreten.
+Raum gelöscht: 1
+[c][INFO] Raum 1 gelöscht
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von k
+[k]Mitglieder:k,
+Anmeldung erfolgreich von g
+[g]Mitglieder:k,g,
+Raum erstellt: 1
+[k]Neuer Raum wurde erstellt:1
+[g]Mitglieder:k,
+g wechselt von Room@2a5f3764 nach 1
+[1][INFO] g ist beigetreten.
+[k]Mitglieder:
+k wechselt von Room@2a5f3764 nach 1
+[1][INFO] k ist beigetreten.
+[1][g]: hi
+[1][k]: moin
+Raum erstellt: 2
+[k]Neuer Raum wurde erstellt:2
+[k]Mitglieder:g,
+k wechselt von Room@65487929 nach 2
+[1][INFO] k hat den Raum verlassen.
+[2][INFO] k ist beigetreten.
+[k]Mitglieder:
+k wechselt von Room@6b503ec2 nach 1
+[2][INFO] k hat den Raum verlassen.
+[1][INFO] k ist beigetreten.
+[k]Mitglieder:g,
+k wechselt von Room@65487929 nach Lobby
+[Lobby][INFO] k ist beigetreten.
+k hat den Raum 1 verlassen
+[g]Mitglieder:
+g wechselt von Room@65487929 nach Lobby
+[Lobby][INFO] g ist beigetreten.
+Raum gelöscht: 1
+[g][INFO] Raum 1 gelöscht
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von g
+[g]Mitglieder:g,
+Raum erstellt: 1
+[g]Neuer Raum wurde erstellt:1
+Anmeldung erfolgreich von df
+[df]Mitglieder:df,g,
+[df]Mitglieder:g,
+df wechselt von Room@39cbe5de nach 1
+[1][INFO] df ist beigetreten.
+[g]Mitglieder:
+g wechselt von Room@39cbe5de nach 1
+[1][INFO] g ist beigetreten.
+[1][df]: hi
+[1][g]: moin
+Raum erstellt: 3
+[g]Neuer Raum wurde erstellt:3
+[g]Mitglieder:df,
+g wechselt von Room@57ab0cfc nach 3
+[1][INFO] g hat den Raum verlassen.
+[3][INFO] g ist beigetreten.
+[g]Mitglieder:
+g wechselt von Room@2641797d nach 1
+[3][INFO] g hat den Raum verlassen.
+[1][INFO] g ist beigetreten.
+[df]Mitglieder:g,
+df wechselt von Room@57ab0cfc nach 3
+[1][INFO] df hat den Raum verlassen.
+[3][INFO] df ist beigetreten.
+[df]Mitglieder:
+df wechselt von Room@2641797d nach 1
+[3][INFO] df hat den Raum verlassen.
+[1][INFO] df ist beigetreten.
+[g]Mitglieder:df,
+g wechselt von Room@57ab0cfc nach Lobby
+[Lobby][INFO] g ist beigetreten.
+g hat den Raum 1 verlassen
+[df]Mitglieder:
+df wechselt von Room@57ab0cfc nach Lobby
+[Lobby][INFO] df ist beigetreten.
+Raum gelöscht: 1
+[df][INFO] Raum 1 gelöscht
+Anmeldung erfolgreich von of
+[of]Mitglieder:df,of,g,
+Raum erstellt: 4
+[of]Neuer Raum wurde erstellt:4
+[g]Mitglieder:df,of,
+g wechselt von Room@39cbe5de nach 3
+[3][INFO] g ist beigetreten.
+[df]Mitglieder:of,
+df wechselt von Room@39cbe5de nach 3
+[3][INFO] df ist beigetreten.
+[of]Mitglieder:
+of wechselt von Room@39cbe5de nach 3
+[3][INFO] of ist beigetreten.
+[of]Mitglieder:df,g,
+of wechselt von Room@2641797d nach Lobby
+[Lobby][INFO] of ist beigetreten.
+of hat den Raum 3 verlassen
+[g]Mitglieder:df,
+g wechselt von Room@2641797d nach Lobby
+[Lobby][INFO] g ist beigetreten.
+g hat den Raum 3 verlassen
+[df]Mitglieder:
+df wechselt von Room@2641797d nach Lobby
+[Lobby][INFO] df ist beigetreten.
+Raum gelöscht: 3
+[df][INFO] Raum 3 gelöscht
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von j
+[j]Mitglieder:j,
+Anmeldung erfolgreich von r
+[r]Mitglieder:r,j,
+Anmeldung erfolgreich von p
+[p]Mitglieder:r,j,p,
+[Lobby][j]: hi
+Raum erstellt: 1
+[j]Neuer Raum wurde erstellt:1
+[j]Mitglieder:r,p,
+j wechselt von Room@4b506eeb nach 1
+[1][INFO] j ist beigetreten.
+[p]Mitglieder:r,
+p wechselt von Room@4b506eeb nach 1
+[1][INFO] p ist beigetreten.
+[r]Mitglieder:
+r wechselt von Room@4b506eeb nach 1
+[1][INFO] r ist beigetreten.
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von jenny
+[jenny]Mitglieder:jenny,
+Anmeldung erfolgreich von max
+[max]Mitglieder:max,jenny,
+Anmeldung erfolgreich von laura
+[laura]Mitglieder:max,jenny,laura,
+Raum erstellt: 1
+[jenny]Neuer Raum wurde erstellt:1
+[jenny]Mitglieder:max,laura,
+[jenny]Mitglieder:jenny,
+jenny wechselt von Room@798dc3c9 nach 1
+[1][INFO] jenny ist beigetreten.
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von jenny
+[jenny]Mitglieder:jenny,
+Anmeldung erfolgreich von max
+[max]Mitglieder:jenny,max,
+Anmeldung erfolgreich von laura
+[laura]Mitglieder:jenny,laura,max,
+Raum erstellt: 1
+[laura]Neuer Raum wurde erstellt:1
+[laura]Mitglieder:jenny,max,
+[1]Mitglieder: laura,
+laura wechselt von Room@3891f8ce nach 1
+[1][INFO] laura ist beigetreten.
+[max]Mitglieder:jenny,
+[1]Mitglieder: laura,max,
+max wechselt von Room@3891f8ce nach 1
+[1][INFO] max ist beigetreten.
+[jenny]Mitglieder:
+[1]Mitglieder: jenny,laura,max,
+jenny wechselt von Room@3891f8ce nach 1
+[1][INFO] jenny ist beigetreten.
+[jenny]Mitglieder:laura,max,
+[Lobby]Mitglieder: jenny,
+jenny wechselt von Room@4f4f3ca nach Lobby
+[Lobby][INFO] jenny ist beigetreten.
+jenny hat den Raum 1 verlassen
+[max]Mitglieder:laura,
+[Lobby]Mitglieder: jenny,max,
+max wechselt von Room@4f4f3ca nach Lobby
+[Lobby][INFO] max ist beigetreten.
+max hat den Raum 1 verlassen
+[laura]Mitglieder:
+[Lobby]Mitglieder: jenny,laura,max,
+laura wechselt von Room@4f4f3ca nach Lobby
+[Lobby][INFO] laura ist beigetreten.
+Raum gelöscht: 1
+[laura][INFO] Raum 1 gelöscht
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von client1
+[client1]Mitglieder:client1,
+Anmeldung erfolgreich von client2
+[client2]Mitglieder:client2,client1,
+Anmeldung erfolgreich von client3
+[client3]Mitglieder:client2,client3,client1,
+Raum erstellt: 1
+[client1]Neuer Raum wurde erstellt:1
+[client3]Mitglieder:client2,client1,
+[1]Mitglieder:client3,
+client3 wechselt von Room@5eb3a638 nach 1
+[1][INFO] client3 ist beigetreten.
+[client1]Mitglieder:client2,
+[1]Mitglieder:client3,client1,
+client1 wechselt von Room@5eb3a638 nach 1
+[1][INFO] client1 ist beigetreten.
+[client2]Mitglieder:
+[1]Mitglieder:client3,client2,client1,
+client2 wechselt von Room@5eb3a638 nach 1
+[1][INFO] client2 ist beigetreten.
+[1][client1]: hi
+[client2]Mitglieder:client3,client1,
+[Lobby]Mitglieder:client2,
+client2 wechselt von Room@6d99ecf4 nach Lobby
+[1][INFO] client2 hat den Raum verlassen.
+[Lobby][INFO] client2 ist beigetreten.
+client2 hat den Raum 1 verlassen
+[1][client3]: moin
+[client1]Mitglieder:client3,
+[Lobby]Mitglieder:client2,client1,
+client1 wechselt von Room@6d99ecf4 nach Lobby
+[1][INFO] client1 hat den Raum verlassen.
+[Lobby][INFO] client1 ist beigetreten.
+client1 hat den Raum 1 verlassen
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von 1
+[1]Mitglieder:1,
+Anmeldung erfolgreich von 2
+[2]Mitglieder:2,1,
+Anmeldung erfolgreich von 3
+[3]Mitglieder:2,1,3,
+Raum erstellt: a
+[1]Neuer Raum wurde erstellt:a
+[1]Mitglieder:2,3,
+[a]Mitglieder:1,
+1 wechselt von Room@42d36ebb nach a
+[a][INFO] 1 ist beigetreten.
+[3]Mitglieder:2,
+[a]Mitglieder:1,3,
+3 wechselt von Room@42d36ebb nach a
+[a][INFO] 3 ist beigetreten.
+[2]Mitglieder:
+[a]Mitglieder:2,1,3,
+2 wechselt von Room@42d36ebb nach a
+[a][INFO] 2 ist beigetreten.
+[2]Mitglieder:1,3,
+[Lobby]Mitglieder:2,
+2 wechselt von Room@2bb0f7ec nach Lobby
+[a][INFO] 2 hat den Raum verlassen.
+[Lobby][INFO] 2 ist beigetreten.
+2 hat den Raum a verlassen
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von 1
+[1]Mitglieder:1,
+Anmeldung erfolgreich von 2
+[2]Mitglieder:1,2,
+Anmeldung erfolgreich von 3
+[3]Mitglieder:1,3,2,
+Raum erstellt: a
+[1]Neuer Raum wurde erstellt:a
+[1]Mitglieder:3,2,
+[a]Mitglieder:1,
+1 wechselt von Room@22ada5a1 nach a
+[a][INFO] 1 ist beigetreten.
+[2]Mitglieder:3,
+[a]Mitglieder:1,2,
+2 wechselt von Room@22ada5a1 nach a
+[a][INFO] 2 ist beigetreten.
+[3]Mitglieder:
+[a]Mitglieder:1,3,2,
+3 wechselt von Room@22ada5a1 nach a
+[a][INFO] 3 ist beigetreten.
+[3]Mitglieder:1,2,
+[Lobby]Mitglieder:3,
+3 wechselt von Room@7211464f nach Lobby
+[a][INFO] 3 hat den Raum verlassen.
+[Lobby][INFO] 3 ist beigetreten.
+3 hat den Raum a verlassen
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von 1
+[1]Mitglieder:1,
+Anmeldung erfolgreich von 2
+[2]Mitglieder:2,1,
+Anmeldung erfolgreich von 3
+[3]Mitglieder:3,2,1,
+Raum erstellt: a
+[1]Neuer Raum wurde erstellt:a
+[1]Mitglieder:3,2,
+[a]Mitglieder:1,
+1 wechselt von Room@7d79714b nach a
+[a][INFO] 1 ist beigetreten.
+[2]Mitglieder:3,
+[a]Mitglieder:2,1,
+2 wechselt von Room@7d79714b nach a
+[a][INFO] 2 ist beigetreten.
+[3]Mitglieder:3,
+[Lobby]Mitglieder:3,
+3 wechselt von Room@7d79714b nach Lobby
+[Lobby][INFO] 3 ist beigetreten.
+3 hat den Raum a verlassen
+[3]Mitglieder:
+[a]Mitglieder:3,2,1,
+3 wechselt von Room@7d79714b nach a
+[a][INFO] 3 ist beigetreten.
+[3]Mitglieder:2,1,
+[Lobby]Mitglieder:3,
+3 wechselt von Room@31412f5f nach Lobby
+[a][INFO] 3 hat den Raum verlassen.
+[Lobby][INFO] 3 ist beigetreten.
+3 hat den Raum a verlassen
+[2]Mitglieder:1,
+[Lobby]Mitglieder:3,2,
+2 wechselt von Room@31412f5f nach Lobby
+[a][INFO] 2 hat den Raum verlassen.
+[Lobby][INFO] 2 ist beigetreten.
+2 hat den Raum a verlassen
+[1]Mitglieder:
+[Lobby]Mitglieder:3,2,1,
+1 wechselt von Room@31412f5f nach Lobby
+[a][INFO] 1 hat den Raum verlassen.
+[Lobby][INFO] 1 ist beigetreten.
+Raum gelöscht: a
+[1][INFO] Raum a gelöscht
+Raum erstellt: a
+[1]Neuer Raum wurde erstellt:a
+[1]Mitglieder:3,2,
+[a]Mitglieder:1,
+1 wechselt von Room@7d79714b nach a
+[a][INFO] 1 ist beigetreten.
+[2]Mitglieder:3,
+[a]Mitglieder:2,1,
+2 wechselt von Room@7d79714b nach a
+[a][INFO] 2 ist beigetreten.
+[3]Mitglieder:
+[a]Mitglieder:3,2,1,
+3 wechselt von Room@7d79714b nach a
+[a][INFO] 3 ist beigetreten.
+[1]Mitglieder:3,2,
+[Lobby]Mitglieder:1,
+1 wechselt von Room@40044c7e nach Lobby
+[a][INFO] 1 hat den Raum verlassen.
+[Lobby][INFO] 1 ist beigetreten.
+1 hat den Raum a verlassen
+[a][2]: hi
+[a][3]: moibn
+[Lobby][1]: hi
+[2]Mitglieder:3,
+[Lobby]Mitglieder:2,1,
+2 wechselt von Room@40044c7e nach Lobby
+[a][INFO] 2 hat den Raum verlassen.
+[Lobby][INFO] 2 ist beigetreten.
+2 hat den Raum a verlassen
+[Lobby][1]: hi
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von 1
+[1]Mitglieder:1,
+Anmeldung erfolgreich von 2
+[2]Mitglieder:1,2,
+Anmeldung erfolgreich von 3
+[3]Mitglieder:1,2,3,
+Raum erstellt: a
+[1]Neuer Raum wurde erstellt:a
+[1]Mitglieder:2,3,
+[a]Mitglieder:1,
+1 wechselt von Room@792b902a nach a
+[a][INFO] 1 ist beigetreten.
+[Lobby][3]: hi
+[a][1]: moin
+[2]Mitglieder:3,
+[a]Mitglieder:1,2,
+2 wechselt von Room@792b902a nach a
+[a][INFO] 2 ist beigetreten.
+[3]Mitglieder:
+[a]Mitglieder:1,2,3,
+3 wechselt von Room@792b902a nach a
+[a][INFO] 3 ist beigetreten.
+[a][3]: moin
+[1]Mitglieder:2,3,
+[Lobby]Mitglieder:1,
+1 wechselt von Room@67bb063a nach Lobby
+[a][INFO] 1 hat den Raum verlassen.
+[Lobby][INFO] 1 ist beigetreten.
+1 hat den Raum a verlassen
+[2]Mitglieder:3,
+[Lobby]Mitglieder:1,2,
+2 wechselt von Room@67bb063a nach Lobby
+[a][INFO] 2 hat den Raum verlassen.
+[Lobby][INFO] 2 ist beigetreten.
+2 hat den Raum a verlassen
+[3]Mitglieder:
+[Lobby]Mitglieder:1,2,3,
+3 wechselt von Room@67bb063a nach Lobby
+[a][INFO] 3 hat den Raum verlassen.
+[Lobby][INFO] 3 ist beigetreten.
+Raum gelöscht: a
+[3][INFO] Raum a gelöscht
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von 1
+[1]Mitglieder:1,
+Anmeldung erfolgreich von 2
+[2]Mitglieder:2,1,
+Anmeldung erfolgreich von 3
+[3]Mitglieder:2,1,3,
+Raum erstellt: a
+[1]Neuer Raum wurde erstellt:a
+[1]Mitglieder:2,3,
+[a]Mitglieder:1,
+1 wechselt von Room@539caa6b nach a
+[a][INFO] 1 ist beigetreten.
+[2]Mitglieder:3,
+[a]Mitglieder:2,1,
+2 wechselt von Room@539caa6b nach a
+[a][INFO] 2 ist beigetreten.
+[3]Mitglieder:
+[a]Mitglieder:2,1,3,
+3 wechselt von Room@539caa6b nach a
+[a][INFO] 3 ist beigetreten.
+[1]Mitglieder:2,3,
+[Lobby]Mitglieder:1,
+1 wechselt von Room@e6416f nach Lobby
+[a][INFO] 1 hat den Raum verlassen.
+[Lobby][INFO] 1 ist beigetreten.
+1 hat den Raum a verlassen
+[2]Mitglieder:3,
+[Lobby]Mitglieder:2,1,
+2 wechselt von Room@e6416f nach Lobby
+[a][INFO] 2 hat den Raum verlassen.
+[Lobby][INFO] 2 ist beigetreten.
+2 hat den Raum a verlassen
+[3]Mitglieder:
+[Lobby]Mitglieder:2,1,3,
+3 wechselt von Room@e6416f nach Lobby
+[a][INFO] 3 hat den Raum verlassen.
+[Lobby][INFO] 3 ist beigetreten.
+Raum gelöscht: a
+[3][INFO] Raum a gelöscht
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von 1
+[1]Mitglieder:1,
+Anmeldung erfolgreich von 2
+[2]Mitglieder:1,2,
+Anmeldung erfolgreich von 3
+[3]Mitglieder:1,2,3,
+Raum erstellt: a
+[1]Neuer Raum wurde erstellt:a
+[1]Mitglieder:2,3,
+[a]Mitglieder:1,
+1 wechselt von Room@2d627127 nach a
+[a][INFO] 1 ist beigetreten.
+[2]Mitglieder:3,
+[a]Mitglieder:1,2,
+2 wechselt von Room@2d627127 nach a
+[a][INFO] 2 ist beigetreten.
+[3]Mitglieder:
+[a]Mitglieder:1,2,3,
+3 wechselt von Room@2d627127 nach a
+[a][INFO] 3 ist beigetreten.
+[3]Mitglieder:1,2,
+[Lobby]Mitglieder:3,
+3 wechselt von Room@3f3aff2e nach Lobby
+[a][INFO] 3 hat den Raum verlassen.
+[Lobby][INFO] 3 ist beigetreten.
+3 hat den Raum a verlassen
+[2]Mitglieder:1,
+[Lobby]Mitglieder:2,3,
+2 wechselt von Room@3f3aff2e nach Lobby
+[a][INFO] 2 hat den Raum verlassen.
+[Lobby][INFO] 2 ist beigetreten.
+2 hat den Raum a verlassen
+[1]Mitglieder:
+[Lobby]Mitglieder:1,2,3,
+1 wechselt von Room@3f3aff2e nach Lobby
+[a][INFO] 1 hat den Raum verlassen.
+[Lobby][INFO] 1 ist beigetreten.
+Raum gelöscht: a
+[1][INFO] Raum a gelöscht
+Raum erstellt: 1
+[1]Neuer Raum wurde erstellt:1
+Raum erstellt: a
+[1]Neuer Raum wurde erstellt:a
+[1]Mitglieder:2,3,
+[a]Mitglieder:1,
+1 wechselt von Room@2d627127 nach a
+[a][INFO] 1 ist beigetreten.
+[3]Mitglieder:2,
+[a]Mitglieder:1,3,
+3 wechselt von Room@2d627127 nach a
+[a][INFO] 3 ist beigetreten.
+[a][3]: hi
+[1]Mitglieder:3,
+[1]Mitglieder:1,
+1 wechselt von Room@388cbafe nach 1
+[a][INFO] 1 hat den Raum verlassen.
+[1][INFO] 1 ist beigetreten.
+[2]Mitglieder:
+[1]Mitglieder:1,2,
+2 wechselt von Room@2d627127 nach 1
+[1][INFO] 2 ist beigetreten.
+[3]Mitglieder:
+[Lobby]Mitglieder:3,
+3 wechselt von Room@388cbafe nach Lobby
+[a][INFO] 3 hat den Raum verlassen.
+[Lobby][INFO] 3 ist beigetreten.
+Raum gelöscht: a
+[3][INFO] Raum a gelöscht
+Raum erstellt: a
+[2]Neuer Raum wurde erstellt:a
+[3]Mitglieder:
+[a]Mitglieder:3,
+3 wechselt von Room@2d627127 nach a
+[a][INFO] 3 ist beigetreten.
+[1]Mitglieder:2,
+[a]Mitglieder:1,3,
+1 wechselt von Room@606221b nach a
+[1][INFO] 1 hat den Raum verlassen.
+[a][INFO] 1 ist beigetreten.
+[2]Mitglieder:
+[a]Mitglieder:1,2,3,
+2 wechselt von Room@606221b nach a
+[1][INFO] 2 hat den Raum verlassen.
+[a][INFO] 2 ist beigetreten.
+[2]Mitglieder:1,3,
+[Lobby]Mitglieder:2,
+2 wechselt von Room@219b8de5 nach Lobby
+[a][INFO] 2 hat den Raum verlassen.
+[Lobby][INFO] 2 ist beigetreten.
+2 hat den Raum a verlassen
+[2]Mitglieder:
+[1]Mitglieder:2,
+2 wechselt von Room@2d627127 nach 1
+[1][INFO] 2 ist beigetreten.
+[1]Mitglieder:3,
+[1]Mitglieder:1,2,
+1 wechselt von Room@219b8de5 nach 1
+[a][INFO] 1 hat den Raum verlassen.
+[1][INFO] 1 ist beigetreten.
+[3]Mitglieder:
+[1]Mitglieder:1,2,3,
+3 wechselt von Room@219b8de5 nach 1
+[a][INFO] 3 hat den Raum verlassen.
+[1][INFO] 3 ist beigetreten.
+[1]Mitglieder:2,3,
+[a]Mitglieder:1,
+1 wechselt von Room@606221b nach a
+[1][INFO] 1 hat den Raum verlassen.
+[a][INFO] 1 ist beigetreten.
+[1]Mitglieder:
+[Lobby]Mitglieder:1,
+1 wechselt von Room@219b8de5 nach Lobby
+[a][INFO] 1 hat den Raum verlassen.
+[Lobby][INFO] 1 ist beigetreten.
+Raum gelöscht: a
+[1][INFO] Raum a gelöscht
+Raum erstellt: a
+[2]Neuer Raum wurde erstellt:a
+[3]Mitglieder:2,
+[a]Mitglieder:3,
+3 wechselt von Room@606221b nach a
+[1][INFO] 3 hat den Raum verlassen.
+[a][INFO] 3 ist beigetreten.
+[2]Mitglieder:
+[a]Mitglieder:2,3,
+2 wechselt von Room@606221b nach a
+[1][INFO] 2 hat den Raum verlassen.
+[a][INFO] 2 ist beigetreten.
+[1]Mitglieder:
+[a]Mitglieder:1,2,3,
+1 wechselt von Room@2d627127 nach a
+[a][INFO] 1 ist beigetreten.
+[2]Mitglieder:1,3,
+[1]Mitglieder:2,
+2 wechselt von Room@15c3884e nach 1
+[a][INFO] 2 hat den Raum verlassen.
+[1][INFO] 2 ist beigetreten.
+[1]Mitglieder:3,
+[1]Mitglieder:1,2,
+1 wechselt von Room@15c3884e nach 1
+[a][INFO] 1 hat den Raum verlassen.
+[1][INFO] 1 ist beigetreten.
+[3]Mitglieder:
+[Lobby]Mitglieder:3,
+3 wechselt von Room@15c3884e nach Lobby
+[a][INFO] 3 hat den Raum verlassen.
+[Lobby][INFO] 3 ist beigetreten.
+Raum gelöscht: a
+[3][INFO] Raum a gelöscht
+[1]Mitglieder:2,
+[Lobby]Mitglieder:1,3,
+1 wechselt von Room@606221b nach Lobby
+[1][INFO] 1 hat den Raum verlassen.
+[Lobby][INFO] 1 ist beigetreten.
+1 hat den Raum 1 verlassen
+[2]Mitglieder:
+[Lobby]Mitglieder:1,2,3,
+2 wechselt von Room@606221b nach Lobby
+[1][INFO] 2 hat den Raum verlassen.
+[Lobby][INFO] 2 ist beigetreten.
+Raum gelöscht: 1
+[2][INFO] Raum 1 gelöscht
+Raum erstellt: a
+[2]Neuer Raum wurde erstellt:a
+Raum erstellt: b
+[2]Neuer Raum wurde erstellt:b
+[2]Mitglieder:1,3,
+[b]Mitglieder:2,
+2 wechselt von Room@2d627127 nach b
+[b][INFO] 2 ist beigetreten.
+[1]Mitglieder:3,
+[b]Mitglieder:1,2,
+1 wechselt von Room@2d627127 nach b
+[b][INFO] 1 ist beigetreten.
+[3]Mitglieder:
+[b]Mitglieder:1,2,3,
+3 wechselt von Room@2d627127 nach b
+[b][INFO] 3 ist beigetreten.
+[3]Mitglieder:1,2,
+[a]Mitglieder:3,
+3 wechselt von Room@2fd158e8 nach a
+[b][INFO] 3 hat den Raum verlassen.
+[a][INFO] 3 ist beigetreten.
+[3]Mitglieder:
+[Lobby]Mitglieder:3,
+3 wechselt von Room@44d16b21 nach Lobby
+[a][INFO] 3 hat den Raum verlassen.
+[Lobby][INFO] 3 ist beigetreten.
+Raum gelöscht: a
+[3][INFO] Raum a gelöscht
+Server erfolgreich gestartet.
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von 1
+[1]Mitglieder:1,
+Anmeldung erfolgreich von 2
+[2]Mitglieder:1,2,
+Anmeldung erfolgreich von 3
+[3]Mitglieder:1,2,3,
+Raum erstellt: a
+[2]Neuer Raum wurde erstellt:a
+Raum erstellt: b
+[2]Neuer Raum wurde erstellt:b
+[1]Mitglieder:2,3,
+[a]Mitglieder:1,
+1 wechselt von Room@3e83e586 nach a
+[a][INFO] 1 ist beigetreten.
+[2]Mitglieder:3,
+[a]Mitglieder:1,2,
+2 wechselt von Room@3e83e586 nach a
+[a][INFO] 2 ist beigetreten.
+[3]Mitglieder:
+[a]Mitglieder:1,2,3,
+3 wechselt von Room@3e83e586 nach a
+[a][INFO] 3 ist beigetreten.
+[3]Mitglieder:1,2,
+[b]Mitglieder:3,
+3 wechselt von Room@23e36511 nach b
+[a][INFO] 3 hat den Raum verlassen.
+[b][INFO] 3 ist beigetreten.
+[3]Mitglieder:
+[Lobby]Mitglieder:3,
+3 wechselt von Room@16958509 nach Lobby
+[b][INFO] 3 hat den Raum verlassen.
+[Lobby][INFO] 3 ist beigetreten.
+Raum gelöscht: b
+[3][INFO] Raum b gelöscht
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von 1
+[1]Mitglieder:1,
+Anmeldung erfolgreich von 2
+[2]Mitglieder:2,1,
+Anmeldung erfolgreich von 3
+[3]Mitglieder:3,2,1,
+Raum erstellt: a
+[1]Neuer Raum wurde erstellt:a
+Raum erstellt: b
+[1]Neuer Raum wurde erstellt:b
+[1]Mitglieder:3,2,
+[a]Mitglieder:1,
+1 wechselt von Room@138f99d3 nach a
+[a][INFO] 1 ist beigetreten.
+[2]Mitglieder:3,
+[a]Mitglieder:2,1,
+2 wechselt von Room@138f99d3 nach a
+[a][INFO] 2 ist beigetreten.
+[2]Mitglieder:2,1,
+[a]Mitglieder:2,1,
+2 wechselt von Room@791dedee nach a
+[a][INFO] 2 hat den Raum verlassen.
+[a][INFO] 2 ist beigetreten.
+[3]Mitglieder:
+[a]Mitglieder:3,2,1,
+3 wechselt von Room@138f99d3 nach a
+[a][INFO] 3 ist beigetreten.
+[2]Mitglieder:3,1,
+[b]Mitglieder:2,
+2 wechselt von Room@791dedee nach b
+[a][INFO] 2 hat den Raum verlassen.
+[b][INFO] 2 ist beigetreten.
+[3]Mitglieder:1,
+[b]Mitglieder:3,2,
+3 wechselt von Room@791dedee nach b
+[a][INFO] 3 hat den Raum verlassen.
+[b][INFO] 3 ist beigetreten.
+[1]Mitglieder:
+[b]Mitglieder:3,2,1,
+1 wechselt von Room@791dedee nach b
+[a][INFO] 1 hat den Raum verlassen.
+[b][INFO] 1 ist beigetreten.
+[1]Mitglieder:3,2,
+[Lobby]Mitglieder:1,
+1 wechselt von Room@1ce0f23d nach Lobby
+[b][INFO] 1 hat den Raum verlassen.
+[Lobby][INFO] 1 ist beigetreten.
+1 hat den Raum b verlassen
+[1]Mitglieder:
+[a]Mitglieder:1,
+1 wechselt von Room@138f99d3 nach a
+[a][INFO] 1 ist beigetreten.
+[2]Mitglieder:3,
+[a]Mitglieder:2,1,
+2 wechselt von Room@1ce0f23d nach a
+[b][INFO] 2 hat den Raum verlassen.
+[a][INFO] 2 ist beigetreten.
+[3]Mitglieder:
+[Lobby]Mitglieder:3,
+3 wechselt von Room@1ce0f23d nach Lobby
+[b][INFO] 3 hat den Raum verlassen.
+[Lobby][INFO] 3 ist beigetreten.
+Raum gelöscht: b
+[3][INFO] Raum b gelöscht
+[3]Mitglieder:3,
+[Lobby]Mitglieder:3,
+3 wechselt von Room@138f99d3 nach Lobby
+[Lobby][INFO] 3 ist beigetreten.
+Raum gelöscht: null
+[3][INFO] Raum null gelöscht
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von 1
+[1]Mitglieder:1,
+Anmeldung erfolgreich von 2
+[2]Mitglieder:1,2,
+Anmeldung erfolgreich von 3
+[3]Mitglieder:3,1,2,
+Raum erstellt: a
+[2]Neuer Raum wurde erstellt:a
+Raum erstellt: b
+[2]Neuer Raum wurde erstellt:b
+[1]Mitglieder:3,2,
+[a]Mitglieder:1,
+1 wechselt von Room@14010e09 nach a
+[a][INFO] 1 ist beigetreten.
+[2]Mitglieder:3,
+[a]Mitglieder:1,2,
+2 wechselt von Room@14010e09 nach a
+[a][INFO] 2 ist beigetreten.
+[3]Mitglieder:
+[a]Mitglieder:3,1,2,
+3 wechselt von Room@14010e09 nach a
+[a][INFO] 3 ist beigetreten.
+[2]Mitglieder:3,1,
+[b]Mitglieder:2,
+2 wechselt von Room@1510449b nach b
+[a][INFO] 2 hat den Raum verlassen.
+[b][INFO] 2 ist beigetreten.
+[2]Mitglieder:
+[Lobby]Mitglieder:2,
+2 wechselt von Room@2e659dd4 nach Lobby
+[b][INFO] 2 hat den Raum verlassen.
+[Lobby][INFO] 2 ist beigetreten.
+Raum gelöscht: b
+[2][INFO] Raum b gelöscht
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von 1
+[1]Mitglieder:1,
+Anmeldung erfolgreich von 2
+[2]Mitglieder:1,2,
+Anmeldung erfolgreich von 3
+[3]Mitglieder:1,2,3,
+Raum erstellt: a
+[1]Neuer Raum wurde erstellt:a
+Raum erstellt: b
+[1]Neuer Raum wurde erstellt:b
+[a]Mitglieder:1,
+[Lobby]Mitglieder:1,
+1 wechselt von Room@62655105 nach a
+[a][INFO] 1 ist beigetreten.
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von 1
+[Lobby]Mitglieder:1,
+Anmeldung erfolgreich von 2
+[Lobby]Mitglieder:2,1,
+Anmeldung erfolgreich von 3
+[Lobby]Mitglieder:3,2,1,
+Raum erstellt: a
+[1]Neuer Raum wurde erstellt:a
+[Lobby]Mitglieder:3,2,
+[a]Mitglieder:1,
+1 wechselt von Room@6e40f544 nach a
+[a][INFO] 1 ist beigetreten.
+[Lobby]Mitglieder:3,
+[a]Mitglieder:2,1,
+2 wechselt von Room@6e40f544 nach a
+[a][INFO] 2 ist beigetreten.
+[Lobby]Mitglieder:
+[a]Mitglieder:3,2,1,
+3 wechselt von Room@6e40f544 nach a
+[a][INFO] 3 ist beigetreten.
+Raum erstellt: b
+[1]Neuer Raum wurde erstellt:b
+[a]Mitglieder:3,2,
+[b]Mitglieder:1,
+1 wechselt von Room@5160f060 nach b
+[a][INFO] 1 hat den Raum verlassen.
+[b][INFO] 1 ist beigetreten.
+[b]Mitglieder:
+[Lobby]Mitglieder:1,
+1 wechselt von Room@1a03746 nach Lobby
+[b][INFO] 1 hat den Raum verlassen.
+[Lobby][INFO] 1 ist beigetreten.
+Raum gelöscht: b
+[1][INFO] Raum b gelöscht
+[a]Mitglieder:3,
+[Lobby]Mitglieder:2,1,
+2 wechselt von Room@5160f060 nach Lobby
+[a][INFO] 2 hat den Raum verlassen.
+[Lobby][INFO] 2 ist beigetreten.
+2 hat den Raum a verlassen
+[a]Mitglieder:
+[Lobby]Mitglieder:3,2,1,
+3 wechselt von Room@5160f060 nach Lobby
+[a][INFO] 3 hat den Raum verlassen.
+[Lobby][INFO] 3 ist beigetreten.
+Raum gelöscht: a
+[3][INFO] Raum a gelöscht
+Server erfolgreich heruntergefahren.

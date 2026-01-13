@@ -1,9 +1,11 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Room {
     private String name; 
-    private List<ClientThread> members = new ArrayList<>();
+    private Set<ClientThread> members = new HashSet<>();
 
     public Room(String name) {
         this.name = name;   
@@ -17,12 +19,14 @@ public class Room {
         this.name = name;
     }
 
-    public List<ClientThread> getMembers() {
+    public Set<ClientThread> getMembers() {
         return this.members;
     }
 
     public void addMember(ClientThread client) {
-        this.members.add(client);
+        if(this.members.add(client)){
+            this.members.add(client);
+        }
     }
 
     public void removeMember(ClientThread client) {

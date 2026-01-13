@@ -171,6 +171,7 @@ public class Chatfenster {
             String name = this.rooms.getSelectedItem();
             this.client.write(name);
             setRoomName(name);
+            this.chatanzeige.removeAll();
         });
 
         this.raumVerlassen.addActionListener(e -> {
@@ -205,5 +206,17 @@ public class Chatfenster {
 
     public void addRoomName(String roomName) {
         this.rooms.add(roomName.trim());
+    }
+
+    public void removeRoomName(String roomName){
+        this.rooms.remove(roomName.trim());
+    }
+
+    public void addUser(String userName){
+        this.user.add(userName.trim());
+    }
+
+    public void removeUser(String userName){
+        this.user.remove(userName.trim());
     }
 }

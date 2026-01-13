@@ -32,6 +32,7 @@ public class ServerGui {
         this.server.setUserAddedListener(id -> EventQueue.invokeLater(() -> addUserToList(id)));
         this.server.setUserRemovedListener(id -> EventQueue.invokeLater(() -> removeUserFromList(id)));
         this.server.setRoomAddedListener(roomName -> EventQueue.invokeLater(() -> addRoomToList(roomName)));
+        this.server.setRoomRemovedListener(roomName -> EventQueue.invokeLater(() -> removeRoomFromList(roomName)));
 
         Panel bottomButtons = new Panel(new FlowLayout(FlowLayout.CENTER, 12, 0));
         this.startServerButton = new Button("Server starten");
@@ -127,6 +128,10 @@ public class ServerGui {
 
     private void addRoomToList(String roomName) {
         roomList.add(roomName);
+    }
+
+    private void removeRoomFromList(String roomName) {
+        roomList.remove(roomName);
     }
 
     private void onRemoveSelectedUser() {

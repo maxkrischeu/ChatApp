@@ -2,10 +2,10 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class RaumVerlassen {
-    Frame frame;
-    Button jaButton;
-    Button neinButton;
-    ClientTest client;
+    private Frame frame;
+    private Button jaButton;
+    private Button neinButton;
+    private ClientTest client;
 
     public RaumVerlassen(ClientTest client) {
         this.client = client;
@@ -50,14 +50,14 @@ public class RaumVerlassen {
         jaButton.addActionListener(e -> {
             client.write("Button gedrückt");
             client.write("Lösche den Raum");
-            String oldRoom = client.chat.rooms.getSelectedItem();
+            String oldRoom = client.getChat().getRooms().getSelectedItem();
             client.write(oldRoom);
 
             this.frame.setVisible(false);
             this.frame.remove(errorL);
 
-            client.chat.roomLabel.setText("Aktueller Raum: Lobby");
-            client.chat.rooms.remove(oldRoom);
+            client.getChat().getRoomLabel().setText("Aktueller Raum: Lobby");
+            client.getChat().getRooms().remove(oldRoom);
         });
 
         this.frame.setVisible(true);

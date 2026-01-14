@@ -261,6 +261,9 @@ public class Server {
                 this.sendMessageToRoom(oldRoom.getName(), client, "[INFO] " + client.getID() + " hat den Raum verlassen.");
             }
             sendMessageToRoom(newRoom, client, "[INFO] " + client.getID() + " ist beigetreten.");
+            // if(!(oldRoom.getName().equals("Lobby")) && oldRoom.getMembers().size() == 0){
+            //     client.write("Soll dieser Raum gelöscht werden:" + oldRoom.getName());
+            // }
         }
     }
 

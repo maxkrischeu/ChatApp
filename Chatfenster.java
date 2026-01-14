@@ -2,27 +2,27 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class Chatfenster {
-    Frame frame;
-    ClientTest client;
-    StartFrame startframe;
-    RaumErstellenFrame raumerstellen;
-    Label roomLabel;
-    Panel chatFensterPanel;
-    Panel chatverwaltung;
-    GridBagConstraints c1;
-    Button raumErstellen; 
-    Button raumBeitreten; 
-    Button raumVerlassen;
-    Button dateiHochladen;
-    Button dateienAnzeigen;
-    Button dateiHerunterladen;
-    List rooms;
-    List user;
-    List chatanzeige;
+    private Frame frame;
+    private ClientTest client;
+    private StartFrame startframe;
+    private RaumErstellenFrame raumerstellen;
+    private Label roomLabel;
+    private Panel chatFensterPanel;
+    private Panel chatverwaltung;
+    private GridBagConstraints c1;
+    private Button raumErstellen; 
+    private Button raumBeitreten; 
+    private Button raumVerlassen;
+    private Button dateiHochladen;
+    private Button dateienAnzeigen;
+    private Button dateiHerunterladen;
+    private List rooms;
+    private List user;
+    private List chatanzeige;
 
     public Chatfenster(ClientTest client) {
         this.client = client;
-        this.startframe = client.startframe;
+        this.startframe = client.getStartFrame();
         this.frame = new Frame("Chatfenster-Client");
         this.frame.setSize(800, 600);
         this.frame.setLayout(new GridBagLayout());
@@ -86,7 +86,7 @@ public class Chatfenster {
         TextField chateingabe = new TextField(20);
         Button senden = new Button("Senden");
         senden.addActionListener(e -> {
-            String msg = "[" + client.startframe.getUsername() + "]" + ": " + chateingabe.getText();
+            String msg = "[" + client.getStartFrame().getUsername() + "]" + ": " + chateingabe.getText();
             this.chatanzeige.add(msg +"\n");
             this.client.write(chateingabe.getText());
             chateingabe.setText("");
@@ -219,4 +219,25 @@ public class Chatfenster {
     public void removeUser(String userName){
         this.user.remove(userName.trim());
     }
+
+    public RaumErstellenFrame getRaumErstellen(){
+        return this.raumerstellen;
+    }
+
+    public List getUser(){
+        return this.user;
+    }
+
+    public List getChatanzeige(){
+        return this.chatanzeige;
+    }
+
+    public List getRooms(){
+        return this.rooms;
+    }
+
+    public Label getRoomLabel(){
+        return this.roomLabel;
+    }
+
 }

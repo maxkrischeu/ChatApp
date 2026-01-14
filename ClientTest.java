@@ -9,17 +9,17 @@ import java.util.Set;
 
 
 public class ClientTest {
-    volatile boolean running;
-    Socket conn; 
-    BufferedReader in;
-    PrintWriter out;
-    Scanner scanner;
-    StartFrame startframe;
-    Rueckmeldung meldung;
-    Chatfenster chat;
-    RaumVerlassen raumVerlassenBestätigen;
-    Set<String> knownUsers;
-    Set<String> knownRooms;
+    private volatile boolean running;
+    private Socket conn; 
+    private BufferedReader in;
+    private PrintWriter out;
+    private Scanner scanner;
+    private StartFrame startframe;
+    private Rueckmeldung meldung;
+    private Chatfenster chat;
+    private RaumVerlassen raumVerlassenBestätigen;
+    private Set<String> knownUsers;
+    private Set<String> knownRooms;
 
     public ClientTest(){
         try{
@@ -59,10 +59,12 @@ public class ClientTest {
             } 
             else if(msg.equals("Der Benutzername oder das Passwort sind falsch.")){
                 this.meldung.meldungErrorAnmelden();
-            }     
-            //TODO: "Du bist gebannt und kannst dich nicht anmelden."
+            }
+            else if(msg.equals("Du bist gebannt und kannst dich nicht anmelden.")){
+                this.meldung.meldungBanned();
+            }
             else if(msg.equals( "Raum Erstellen erfolgreich")){
-                this.chat.addRoomName(this.chat.raumerstellen.getRoomName().trim());
+                this.chat.addRoomName(this.chat.getRaumErstellen().getRoomName().trim());
             }  
             else if(msg.equals("Es wurde kein Raum ausgewählt.")){
                 this.meldung.meldungErrorBeitreten();
@@ -80,7 +82,7 @@ public class ClientTest {
             }
 
             else if(msg.startsWith("Mitglieder:")){
-                this.chat.user.removeAll();
+                this.chat.getUser().removeAll();
                 this.knownUsers.clear();
                 String roomMembers = msg.substring("Mitglieder:".length());
                 String[] members = roomMembers.split(",");
@@ -104,25 +106,25 @@ public class ClientTest {
                 if(this.knownUsers.add(newMember.trim())){
                     this.chat.addUser(newMember.trim());
                 }
-                this.chat.chatanzeige.add(msg);
+                this.chat.getChatanzeige().add(msg);
             }
 
             else if(msg.startsWith("[INFO]") && msg.contains("verlassen")){
                 int ende = msg.indexOf(" hat den Raum verlassen");
                 String oldMember = msg.substring("[INFO] ".length(), ende);
-                this.chat.chatanzeige.add(msg);
+                this.chat.getChatanzeige().add(msg);
             }
             else if(msg.contains("wurde gelöscht. Du bist jetzt in der Lobby.")){
                 int start = msg.indexOf("Raum".length());
                 int end = msg.indexOf(" wurde gelöscht. Du bist jetzt in der Lobby");
                 String oldRoom = msg.substring(start, end);
-                this.chat.roomLabel.setText("Aktueller Raum: Lobby");
+                this.chat.getRoomLabel().setText("Aktueller Raum: Lobby");
                 this.chat.removeRoomName(oldRoom.trim());
             }
             else if(msg.equals("[INFO] Du bist in der Lobby")){
-                this.chat.roomLabel.setText("Aktueller Raum: Lobby");
-                System.out.println(this.chat.roomLabel.getText());
-                this.chat.chatanzeige.removeAll();
+                this.chat.getRoomLabel().setText("Aktueller Raum: Lobby");
+                System.out.println(this.chat.getRoomLabel().getText());
+                this.chat.getChatanzeige().removeAll();
             }
             else if(msg.startsWith("Soll dieser Raum gelöscht werden:")){
                 int start = msg.indexOf("Soll dieser Raum gelöscht werden:".length());
@@ -136,7 +138,7 @@ public class ClientTest {
                 this.chat.removeRoomName(oldRoom.trim());
             }
             else{
-                this.chat.chatanzeige.add(msg);
+                this.chat.getChatanzeige().add(msg);
             }
         }
 
@@ -200,5 +202,13 @@ public class ClientTest {
     public static void main(String[] args) {
         ClientTest client = new ClientTest();
         client.start();
+    }
+
+    public StartFrame getStartFrame(){
+        return this.startframe;
+    }
+
+    public Chatfenster getChat(){
+        return this.chat;
     }
 }

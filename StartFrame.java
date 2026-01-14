@@ -2,15 +2,15 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class StartFrame{
-    Frame frame;
-    ClientTest client;
-    Rueckmeldung meldung;
-    Panel eingabePanel;
-    TextField bEingabe;
-    String benutzername;
-    TextField pEingabe;
-    Button anmeldeButton;
-    Button registrierenButton;
+    private Frame frame;
+    private ClientTest client;
+    private Rueckmeldung meldung;
+    private Panel eingabePanel;
+    private TextField bEingabe;
+    private String benutzername;
+    private TextField pEingabe;
+    private Button anmeldeButton;
+    private Button registrierenButton;
 
     public StartFrame(ClientTest client){
         this.frame = new Frame("Chat-Client");
@@ -66,7 +66,7 @@ public class StartFrame{
         frame.setVisible(false);
     }
 
-    public void setEingabepanel(){
+    private void setEingabepanel(){
         Label benutzername = new Label("Benutzername: ", 1); 
         eingabePanel.add(benutzername);
         eingabePanel.add(bEingabe);
@@ -77,7 +77,7 @@ public class StartFrame{
         eingabePanel.add(pEingabe);
     }
 
-    public void setAnmeldeButton(){
+    private void setAnmeldeButton(){
         anmeldeButton.addActionListener(e -> {
             this.client.write("anmelden");
             this.client.write(bEingabe.getText()); 
@@ -85,7 +85,7 @@ public class StartFrame{
         });
     }
 
-    public void setRegistrierenButton(){
+    private void setRegistrierenButton(){
         registrierenButton.addActionListener(e -> {
             this.client.write("registrieren");
             this.client.write(bEingabe.getText());

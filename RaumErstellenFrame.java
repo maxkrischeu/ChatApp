@@ -2,14 +2,14 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class RaumErstellenFrame{
-    Frame frame;
-    Button ok;
-    Button abbrechen;
-    ClientTest client;
-    GridBagConstraints gbc;
-    Chatfenster chat;
-    TextField raumname;
-    Panel buttonPanel;
+    private Frame frame;
+    private Button ok;
+    private Button abbrechen;
+    private ClientTest client;
+    private GridBagConstraints gbc;
+    private Chatfenster chat;
+    private TextField raumname;
+    private Panel buttonPanel;
 
     public RaumErstellenFrame(ClientTest client, Chatfenster chat){
         this.client = client;
@@ -43,7 +43,7 @@ public class RaumErstellenFrame{
     }
 
 
-    public void setOk(){
+    private void setOk(){
         this.ok = new Button("OK");
         this.ok.setSize(10,30);
         gbc.gridx = 0;
@@ -56,7 +56,7 @@ public class RaumErstellenFrame{
         this.buttonPanel.add(this.ok);
     }
 
-    public void setAbbruch(){
+    private void setAbbruch(){
         this.abbrechen = new Button("Abbrechen");
         this.abbrechen.setSize(10,30);
          gbc.gridx = 1;
@@ -66,7 +66,7 @@ public class RaumErstellenFrame{
         this.buttonPanel.add(this.abbrechen);
     }
 
-    public void enterRoomName(){
+    private void enterRoomName(){
         this.raumname = new TextField(20); 
         this.frame.add(raumname, gbc);
     }

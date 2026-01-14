@@ -61,7 +61,11 @@ public class ClientTest {
                 this.meldung.meldungErrorAnmelden();
             }
             else if(msg.equals("Du bist gebannt und kannst dich nicht anmelden.")){
+                this.meldung.meldungBannedAnmelden();
+            }
+            else if(msg.equals("Du wurdest vom Server entfernt")){
                 this.meldung.meldungBanned();
+                this.chat.nichtAnzeigen();
             }
             else if(msg.equals( "Raum Erstellen erfolgreich")){
                 this.chat.addRoomName(this.chat.getRaumErstellen().getRoomName().trim());

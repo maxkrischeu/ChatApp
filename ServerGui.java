@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -110,6 +111,13 @@ public class ServerGui {
 
         this.frame.add(leftPanel, BorderLayout.CENTER);
         this.frame.add(right, BorderLayout.EAST);
+
+        this.frame.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e){
+                frame.dispose();
+                System.exit(0);
+            }
+        });
 
         this.frame.setVisible(true);
     }

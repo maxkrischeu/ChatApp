@@ -96,15 +96,30 @@ public class Rueckmeldung{
         });
     }
 
-    public void meldungBanned(){
+    public void meldungBannedAnmelden(){
         this.gbc.gridx = 0;
         this.gbc.gridy = 0;
-        Label errorBanned = new Label("Du bist gebannt und kannst dich nicht anmelden.");
-        this.frame.add(errorBanned, this.gbc); 
+        Label errorBannedA = new Label("Du bist gebannt und kannst dich nicht anmelden.");
+        this.frame.add(errorBannedA, this.gbc); 
         this.frame.setVisible(true);
         this.button.addActionListener(e -> {
             this.frame.setVisible(false);
-            this.frame.remove(errorBanned);
+            this.frame.remove(errorBannedA);
+        });
+    }
+
+    public void meldungBanned(){
+        this.gbc.gridx = 0;
+        this.gbc.gridy = 0;
+        Label errorBanned = new Label("Du wurdest vom Server entfernt.");
+        this.frame.add(errorBanned, this.gbc); 
+        this.frame.setVisible(true);
+        this.frame.remove(this.button);
+        this.frame.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e){
+                frame.dispose();
+                System.exit(0);
+            }
         });
     }
 }

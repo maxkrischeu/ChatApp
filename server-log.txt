@@ -4037,3 +4037,40 @@ Nutzer gebannt: a
 Abmeldung erfolgreich von a
 Nutzer entfernt: a
 Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von d
+[Lobby]Mitglieder:d,
+Nutzer gebannt: d
+Abmeldung erfolgreich von d
+Nutzer entfernt: d
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von a
+[Lobby]Mitglieder:a,
+Nutzer gebannt: a
+Abmeldung erfolgreich von a
+Nutzer entfernt: a
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von d
+[Lobby]Mitglieder:d,
+Raum erstellt: 1
+[d]Neuer Raum wurde erstellt:1
+[Lobby]Mitglieder:
+[1]Mitglieder:d,
+d wechselt von Room@2b8d507d nach 1
+[1][INFO] d ist beigetreten.
+Nutzer gebannt: d
+Abmeldung erfolgreich von d
+Nutzer entfernt: d
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von f
+[Lobby]Mitglieder:f,
+Nutzer gebannt: f
+Abmeldung erfolgreich von f
+Nutzer entfernt: f
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von moin
+[Lobby]Mitglieder:moin,
+Server erfolgreich heruntergefahren.

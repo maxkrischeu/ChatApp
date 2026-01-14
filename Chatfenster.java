@@ -194,10 +194,22 @@ public class Chatfenster {
         buttons.add(this.dateiHerunterladen); 
 
         frame.add(buttons, gbcButtons);
+
+        this.frame.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e){
+                frame.dispose();
+                System.exit(0);
+                client.write(client.getStartFrame().getUsername() + " ist abgemeldet");
+            }
+        });
     }
 
     public void anzeigen() {
         this.frame.setVisible(true);
+    }
+
+    public void nichtAnzeigen() {
+        this.frame.setVisible(false);
     }
 
     public void setRoomName(String roomName){

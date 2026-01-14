@@ -37,6 +37,9 @@ public class ClientThread extends Thread {
                 }
                 else if(msg != null && msg.length()>0) {
                     this.server.sendMessageToRoom(this.getCurrentRoom(), this, "[" + this.id + "]"  + ": " + msg);
+                    if(msg.endsWith("ist abgemeldet")){
+                        this.stopp();
+                    }
                 }
                 else if(msg == null){                    
                     this.server.removeClientThread(this);

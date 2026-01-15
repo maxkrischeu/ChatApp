@@ -48,6 +48,8 @@ public class ClientThread extends Thread {
                 }
             } catch (Exception e) {
                 System.err.println("Der Client hat unerwartet die Verbindung abgebrochen:" + e.getMessage());
+                this.server.removeClientThread(this);
+                this.server.sendMessageToRoom(this.getCurrentRoom(), this, this.id + " hat den Chatraum verlassen.");
                 break;
             }
         }
@@ -94,7 +96,7 @@ public class ClientThread extends Thread {
 
                 this.server.registrieren(id, pw);
                 this.write("Registrierung erfolgreich.");
-                this.server.addClientThread(this);
+                //this.server.addClientThread(this);
                 return true;
             } else {
                 this.write("Dieser Benutzername existiert bereits. Gib bitte einen neuen Benutzernamen ein.");

@@ -135,6 +135,9 @@ public class Server {
     }
 
     public void removeClientThread(ClientThread client) {
+        // hier neu:
+        this.rooms.get(client.getCurrentRoom()).removeMember(client);
+        
         this.clients.remove(client);
         this.log("Abmeldung erfolgreich von " + client.getID());
         this.userRemoved.accept(client.getID());

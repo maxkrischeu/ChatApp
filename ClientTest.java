@@ -127,7 +127,6 @@ public class ClientTest {
             }
             else if(msg.equals("[INFO] Du bist in der Lobby")){
                 this.chat.getRoomLabel().setText("Aktueller Raum: Lobby");
-                System.out.println(this.chat.getRoomLabel().getText());
                 this.chat.getChatanzeige().removeAll();
             }
             else if(msg.startsWith("Soll dieser Raum gelöscht werden:")){
@@ -169,7 +168,8 @@ public class ClientTest {
             //return "";
         }
         catch(Exception e){
-            System.out.println("ich bin im catch");
+            //TODO: Kommt hier rein wenn Nutzer gebannt
+            //System.out.println("ich bin im catch");
             return "";
         }
     }

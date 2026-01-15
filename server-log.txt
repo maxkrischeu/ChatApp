@@ -4074,3 +4074,718 @@ Server erfolgreich gestartet.
 Anmeldung erfolgreich von moin
 [Lobby]Mitglieder:moin,
 Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von fkff
+[Lobby]Mitglieder:fkff,
+Nutzer gebannt: fkff
+Abmeldung erfolgreich von fkff
+Nutzer entfernt: fkff
+Anmeldung erfolgreich von a
+[Lobby]Mitglieder:a,
+Nutzer gebannt: a
+Abmeldung erfolgreich von a
+Nutzer entfernt: a
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von a
+[Lobby]Mitglieder:a,
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von d
+[Lobby]Mitglieder:d,
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von aa
+[Lobby]Mitglieder:aa,
+Anmeldung erfolgreich von b
+[Lobby]Mitglieder:aa,b,
+[Lobby]Mitglieder:aa,b,
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von a
+[Lobby]Mitglieder:a,
+Anmeldung erfolgreich von c
+[Lobby]Mitglieder:c,a,
+Abmeldung erfolgreich von a
+[Lobby]a hat den Chatraum verlassen.
+Abmeldung erfolgreich von c
+[Lobby]c hat den Chatraum verlassen.
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von a
+[Lobby]Mitglieder:a,
+Anmeldung erfolgreich von b
+[Lobby]Mitglieder:a,b,
+[Lobby][a]: hi
+Raum erstellt: 1
+[a]Neuer Raum wurde erstellt:1
+Raum erstellt: 2
+[a]Neuer Raum wurde erstellt:2
+[Lobby]Mitglieder:b,
+[1]Mitglieder:a,
+a wechselt von Room@77cec0f0 nach 1
+[1][INFO] a ist beigetreten.
+[Lobby]Mitglieder:
+[1]Mitglieder:a,b,
+b wechselt von Room@77cec0f0 nach 1
+[1][INFO] b ist beigetreten.
+Abmeldung erfolgreich von b
+[1]b hat den Chatraum verlassen.
+[1]Mitglieder:a,
+[1]Mitglieder:
+[Lobby]Mitglieder:a,
+a wechselt von Room@4c8ef7fe nach Lobby
+[1][INFO] a hat den Raum verlassen.
+[Lobby][INFO] a ist beigetreten.
+Raum gelöscht: 1
+[a][INFO] Raum 1 gelöscht
+[Lobby]Mitglieder:a,
+Abmeldung erfolgreich von b
+[Lobby]b hat den Chatraum verlassen.
+[Lobby]Mitglieder:a,
+Abmeldung erfolgreich von a
+[Lobby]a hat den Chatraum verlassen.
+[Lobby]Mitglieder:
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von a
+[Lobby]Mitglieder:a,
+Anmeldung erfolgreich von b
+[Lobby]Mitglieder:b,a,
+Abmeldung erfolgreich von b
+[Lobby]b hat den Chatraum verlassen.
+[Lobby]Mitglieder:a,
+[Lobby]Mitglieder:a,
+Abmeldung erfolgreich von a
+[Lobby]a hat den Chatraum verlassen.
+[Lobby]Mitglieder:
+Abmeldung erfolgreich von b
+[Lobby]b hat den Chatraum verlassen.
+[Lobby]Mitglieder:
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von a
+[Lobby]Mitglieder:a,
+Anmeldung erfolgreich von b
+[Lobby]Mitglieder:a,b,
+Abmeldung erfolgreich von b
+[Lobby]b hat den Chatraum verlassen.
+[Lobby]Mitglieder:a,
+Anmeldung erfolgreich von b
+[Lobby]Mitglieder:a,b,
+Nutzer gebannt: a
+Abmeldung erfolgreich von a
+Abmeldung erfolgreich von a
+Nutzer entfernt: a
+[Lobby]a hat den Chatraum verlassen.
+[Lobby]Mitglieder:b,
+Abmeldung erfolgreich von b
+[Lobby]b hat den Chatraum verlassen.
+[Lobby]Mitglieder:
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von a
+[Lobby]Mitglieder:a,
+Abmeldung erfolgreich von a
+[Lobby]a hat den Chatraum verlassen.
+[Lobby]Mitglieder:
+Server erfolgreich gestartet.
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von a
+[Lobby]a ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:a,
+Anmeldung erfolgreich von b
+[Lobby]b ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:a,b,
+Abmeldung erfolgreich von b
+[Lobby]b hat den Chatraum verlassen.
+[Lobby]Mitglieder:a,
+Anmeldung erfolgreich von b
+[Lobby]b ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:a,b,
+[Lobby][a]: hi
+Raum erstellt: 1
+[a]Neuer Raum wurde erstellt:1
+Raum erstellt: 2
+[a]Neuer Raum wurde erstellt:2
+Abmeldung erfolgreich von b
+[Lobby]b hat den Chatraum verlassen.
+[Lobby]Mitglieder:a,
+Anmeldung erfolgreich von c
+[Lobby]c ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:a,c,
+Raum erstellt: 3
+[c]Neuer Raum wurde erstellt:3
+Raum erstellt: 4
+[a]Neuer Raum wurde erstellt:4
+Abmeldung erfolgreich von c
+[Lobby]c hat den Chatraum verlassen.
+[Lobby]Mitglieder:a,
+Anmeldung erfolgreich von c
+[Lobby]c ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:a,c,
+Raum erstellt: 5
+[c]Neuer Raum wurde erstellt:5
+Raum erstellt: 6
+[a]Neuer Raum wurde erstellt:6
+Abmeldung erfolgreich von c
+[Lobby]c hat den Chatraum verlassen.
+[Lobby]Mitglieder:a,
+Abmeldung erfolgreich von a
+[Lobby]a hat den Chatraum verlassen.
+[Lobby]Mitglieder:
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von a
+[Lobby]a ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:a,
+Anmeldung erfolgreich von b
+[Lobby]b ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:b,a,
+Raum erstellt: 1
+[a]Neuer Raum wurde erstellt:1
+Abmeldung erfolgreich von b
+[Lobby]b hat den Chatraum verlassen.
+[Lobby]Mitglieder:a,
+Anmeldung erfolgreich von b
+[Lobby]b ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:b,a,
+Raum erstellt: 2
+[a]Neuer Raum wurde erstellt:2
+[Lobby][a]: hi
+Abmeldung erfolgreich von a
+[Lobby]a hat den Chatraum verlassen.
+[Lobby]Mitglieder:b,
+Abmeldung erfolgreich von b
+[Lobby]b hat den Chatraum verlassen.
+[Lobby]Mitglieder:
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von a
+[Lobby]a ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:a,
+Anmeldung erfolgreich von b
+[Lobby]b ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:a,b,
+Raum erstellt: 1
+[b]Neuer Raum wurde erstellt:1
+Raum erstellt: 2
+[a]Neuer Raum wurde erstellt:2
+[Lobby]Mitglieder:b,
+[1]Mitglieder:a,
+a wechselt von Room@15969d45 nach 1
+[1][INFO] a ist beigetreten.
+[1][a]: hi
+[Lobby]Mitglieder:
+[1]Mitglieder:a,b,
+b wechselt von Room@15969d45 nach 1
+[1][INFO] b ist beigetreten.
+[1][b]: hi
+[1]Mitglieder:b,
+[2]Mitglieder:a,
+a wechselt von Room@3b27663b nach 2
+[1][INFO] a hat den Raum verlassen.
+[2][INFO] a ist beigetreten.
+[2]Mitglieder:
+[1]Mitglieder:a,b,
+a wechselt von Room@645b5146 nach 1
+[2][INFO] a hat den Raum verlassen.
+[1][INFO] a ist beigetreten.
+[1]Mitglieder:a,
+[Lobby]Mitglieder:b,
+b wechselt von Room@3b27663b nach Lobby
+[1][INFO] b hat den Raum verlassen.
+[Lobby][INFO] b ist beigetreten.
+b hat den Raum 1 verlassen
+[1]Mitglieder:
+[Lobby]Mitglieder:a,b,
+a wechselt von Room@3b27663b nach Lobby
+[1][INFO] a hat den Raum verlassen.
+[Lobby][INFO] a ist beigetreten.
+Raum gelöscht: 1
+[a][INFO] Raum 1 gelöscht
+Abmeldung erfolgreich von b
+[Lobby]b hat den Chatraum verlassen.
+[Lobby]Mitglieder:a,
+Anmeldung erfolgreich von b
+[Lobby]b ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:a,b,
+Raum erstellt: 1
+[b]Neuer Raum wurde erstellt:1
+Raum erstellt: 3
+[a]Neuer Raum wurde erstellt:3
+Abmeldung erfolgreich von a
+[Lobby]a hat den Chatraum verlassen.
+[Lobby]Mitglieder:b,
+Anmeldung erfolgreich von a
+[Lobby]a ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:b,a,
+Raum erstellt: 4
+[b]Neuer Raum wurde erstellt:4
+[Lobby][a]: hi
+[Lobby][b]: moib
+[Lobby]Mitglieder:a,
+[1]Mitglieder:b,
+b wechselt von Room@15969d45 nach 1
+[1][INFO] b ist beigetreten.
+[Lobby]Mitglieder:
+[1]Mitglieder:b,a,
+a wechselt von Room@15969d45 nach 1
+[1][INFO] a ist beigetreten.
+[1][a]: hi
+Raum erstellt: 7
+[b]Neuer Raum wurde erstellt:7
+[1]Mitglieder:a,
+[Lobby]Mitglieder:b,
+b wechselt von Room@6766ea3d nach Lobby
+[1][INFO] b hat den Raum verlassen.
+[Lobby][INFO] b ist beigetreten.
+b hat den Raum 1 verlassen
+[1]Mitglieder:
+[Lobby]Mitglieder:b,a,
+a wechselt von Room@6766ea3d nach Lobby
+[1][INFO] a hat den Raum verlassen.
+[Lobby][INFO] a ist beigetreten.
+Raum gelöscht: 1
+[a][INFO] Raum 1 gelöscht
+Raum erstellt: 11
+[b]Neuer Raum wurde erstellt:11
+Abmeldung erfolgreich von a
+[Lobby]a hat den Chatraum verlassen.
+[Lobby]Mitglieder:b,
+Abmeldung erfolgreich von b
+[Lobby]b hat den Chatraum verlassen.
+[Lobby]Mitglieder:
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von a
+[Lobby]a ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:a,
+Anmeldung erfolgreich von b
+[Lobby]b ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:b,a,
+Raum erstellt: 1
+[a]Neuer Raum wurde erstellt:1
+Raum erstellt: 2
+[b]Neuer Raum wurde erstellt:2
+[Lobby][a]: hi
+[Lobby]Mitglieder:b,
+[1]Mitglieder:a,
+a wechselt von Room@67a07e9d nach 1
+[1][INFO] a ist beigetreten.
+[Lobby][b]: moin
+[Lobby]Mitglieder:
+[2]Mitglieder:b,
+b wechselt von Room@67a07e9d nach 2
+[2][INFO] b ist beigetreten.
+[2]Mitglieder:
+[1]Mitglieder:b,a,
+b wechselt von Room@555a4df3 nach 1
+[2][INFO] b hat den Raum verlassen.
+[1][INFO] b ist beigetreten.
+[1][b]: hi
+[1]Mitglieder:a,
+[Lobby]Mitglieder:b,
+b wechselt von Room@3f2dcc44 nach Lobby
+[1][INFO] b hat den Raum verlassen.
+[Lobby][INFO] b ist beigetreten.
+b hat den Raum 1 verlassen
+[1]Mitglieder:
+[Lobby]Mitglieder:b,a,
+a wechselt von Room@3f2dcc44 nach Lobby
+[1][INFO] a hat den Raum verlassen.
+[Lobby][INFO] a ist beigetreten.
+Raum gelöscht: 1
+[a][INFO] Raum 1 gelöscht
+[Lobby][b]: b ist abgemeldet
+Abmeldung erfolgreich von b
+[Lobby]b hat den Chatraum verlassen.
+[Lobby]Mitglieder:a,
+Anmeldung erfolgreich von b
+[Lobby]b ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:b,a,
+Raum erstellt: 1
+[a]Neuer Raum wurde erstellt:1
+Abmeldung erfolgreich von a
+[Lobby]a hat den Chatraum verlassen.
+[Lobby]Mitglieder:b,
+Abmeldung erfolgreich von b
+[Lobby]b hat den Chatraum verlassen.
+[Lobby]Mitglieder:
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von a
+[Lobby]a ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:a,
+Anmeldung erfolgreich von b
+[Lobby]b ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:b,a,
+Raum erstellt: 1
+[b]Neuer Raum wurde erstellt:1
+Raum erstellt: 2
+[a]Neuer Raum wurde erstellt:2
+[Lobby][b]: b ist abgemeldet
+Abmeldung erfolgreich von b
+[Lobby]b hat den Chatraum verlassen.
+[Lobby]Mitglieder:a,
+Anmeldung erfolgreich von b
+[Lobby]b ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:b,a,
+Raum erstellt: 3
+[b]Neuer Raum wurde erstellt:3
+Raum erstellt: 4
+[a]Neuer Raum wurde erstellt:4
+Raum erstellt: 5
+[a]Neuer Raum wurde erstellt:5
+Abmeldung erfolgreich von b
+[Lobby]b hat den Chatraum verlassen.
+[Lobby]Mitglieder:a,
+Anmeldung erfolgreich von b
+[Lobby]b ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:a,b,
+Raum erstellt: 11
+[a]Neuer Raum wurde erstellt:11
+Raum erstellt: 22
+[b]Neuer Raum wurde erstellt:22
+Raum erstellt: 33
+[b]Neuer Raum wurde erstellt:33
+Raum erstellt: 44
+[a]Neuer Raum wurde erstellt:44
+Abmeldung erfolgreich von a
+[Lobby]a hat den Chatraum verlassen.
+[Lobby]Mitglieder:b,
+Abmeldung erfolgreich von b
+[Lobby]b hat den Chatraum verlassen.
+[Lobby]Mitglieder:
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von a
+[Lobby]a ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:a,
+Anmeldung erfolgreich von b
+[Lobby]b ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:a,b,
+Raum erstellt: 1
+[a]Neuer Raum wurde erstellt:1
+Raum erstellt: 2
+[b]Neuer Raum wurde erstellt:2
+[Lobby][b]: b ist abgemeldet
+Abmeldung erfolgreich von b
+[Lobby]b hat den Chatraum verlassen.
+[Lobby]Mitglieder:a,
+Anmeldung erfolgreich von b
+[Lobby]b ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:a,b,
+Raum erstellt: 3
+[a]Neuer Raum wurde erstellt:3
+Raum erstellt: 4
+[b]Neuer Raum wurde erstellt:4
+Abmeldung erfolgreich von b
+[Lobby]b hat den Chatraum verlassen.
+[Lobby]Mitglieder:a,
+Abmeldung erfolgreich von a
+[Lobby]a hat den Chatraum verlassen.
+[Lobby]Mitglieder:
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von a
+[Lobby]a ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:a,
+Anmeldung erfolgreich von b
+[Lobby]b ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:b,a,
+Raum erstellt: 1
+[a]Neuer Raum wurde erstellt:1
+Raum erstellt: 2
+[b]Neuer Raum wurde erstellt:2
+[Lobby]Mitglieder:b,
+[1]Mitglieder:a,
+a wechselt von Room@4d504831 nach 1
+[1][INFO] a ist beigetreten.
+[Lobby]Mitglieder:
+[1]Mitglieder:b,a,
+b wechselt von Room@4d504831 nach 1
+[1][INFO] b ist beigetreten.
+[1][b]: moin
+[1]Mitglieder:b,
+[Lobby]Mitglieder:a,
+a wechselt von Room@63aa2f7f nach Lobby
+[1][INFO] a hat den Raum verlassen.
+[Lobby][INFO] a ist beigetreten.
+a hat den Raum 1 verlassen
+[1]Mitglieder:
+[Lobby]Mitglieder:b,a,
+b wechselt von Room@63aa2f7f nach Lobby
+[1][INFO] b hat den Raum verlassen.
+[Lobby][INFO] b ist beigetreten.
+Raum gelöscht: 1
+[b][INFO] Raum 1 gelöscht
+[Lobby][b]: b ist abgemeldet
+Abmeldung erfolgreich von b
+[Lobby]b hat den Chatraum verlassen.
+[Lobby]Mitglieder:a,
+Anmeldung erfolgreich von b
+[Lobby]b ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:b,a,
+Raum erstellt: 1
+[b]Neuer Raum wurde erstellt:1
+Raum erstellt: 3
+[a]Neuer Raum wurde erstellt:3
+Abmeldung erfolgreich von a
+[Lobby]a hat den Chatraum verlassen.
+[Lobby]Mitglieder:b,
+Abmeldung erfolgreich von b
+[Lobby]b hat den Chatraum verlassen.
+[Lobby]Mitglieder:
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von a
+[Lobby]a ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:a,
+Raum erstellt: 1
+[a]Neuer Raum wurde erstellt:1
+Anmeldung erfolgreich von b
+[Lobby]b ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:b,a,
+Raum erstellt: 2
+[b]Neuer Raum wurde erstellt:2
+[Lobby]Mitglieder:b,
+[1]Mitglieder:a,
+a wechselt von Room@1086ad0d nach 1
+[1][INFO] a ist beigetreten.
+[Lobby]Mitglieder:
+[1]Mitglieder:b,a,
+b wechselt von Room@1086ad0d nach 1
+[1][INFO] b ist beigetreten.
+[1]Mitglieder:a,
+[Lobby]Mitglieder:b,
+b wechselt von Room@7df7c7be nach Lobby
+[1][INFO] b hat den Raum verlassen.
+[Lobby][INFO] b ist beigetreten.
+b hat den Raum 1 verlassen
+[1]Mitglieder:
+[Lobby]Mitglieder:b,a,
+a wechselt von Room@7df7c7be nach Lobby
+[1][INFO] a hat den Raum verlassen.
+[Lobby][INFO] a ist beigetreten.
+Raum gelöscht: 1
+[a][INFO] Raum 1 gelöscht
+[Lobby][b]: b ist abgemeldet
+Abmeldung erfolgreich von b
+[Lobby]b hat den Chatraum verlassen.
+[Lobby]Mitglieder:a,
+Anmeldung erfolgreich von b
+[Lobby]b ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:a,b,
+Raum erstellt: 3
+[b]Neuer Raum wurde erstellt:3
+Raum erstellt: 1
+[a]Neuer Raum wurde erstellt:1
+Abmeldung erfolgreich von a
+[Lobby]a hat den Chatraum verlassen.
+[Lobby]Mitglieder:b,
+[Lobby][b]: b ist abgemeldet
+Abmeldung erfolgreich von b
+[Lobby]b hat den Chatraum verlassen.
+[Lobby]Mitglieder:
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von a
+[Lobby]a ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:a,
+Anmeldung erfolgreich von b
+[Lobby]b ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:b,a,
+[Lobby][a]: hi
+Raum erstellt: 1
+[b]Neuer Raum wurde erstellt:1
+Raum erstellt: 2
+[a]Neuer Raum wurde erstellt:2
+[Lobby][a]: a ist abgemeldet
+Abmeldung erfolgreich von a
+[Lobby]a hat den Chatraum verlassen.
+[Lobby]Mitglieder:b,
+Anmeldung erfolgreich von a
+[Lobby]a ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:b,a,
+[Lobby][a]: hi
+Raum erstellt: 3
+[a]Neuer Raum wurde erstellt:3
+Raum erstellt: 4
+[b]Neuer Raum wurde erstellt:4
+Abmeldung erfolgreich von a
+[Lobby]a hat den Chatraum verlassen.
+[Lobby]Mitglieder:b,
+Abmeldung erfolgreich von b
+[Lobby]b hat den Chatraum verlassen.
+[Lobby]Mitglieder:
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von a
+[Lobby]a ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:a,
+Anmeldung erfolgreich von b
+[Lobby]b ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:b,a,
+Raum erstellt: 1
+[a]Neuer Raum wurde erstellt:1
+Raum erstellt: 2
+[b]Neuer Raum wurde erstellt:2
+[Lobby]Mitglieder:b,
+[1]Mitglieder:a,
+a wechselt von Room@2bdd0a0e nach 1
+[1][INFO] a ist beigetreten.
+[Lobby]Mitglieder:
+[1]Mitglieder:b,a,
+b wechselt von Room@2bdd0a0e nach 1
+[1][INFO] b ist beigetreten.
+[1]Mitglieder:a,
+[Lobby]Mitglieder:b,
+b wechselt von Room@4af6f498 nach Lobby
+[1][INFO] b hat den Raum verlassen.
+[Lobby][INFO] b ist beigetreten.
+b hat den Raum 1 verlassen
+[1]Mitglieder:
+[Lobby]Mitglieder:b,a,
+a wechselt von Room@4af6f498 nach Lobby
+[1][INFO] a hat den Raum verlassen.
+[Lobby][INFO] a ist beigetreten.
+Raum gelöscht: 1
+[a][INFO] Raum 1 gelöscht
+[Lobby][b]: b ist abgemeldet
+Abmeldung erfolgreich von b
+[Lobby]b hat den Chatraum verlassen.
+[Lobby]Mitglieder:a,
+Anmeldung erfolgreich von b
+[Lobby]b ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:b,a,
+Raum erstellt: 1
+[a]Neuer Raum wurde erstellt:1
+Raum erstellt: 3
+[b]Neuer Raum wurde erstellt:3
+[Lobby]Mitglieder:b,
+[1]Mitglieder:a,
+a wechselt von Room@2bdd0a0e nach 1
+[1][INFO] a ist beigetreten.
+[Lobby]Mitglieder:
+[1]Mitglieder:b,a,
+b wechselt von Room@2bdd0a0e nach 1
+[1][INFO] b ist beigetreten.
+[1]Mitglieder:a,
+[3]Mitglieder:b,
+b wechselt von Room@5ac702a nach 3
+[1][INFO] b hat den Raum verlassen.
+[3][INFO] b ist beigetreten.
+[3]Mitglieder:
+[1]Mitglieder:b,a,
+b wechselt von Room@7b6d8a61 nach 1
+[3][INFO] b hat den Raum verlassen.
+[1][INFO] b ist beigetreten.
+[1][b]: hi
+[1]Mitglieder:a,
+[Lobby]Mitglieder:b,
+b wechselt von Room@5ac702a nach Lobby
+[1][INFO] b hat den Raum verlassen.
+[Lobby][INFO] b ist beigetreten.
+b hat den Raum 1 verlassen
+[1]Mitglieder:
+[Lobby]Mitglieder:b,a,
+a wechselt von Room@5ac702a nach Lobby
+[1][INFO] a hat den Raum verlassen.
+[Lobby][INFO] a ist beigetreten.
+Raum gelöscht: 1
+[a][INFO] Raum 1 gelöscht
+[Lobby][a]: a ist abgemeldet
+Abmeldung erfolgreich von a
+[Lobby]a hat den Chatraum verlassen.
+[Lobby]Mitglieder:b,
+Anmeldung erfolgreich von a
+[Lobby]a ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:b,a,
+Raum erstellt: 99
+[a]Neuer Raum wurde erstellt:99
+[Lobby][b]: b ist abgemeldet
+Abmeldung erfolgreich von b
+[Lobby]b hat den Chatraum verlassen.
+[Lobby]Mitglieder:a,
+[Lobby][a]: a ist abgemeldet
+Abmeldung erfolgreich von a
+[Lobby]a hat den Chatraum verlassen.
+[Lobby]Mitglieder:
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von a
+[Lobby]a ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:a,
+Anmeldung erfolgreich von b
+[Lobby]b ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:a,b,
+Raum erstellt: 1
+[a]Neuer Raum wurde erstellt:1
+Raum erstellt: 2
+[a]Neuer Raum wurde erstellt:2
+Raum erstellt: 3
+[b]Neuer Raum wurde erstellt:3
+[Lobby]Mitglieder:b,
+[1]Mitglieder:a,
+a wechselt von Room@6049bdd7 nach 1
+[1][INFO] a ist beigetreten.
+[Lobby]Mitglieder:
+[2]Mitglieder:b,
+b wechselt von Room@6049bdd7 nach 2
+[2][INFO] b ist beigetreten.
+[2]Mitglieder:
+[1]Mitglieder:a,b,
+b wechselt von Room@958bdc0 nach 1
+[2][INFO] b hat den Raum verlassen.
+[1][INFO] b ist beigetreten.
+[1][b]: hi
+[1]Mitglieder:a,
+[Lobby]Mitglieder:b,
+b wechselt von Room@4d162d79 nach Lobby
+[1][INFO] b hat den Raum verlassen.
+[Lobby][INFO] b ist beigetreten.
+b hat den Raum 1 verlassen
+[1]Mitglieder:
+[Lobby]Mitglieder:b,a,
+a wechselt von Room@4d162d79 nach Lobby
+[1][INFO] a hat den Raum verlassen.
+[Lobby][INFO] a ist beigetreten.
+Raum gelöscht: 1
+[a][INFO] Raum 1 gelöscht
+[Lobby][b]: b ist abgemeldet
+Abmeldung erfolgreich von b
+[Lobby]b hat den Chatraum verlassen.
+[Lobby]Mitglieder:a,
+Anmeldung erfolgreich von b
+[Lobby]b ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:a,b,
+Raum erstellt: 4
+[a]Neuer Raum wurde erstellt:4
+Raum erstellt: 5
+[b]Neuer Raum wurde erstellt:5
+[Lobby][a]: a ist abgemeldet
+Abmeldung erfolgreich von a
+[Lobby]a hat den Chatraum verlassen.
+[Lobby]Mitglieder:b,
+Anmeldung erfolgreich von a
+[Lobby]a ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:a,b,
+Raum erstellt: 88
+[a]Neuer Raum wurde erstellt:88
+[Lobby]Mitglieder:b,
+[88]Mitglieder:a,
+a wechselt von Room@6049bdd7 nach 88
+[88][INFO] a ist beigetreten.
+[Lobby]Mitglieder:
+[88]Mitglieder:a,b,
+b wechselt von Room@6049bdd7 nach 88
+[88][INFO] b ist beigetreten.
+[88][b]: b ist abgemeldet
+Abmeldung erfolgreich von b
+[88]b hat den Chatraum verlassen.
+[88]Mitglieder:a,
+[88][a]: a ist abgemeldet
+Abmeldung erfolgreich von a
+[88]a hat den Chatraum verlassen.
+[88]Mitglieder:
+Server erfolgreich heruntergefahren.

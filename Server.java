@@ -121,17 +121,13 @@ public class Server {
     }
     
     public void addClientThread(ClientThread client) {
-        this.clients.putIfAbsent(client.getID(), client);
-        String clientNames = "";
-        for(String clientName: this.clients.keySet()){
-            clientNames+=clientName;
-        }
-        System.out.println("Clients: " + clientNames);
+        this.clients.put(client.getID(), client);
         this.log("Anmeldung erfolgreich von " + client.getID());
         this.userAdded.accept(client.getID());
 
         client.setCurrentRoom("Lobby");
         this.rooms.get("Lobby").addMember(client);
+        this.sendMessageToRoom("Lobby", client, client.getID() + " ist dem Chatraum beigetreten.");
     }
 
     public void removeClientThread(ClientThread client) {
@@ -246,7 +242,7 @@ public class Server {
         else{
             Room oldRoom = this.rooms.get(client.getCurrentRoom());
             oldRoom.removeMember(client);
-            System.out.println("Alter Raum: " + client.getCurrentRoom());
+            //System.out.println("Alter Raum: " + client.getCurrentRoom());
             rooms.get(newRoom).addMember(client);
             client.setCurrentRoom(newRoom);
             this.getCurrentRoomMembers(client, newRoom);
@@ -256,7 +252,7 @@ public class Server {
             for(ClientThread roomMember: rooms.get(newRoom).getMembers()){
                 roomMembers += roomMember.getID() + ",";
             }
-            System.out.println("Neuer Raum: " +newRoom);
+            //System.out.println("Neuer Raum: " +newRoom);
             this.sendMessageToRoom(newRoom, client, "Mitglieder:" + roomMembers);
 
             this.log(client.getID() + " wechselt von " + oldRoom + " nach " + newRoom);
@@ -359,7 +355,7 @@ public class Server {
 
     public void sendMessageToAll(ClientThread self, String msg) {
         for(ClientThread client: this.clients.values()) {
-            if (client != self) {
+            if (!client.getID().equals(self.getID())) {
                 client.write(msg);
             }
         }

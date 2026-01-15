@@ -41,15 +41,16 @@ public class ClientThread extends Thread {
                         this.stopp();
                     }
                 }
-                else if(msg == null){                    
-                    this.server.removeClientThread(this);
-                    this.server.sendMessageToRoom(this.getCurrentRoom(), this, this.id + " hat den Chatraum verlassen.");
-                    break;
-                }
+                // else if(msg == null){                    
+                //     this.server.removeClientThread(this);
+                //     this.server.sendMessageToRoom(this.getCurrentRoom(), this, this.id + " hat den Chatraum verlassen.");
+                //     break;
+                // }
             } catch (Exception e) {
                 System.err.println("Der Client hat unerwartet die Verbindung abgebrochen:" + e.getMessage());
                 this.server.removeClientThread(this);
                 this.server.sendMessageToRoom(this.getCurrentRoom(), this, this.id + " hat den Chatraum verlassen.");
+                this.server.UpdateCurrentRoomMembers(this, this.getCurrentRoom());
                 break;
             }
         }
@@ -127,9 +128,7 @@ public class ClientThread extends Thread {
             if (ok) {
                 this.id = id;
                 this.write("Anmeldung erfolgreich.");
-                if(!(this.server.getClients().containsKey(id))){
-                    this.server.addClientThread(this);
-                }
+                this.server.addClientThread(this);
                 return true;
             } else {
                 this.write("Der Benutzername oder das Passwort sind falsch.");

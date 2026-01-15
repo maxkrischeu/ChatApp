@@ -198,8 +198,9 @@ public class Chatfenster {
         this.frame.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e){
                 frame.dispose();
-                System.exit(0);
                 client.write(client.getStartFrame().getUsername() + " ist abgemeldet");
+                System.exit(0);
+                //client.write(client.getStartFrame().getUsername() + " ist abgemeldet");
             }
         });
     }

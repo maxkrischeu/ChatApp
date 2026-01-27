@@ -2,6 +2,8 @@ import java.io.*;
 import java.net.Socket;
 import java.awt.*;
 import java.awt.event.*;
+import java.nio.file.*;
+
 
 public class ClientThread extends Thread {
     private Server server;
@@ -10,12 +12,14 @@ public class ClientThread extends Thread {
     private BufferedReader reader;
     private String id;
     private String currentRoom = "Lobby";
+    private DataInputStream dataIn;
 
     public ClientThread(Server server, Socket conn) throws IOException {
         this.server = server;
         this.conn = conn;
         this.writer = new PrintWriter(new OutputStreamWriter(this.conn.getOutputStream()), true);
         this.reader = new BufferedReader(new InputStreamReader(this.conn.getInputStream()));
+        this.dataIn = new DataInputStream(new BufferedInputStream(this.conn.getInputStream()));
     }
 
     @Override
@@ -202,7 +206,10 @@ public class ClientThread extends Thread {
             String msg = reader.readLine(); 
             switch(msg) {
                 case "Datei hochladen":
-
+                    String filename = reader.readLine(); // Client sendet Dateiname als Textzeile und danach die Dateigröße
+                    boolean ok = receiveFileToCurrentRoom(filename);
+                    if (ok) this.write("[INFO] Upload erfolgreich: " + filename);
+                    else this.write("[INFO] Upload fehlgeschlagen: " + filename);
                     break;
                 case "Dateien anzeigen":
                     
@@ -215,6 +222,39 @@ public class ClientThread extends Thread {
             }
         } catch (IOException e) {
             this.write("Es konnte keine Dateienaktionen durchgeführt werden");
+        }
+    }
+
+    public boolean receiveFileToCurrentRoom(String filename) {
+        try {
+            String room = this.getCurrentRoom();
+            Path dir = this.server.roomDir(room);
+
+            Path target = dir.resolve(filename);
+
+            // Client sendet zuerst die Dateigröße
+            long size = dataIn.readLong();
+            if (size < 0) return false;
+
+            try (OutputStream out = new BufferedOutputStream(
+                    Files.newOutputStream(target, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)
+            )) {
+                byte[] buffer = new byte[8192];
+                long remaining = size;
+
+                while (remaining > 0) {
+                    int read = dataIn.read(buffer, 0, (int)Math.min(buffer.length, remaining));
+                    if (read == -1) throw new EOFException("Stream ended early");
+                    out.write(buffer, 0, read);
+                    remaining -= read;
+                }
+                out.flush();
+            }
+
+            return true;
+        } catch (IOException e) {
+            System.err.println("receiveFileToCurrentRoom failed: " + e.getMessage());
+            return false;
         }
     }
 }

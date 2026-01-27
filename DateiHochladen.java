@@ -142,7 +142,7 @@ public class DateiHochladen{
             }
             else{
                 for(File file : this.selectedFiles){
-                    upload(file);
+                    //upload(file);
                     this.frame.setVisible(false);
                 }
             }
@@ -150,12 +150,12 @@ public class DateiHochladen{
     }
 
     //TODO:
-    public void upload(File file){
-        try(FileOutputStream output = new FileOutputStream(file.getName)){
-            int b;
-            while(b )
-        }
-    } 
+    // public void upload(File file){
+    //     try(FileOutputStream output = new FileOutputStream(file.getName)){
+    //         int b;
+    //         while(b )
+    //     }
+    // } 
 }
 
 

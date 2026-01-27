@@ -380,7 +380,7 @@ public class Server {
         return this.clients;
     }
     
-    private Path roomDir(String roomName) {
+    public Path roomDir(String roomName) {
         return roomRoot.resolve(roomName);
     }
 

@@ -1,6 +1,5 @@
 import java.io.IOException;
 import java.net.ServerSocket;
-import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.function.Consumer;
 import java.util.HashMap;
@@ -24,6 +23,8 @@ public class Server {
     private Map<String, ClientThread> clients;
     private Path logFile = Paths.get("server-log.txt");
     private Set<String> bannedUsers = new HashSet<>();
+    private final Path roomRoot = Paths.get("RoomData");
+
 
     public Server(int port) {
         this.port = port;
@@ -34,9 +35,11 @@ public class Server {
     public void start() {
         this.running = true;
         this.clients  = new HashMap<>();
+        this.ensureRoomRootExists();
 
         this.rooms.put("Lobby", new Room("Lobby"));
         this.roomAdded.accept("Lobby");
+        this.createRoomDirectory("Lobby");
 
 
         try {
@@ -134,7 +137,7 @@ public class Server {
         // hier neu:
         this.rooms.get(client.getCurrentRoom()).removeMember(client);
         
-        this.clients.remove(client);
+        this.clients.remove(client.getID());
         this.log("Abmeldung erfolgreich von " + client.getID());
         this.userRemoved.accept(client.getID());
     }
@@ -229,7 +232,13 @@ public class Server {
         if (name.isEmpty()) return false;
         if (this.rooms.containsKey(name)) return false;
 
+        if (!createRoomDirectory(name)) {
+            return false;
+        }
+
         this.rooms.put(name, new Room(name));
+
+
         this.log("Raum erstellt: " + name);
         this.roomAdded.accept(name);
         return true;
@@ -280,6 +289,11 @@ public class Server {
        // Room lobby = this.rooms.get("Lobby");
         this.joinRoom(client, "Lobby");
         client.write("[INFO] Du bist in der Lobby");
+
+        if (!deleteRoomDirectoryRecursive(roomName)) {
+            client.write("[INFO] Raum konnte nicht gelöscht werden (Dateisystem-Fehler).");
+            return false;
+        }
 
         this.rooms.remove(roomName);
         this.log("Raum gelöscht: " + roomName);
@@ -365,4 +379,50 @@ public class Server {
     public Map<String, ClientThread> getClients(){
         return this.clients;
     }
-}
+    
+    private Path roomDir(String roomName) {
+        return roomRoot.resolve(roomName);
+    }
+
+    private void ensureRoomRootExists() {
+        try {
+            Files.createDirectories(roomRoot);
+        } catch (IOException e) {
+            log("Konnte Root-Verzeichnis nicht erstellen (" + roomRoot + "): " + e.getMessage());
+        }
+    }
+
+    private boolean createRoomDirectory(String roomName) {
+        try {
+            Files.createDirectories(this.roomDir(roomName));
+            return true;
+        } catch (IOException e) {
+            log("Konnte Raum-Verzeichnis nicht erstellen (" + roomName + ")" + e.getMessage());
+            return false;
+        }
+    }
+
+    private boolean deleteRoomDirectoryRecursive(String roomName) {
+        Path dir = roomDir(roomName);
+
+        if (!Files.exists(dir)) return true;
+
+        try (var walk = Files.walk(dir)) {
+            walk.sorted((a, b) -> b.compareTo(a))
+                .forEach(p -> {
+                    try {
+                        Files.deleteIfExists(p);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                });
+            return true;
+        } catch (RuntimeException e) {
+            log("Fehler beim rekursiven Löschen (" + roomName + "): " + e.getMessage());
+            return false;
+        } catch (IOException e) {
+            log("Fehler beim rekursiven Löschen (" + roomName + "): " + e.getMessage());
+            return false;
+        }
+    }
+}  

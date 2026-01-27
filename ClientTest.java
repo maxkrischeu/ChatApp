@@ -18,6 +18,7 @@ public class ClientTest {
     private Rueckmeldung meldung;
     private Chatfenster chat;
     private RaumVerlassen raumVerlassenBestätigen;
+    private DateiHochladen upload;
     private Set<String> knownUsers;
     private Set<String> knownRooms;
 

@@ -181,6 +181,11 @@ public class Chatfenster {
             this.client.write(name);
         });
 
+        this.dateiHochladen.addActionListener(e -> {
+            this.client.write("Files");
+            this.client.write("Datei hochladen");
+        });
+
         buttons.add(this.raumErstellen);
 
         buttons.add(this.raumBeitreten);

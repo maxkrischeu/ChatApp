@@ -4789,3 +4789,131 @@ Abmeldung erfolgreich von a
 [88]a hat den Chatraum verlassen.
 [88]Mitglieder:
 Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von a
+[Lobby]a ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:a,
+Anmeldung erfolgreich von b
+[Lobby]b ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:a,b,
+[Lobby][a]: hi
+Raum erstellt: 1
+[b]Neuer Raum wurde erstellt:1
+Raum erstellt: 2
+[a]Neuer Raum wurde erstellt:2
+[Lobby]Mitglieder:b,
+[1]Mitglieder:a,
+a wechselt von Room@3e3fd212 nach 1
+[1][INFO] a ist beigetreten.
+[Lobby]Mitglieder:
+[1]Mitglieder:a,b,
+b wechselt von Room@3e3fd212 nach 1
+[1][INFO] b ist beigetreten.
+[1]Mitglieder:a,
+[Lobby]Mitglieder:b,
+b wechselt von Room@a1c1940 nach Lobby
+[1][INFO] b hat den Raum verlassen.
+[Lobby][INFO] b ist beigetreten.
+b hat den Raum 1 verlassen
+[1]Mitglieder:
+[Lobby]Mitglieder:a,b,
+a wechselt von Room@a1c1940 nach Lobby
+[1][INFO] a hat den Raum verlassen.
+[Lobby][INFO] a ist beigetreten.
+Raum gelöscht: 1
+[a][INFO] Raum 1 gelöscht
+[Lobby][a]: a ist abgemeldet
+Abmeldung erfolgreich von a
+[Lobby]a hat den Chatraum verlassen.
+[Lobby]Mitglieder:b,
+Anmeldung erfolgreich von a
+[Lobby]a ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:a,b,
+Raum erstellt: 3
+[b]Neuer Raum wurde erstellt:3
+[Lobby][b]: b ist abgemeldet
+Abmeldung erfolgreich von b
+[Lobby]b hat den Chatraum verlassen.
+[Lobby]Mitglieder:a,
+[Lobby][a]: a ist abgemeldet
+Abmeldung erfolgreich von a
+[Lobby]a hat den Chatraum verlassen.
+[Lobby]Mitglieder:
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von jenny
+[Lobby]jenny ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:jenny,
+Raum erstellt: 1
+[jenny]Neuer Raum wurde erstellt:1
+[Lobby]Mitglieder:
+[1]Mitglieder:jenny,
+jenny wechselt von Room@811b98f nach 1
+[1][INFO] jenny ist beigetreten.
+Anmeldung erfolgreich von max
+[Lobby]max ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:max,
+[1]Mitglieder:
+[Lobby]Mitglieder:max,jenny,
+jenny wechselt von Room@56dfbed4 nach Lobby
+[1][INFO] jenny hat den Raum verlassen.
+[Lobby][INFO] jenny ist beigetreten.
+Raum gelöscht: 1
+[jenny][INFO] Raum 1 gelöscht
+[Lobby][jenny]: hi
+Raum erstellt: 2
+[max]Neuer Raum wurde erstellt:2
+[Lobby]Mitglieder:jenny,
+[2]Mitglieder:max,
+max wechselt von Room@811b98f nach 2
+[2][INFO] max ist beigetreten.
+[Lobby]Mitglieder:
+[2]Mitglieder:max,jenny,
+jenny wechselt von Room@811b98f nach 2
+[2][INFO] jenny ist beigetreten.
+[2][max]: moin
+[2]Mitglieder:jenny,
+[Lobby]Mitglieder:max,
+max wechselt von Room@5dad029 nach Lobby
+[2][INFO] max hat den Raum verlassen.
+[Lobby][INFO] max ist beigetreten.
+max hat den Raum 2 verlassen
+[2]Mitglieder:
+[Lobby]Mitglieder:max,jenny,
+jenny wechselt von Room@5dad029 nach Lobby
+[2][INFO] jenny hat den Raum verlassen.
+[Lobby][INFO] jenny ist beigetreten.
+Raum gelöscht: 2
+[jenny][INFO] Raum 2 gelöscht
+Nutzer gebannt: jenny
+Abmeldung erfolgreich von jenny
+Abmeldung erfolgreich von jenny
+Nutzer entfernt: jenny
+[Lobby]jenny hat den Chatraum verlassen.
+[Lobby]Mitglieder:max,
+[Lobby][max]: max ist abgemeldet
+Abmeldung erfolgreich von max
+[Lobby]max hat den Chatraum verlassen.
+[Lobby]Mitglieder:
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von j
+[Lobby]j ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:j,
+[Lobby][j]: hiu
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von kd
+[Lobby]kd ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:kd,
+Raum erstellt: 1
+[kd]Neuer Raum wurde erstellt:1
+Abmeldung erfolgreich von kd
+[Lobby]kd hat den Chatraum verlassen.
+[Lobby]Mitglieder:
+Server erfolgreich heruntergefahren.
+Server erfolgreich gestartet.
+Anmeldung erfolgreich von hi
+[Lobby]hi ist dem Chatraum beigetreten.
+[Lobby]Mitglieder:hi,
+Raum erstellt: 1
+[hi]Neuer Raum wurde erstellt:1

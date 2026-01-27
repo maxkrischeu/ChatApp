@@ -35,17 +35,15 @@ public class ClientThread extends Thread {
                 if(msg.equals("Button gedrückt")){
                     RoomClient();
                 }
+                else if(msg.equals("Files")){
+                    FilesClient();
+                }
                 else if(msg != null && msg.length()>0) {
                     this.server.sendMessageToRoom(this.getCurrentRoom(), this, "[" + this.id + "]"  + ": " + msg);
                     if(msg.endsWith("ist abgemeldet")){
                         this.stopp();
                     }
                 }
-                // else if(msg == null){                    
-                //     this.server.removeClientThread(this);
-                //     this.server.sendMessageToRoom(this.getCurrentRoom(), this, this.id + " hat den Chatraum verlassen.");
-                //     break;
-                // }
             } catch (Exception e) {
                 System.err.println("Der Client hat unerwartet die Verbindung abgebrochen:" + e.getMessage());
                 this.server.removeClientThread(this);
@@ -198,5 +196,25 @@ public class ClientThread extends Thread {
             this.write("Es konnte keine Raumaktion durchgeführt werden");
         }
     }
-    
+
+    public void FilesClient(){
+        try{
+            String msg = reader.readLine(); 
+            switch(msg) {
+                case "Datei hochladen":
+
+                    break;
+                case "Dateien anzeigen":
+                    
+                    break;
+                case "Dateien herunterladen":
+                    
+                    break;
+                default:
+                    this.write("Etwas ist schief gelaufen");
+            }
+        } catch (IOException e) {
+            this.write("Es konnte keine Dateienaktionen durchgeführt werden");
+        }
+    }
 }

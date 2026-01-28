@@ -93,6 +93,10 @@ public class Server {
             // hier eventuell noch Name anpassen?
             client.stopp();
         }
+
+        this.rooms.remove("Lobby");
+        this.log("Raum gelöscht: " + "Lobby");
+        roomRemoved.accept("Lobby");
     }
 
     public String getIdOfAvailableClients(ClientThread self) {

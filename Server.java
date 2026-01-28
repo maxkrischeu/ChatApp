@@ -87,6 +87,8 @@ public class Server {
             this.log("Beim stoppen des Servers ist etwas schiefgelaufen: " + e.getMessage());
         }
 
+        boolean dirRemove = deleteAllRoomDirectories();
+
         for (ClientThread client: this.clients.values()) {
             // hier eventuell noch Name anpassen?
             client.stopp();
@@ -422,6 +424,27 @@ public class Server {
             return false;
         } catch (IOException e) {
             log("Fehler beim rekursiven Löschen (" + roomName + "): " + e.getMessage());
+            return false;
+        }
+    }
+
+    public boolean deleteAllRoomDirectories() {
+    if (!Files.exists(roomRoot)) {
+        return true; // nichts zu löschen
+    }
+
+    try (var stream = Files.list(roomRoot)) {
+        stream
+            .filter(Files::isDirectory) // nur Räume, keine Dateien
+            .forEach(dir -> {
+                boolean ok = deleteRoomDirectoryRecursive(dir.getFileName().toString());
+                if (!ok) {
+                    throw new RuntimeException("Fehler beim Löschen von " + dir.getFileName());
+                }
+            });
+        return true;
+        } catch (RuntimeException | IOException e) {
+            log("Fehler beim Löschen aller Räume: " + e.getMessage());
             return false;
         }
     }

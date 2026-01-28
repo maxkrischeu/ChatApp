@@ -208,18 +208,23 @@ public class ClientThread extends Thread {
     public void FilesClient(){
         try{
             String msg = dataInReader.readUTF(); 
+            String filename = null;
+            boolean ok = false;
             switch(msg) {
                 case "Datei hochladen":
-                    String filename = dataInReader.readUTF(); // Client sendet Dateiname als Textzeile und danach die Dateigröße
-                    boolean ok = receiveFileToCurrentRoom(filename);
+                    filename = dataInReader.readUTF(); // Client sendet Dateiname als Textzeile und danach die Dateigröße
+                    ok = receiveFileToCurrentRoom(filename);
                     if (ok) this.write("[INFO] Upload erfolgreich: " + filename);
                     else this.write("[INFO] Upload fehlgeschlagen: " + filename);
                     break;
                 case "Dateien anzeigen":
-                    
+                    sendFileListForCurrentRoom();
                     break;
-                case "Dateien herunterladen":
-                    
+                case "Datei herunterladen":
+                    filename = dataInReader.readUTF(); // Client sendet Dateiname als Textzeile und danach die Dateigröße
+                    ok = sendFileFromCurrentRoom(filename);
+                    if (ok) this.write("[INFO] Download erfolgreich: " + filename);
+                    else this.write("[INFO] Download fehlgeschlagen: " + filename);
                     break;
                 default:
                     this.write("Etwas ist schief gelaufen");
@@ -259,6 +264,74 @@ public class ClientThread extends Thread {
         } catch (IOException e) {
             System.err.println("receiveFileToCurrentRoom failed: " + e.getMessage());
             return false;
+        }
+    }
+
+    public boolean sendFileFromCurrentRoom(String filename) {
+    try {
+        String room = this.getCurrentRoom();
+        Path dir = this.server.roomDir(room);
+
+        Path source = dir.resolve(filename);
+
+        if (!Files.exists(source) || !Files.isRegularFile(source)) {
+            // optional: client informieren
+            this.write("[INFO] Datei nicht gefunden: " + filename);
+            return false;
+        }
+
+        long size = Files.size(source);
+        if (size < 0) return false;
+
+        // 1) zuerst Datei-Info senden
+        dataOutWriter.writeUTF("DOWNLOAD_BEGIN:" + filename);
+        dataOutWriter.writeLong(size);
+        dataOutWriter.flush();
+
+        // 2) dann Bytes senden
+        try (InputStream in = new BufferedInputStream(Files.newInputStream(source))) {
+            byte[] buffer = new byte[8192];
+            int read;
+
+            while ((read = in.read(buffer)) != -1) {
+                dataOutWriter.write(buffer, 0, read);
+            }
+            dataOutWriter.flush();
+        }   
+            return true;
+        } catch (IOException e) {
+            System.err.println("sendFileFromCurrentRoom failed: " + e.getMessage());
+            return false;
+        }
+    }
+
+    public void sendFileListForCurrentRoom() {
+    try {
+        Path dir = server.roomDir(getCurrentRoom());
+
+        if (!Files.exists(dir)) {
+            write("FILES_LIST_BEGIN");
+            dataOutWriter.writeInt(0);
+            write("FILES_LIST_END");
+            return;
+        }
+
+        File[] files = dir.toFile().listFiles(File::isFile);
+
+        write("FILES_LIST_BEGIN");
+        dataOutWriter.writeInt(files == null ? 0 : files.length);
+
+        if (files != null) {
+            for (File f : files) {
+                dataOutWriter.writeUTF(f.getName());
+            }
+        }
+
+        write("FILES_LIST_END");
+        dataOutWriter.flush();
+
+        } catch (IOException e) {
+            write("[INFO] Fehler beim Laden der Dateiliste");
         }
     }
 }

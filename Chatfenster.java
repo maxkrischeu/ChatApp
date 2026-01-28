@@ -1,5 +1,6 @@
 import java.awt.*;
 import java.awt.event.*;
+import java.io.*;
 
 public class Chatfenster {
     private Frame frame;
@@ -182,9 +183,25 @@ public class Chatfenster {
         });
 
         this.dateiHochladen.addActionListener(e -> {
-            // this.client.write("Files");
-            // this.client.write("Datei hochladen");
             DateiHochladen upload = new DateiHochladen(this.client, this);
+        });
+
+        this.dateiHerunterladen.addActionListener(e -> {
+            String selected = this.chatanzeige.getSelectedItem();
+            if (selected == null) {
+                this.chatanzeige.add("[INFO] Bitte erst eine Datei in der Liste auswählen.");
+                return;
+            }
+            selected = selected.trim();
+            this.client.write("Files");
+            this.client.write("Datei herunterladen");
+            this.client.write(selected);
+        });
+
+        this.dateienAnzeigen.addActionListener(e -> {
+            this.client.write("Files");
+            this.client.write("Dateien anzeigen");
+            this.client.write("FILES_LIST_BEGIN");
         });
 
         buttons.add(this.raumErstellen);
@@ -259,4 +276,21 @@ public class Chatfenster {
         return this.roomLabel;
     }
 
+   public void showAvailableFiles(java.util.List<String> files) {
+
+        this.chatanzeige.add("Verfügbare Dateien in diesem Raum:");
+
+        if (files == null || files.isEmpty()) {
+            this.chatanzeige.add("[INFO] Keine Dateien vorhanden.");
+            return;
+        }
+
+        for (String f : files) {
+            if (f == null) continue;
+            String name = f.trim();
+            if (name.isEmpty()) continue;
+
+            this.chatanzeige.add(name);
+        }
+    }
 }

@@ -128,6 +128,10 @@ public class DateiHochladen{
         }
     }
 
+    public Set<File> getSelectedFiles(){
+        return this.selectedFiles;
+    }
+
     public void setStatusLabel(){
         int count = this.selectedFiles.size();
         if (count == 0) {

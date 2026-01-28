@@ -21,6 +21,8 @@ public class ClientTest {
     private DateiHochladen upload;
     private Set<String> knownUsers;
     private Set<String> knownRooms;
+    private volatile File pendingDownloadTarget = null;
+    private volatile String pendingDownloadFilename = null;
 
     public ClientTest(){
         try{
@@ -46,6 +48,16 @@ public class ClientTest {
         while(true) {
             String msg = read();
             //System.out.println(msg);
+            if(msg == null || msg.isEmpty()) continue;
+            if(msg.startsWith("DOWNLOAD_BEGIN:")){
+                String filename = msg.substring("DOWNLOAD_BEGIN:".length()).trim();
+                receiveDownloadPayload(filename);
+                continue;
+            }
+            if (msg.equals("FILES_LIST_BEGIN")) {
+                receiveFileList();
+                continue;
+            }
             if(msg.equals("Registrierung erfolgreich.")){
                 this.meldung.meldungErfolgRegistrieren();
             }
@@ -244,5 +256,74 @@ public class ClientTest {
 
     public Chatfenster getChat(){
         return this.chat;
+    }
+
+    private void receiveDownloadPayload(String filenameFromServer) {
+    try {
+        // Ziel bestimmen
+        File target = this.pendingDownloadTarget;
+
+        // Falls GUI nichts gesetzt hat: fallback in Downloads/ChatApp
+        if (target == null) {
+            File dir = new File(System.getProperty("user.home"), "Downloads/");
+            dir.mkdirs();
+            target = new File(dir, filenameFromServer);
+        }
+
+        long size = this.dataIn.readLong();
+        if (size < 0) {
+            this.chat.getChatanzeige().add("[INFO] Download fehlgeschlagen: " + filenameFromServer);
+            // pending zurücksetzen
+            this.pendingDownloadTarget = null;
+            this.pendingDownloadFilename = null;
+            return;
+        }
+
+        try (OutputStream out = new BufferedOutputStream(new FileOutputStream(target))) {
+            byte[] buffer = new byte[8192];
+            long remaining = size;
+
+            while (remaining > 0) {
+                int read = this.dataIn.read(buffer, 0, (int) Math.min(buffer.length, remaining));
+                if (read == -1) throw new EOFException("Stream ended early");
+                out.write(buffer, 0, read);
+                remaining -= read;
+            }
+            out.flush();
+        }
+
+        this.chat.getChatanzeige().add("[INFO] Download gespeichert: " + target.getAbsolutePath());
+
+        } catch (IOException e) {
+            this.chat.getChatanzeige().add("[INFO] Download-Fehler: " + e.getMessage());
+        } finally {
+            // pending zurücksetzen (wichtig!)
+            this.pendingDownloadTarget = null;
+            this.pendingDownloadFilename = null;
+        }
+    }
+
+    private void receiveFileList() {
+    try {
+        int count = dataIn.readInt();
+
+        java.util.List<String> files = new java.util.ArrayList<>();
+
+        for (int i = 0; i < count; i++) {
+            files.add(dataIn.readUTF());
+        }
+
+        String end = dataIn.readUTF(); // FILES_LIST_END
+        if (!"FILES_LIST_END".equals(end)) {
+            System.err.println("Protokollfehler bei FILES_LIST");
+            return;
+        }
+
+        // an GUI weiterreichen
+        this.chat.showAvailableFiles(files);
+
+        } catch (IOException e) {
+            System.err.println("Fehler beim Empfangen der Dateiliste: " + e.getMessage());
+        }
     }
 }

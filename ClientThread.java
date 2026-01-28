@@ -8,18 +8,16 @@ import java.nio.file.*;
 public class ClientThread extends Thread {
     private Server server;
     private Socket conn;
-    private PrintWriter writer;
-    private BufferedReader reader;
     private String id;
     private String currentRoom = "Lobby";
-    private DataInputStream dataIn;
+    private DataInputStream dataInReader;
+    private DataOutputStream dataOutWriter;
 
     public ClientThread(Server server, Socket conn) throws IOException {
         this.server = server;
         this.conn = conn;
-        this.writer = new PrintWriter(new OutputStreamWriter(this.conn.getOutputStream()), true);
-        this.reader = new BufferedReader(new InputStreamReader(this.conn.getInputStream()));
-        this.dataIn = new DataInputStream(new BufferedInputStream(this.conn.getInputStream()));
+        this.dataInReader = new DataInputStream(new BufferedInputStream(this.conn.getInputStream()));
+        this.dataOutWriter = new DataOutputStream(new BufferedOutputStream(this.conn.getOutputStream()));
     }
 
     @Override
@@ -34,8 +32,8 @@ public class ClientThread extends Thread {
 
         while(true) {
             try {
-                String msg = reader.readLine();
-                System.out.println(msg);
+                String msg = dataInReader.readUTF();
+                //System.out.println(msg);
                 if(msg.equals("Button gedrückt")){
                     RoomClient();
                 }
@@ -61,7 +59,7 @@ public class ClientThread extends Thread {
     public boolean startseite() {
         try {
             //this.write("Möchtest du dich anmelden oder registrieren?: ");
-            String antwort = reader.readLine();
+            String antwort = dataInReader.readUTF();
             if (antwort == null) return false;
             switch(antwort) {
                 case "registrieren":
@@ -85,14 +83,14 @@ public class ClientThread extends Thread {
     public boolean registrieren() {
         try {
             //this.write("Bitte gib deinen Benutzernamen ein: ");
-            String id = reader.readLine();
+            String id = dataInReader.readUTF();
             if (id == null) return false;
 
             boolean nameExists = this.server.checkName(id);
             if (!nameExists) {
                 this.id = id;
                 //this.write("Passwort: ");
-                String pw = reader.readLine();
+                String pw = dataInReader.readUTF();
                 if (pw.length() == 0) {
                     this.write("Kein Passwort eingegeben.");
                     return false;}
@@ -113,7 +111,7 @@ public class ClientThread extends Thread {
     public boolean anmelden() {
         try {
             //this.write("Bitte gib deinen Benutzernamen ein: ");
-            String id = reader.readLine();
+            String id = dataInReader.readUTF();
             if (id == null) return false;
 
             if (server.isBanned(id)) {
@@ -123,7 +121,7 @@ public class ClientThread extends Thread {
             }
 
             //this.write("Passwort: ");
-            String pw = reader.readLine();
+            String pw = dataInReader.readUTF();
             if (pw == null) return false;
 
             boolean ok = this.server.checkLogIn(id, pw);
@@ -142,14 +140,20 @@ public class ClientThread extends Thread {
     }
 
     public void write(String msg) {
-        this.writer.println(msg);
+        try {
+            this.dataOutWriter.writeUTF(msg);
+            this.dataOutWriter.flush();
+        } catch (IOException e) {
+            System.err.println("Write fehlgeschlagen: " + e.getMessage());
+            stopp(); 
+        }
     }
 
     public void stopp() {
         try {
             this.conn.close();
-            this.writer.close();
-            this.reader.close();
+            this.dataInReader.close();
+            this.dataOutWriter.close();
         }
         catch(IOException e){System.out.println("Socket konnte nicht geschlossen werden.");}
     }
@@ -168,10 +172,10 @@ public class ClientThread extends Thread {
 
     public void RoomClient(){
         try{
-            String msg = reader.readLine(); 
+            String msg = dataInReader.readUTF(); 
             switch(msg) {
                 case "Raum Erstellen":
-                    String newName = reader.readLine();
+                    String newName = dataInReader.readUTF();
                     boolean ok = this.server.createRoom(newName);
                     if(ok) { 
                         this.write("Raum Erstellen erfolgreich");
@@ -179,15 +183,15 @@ public class ClientThread extends Thread {
                         break;
                     }
                 case "Raum Beitreten":
-                    String joinName = reader.readLine();
+                    String joinName = dataInReader.readUTF();
                     this.server.joinRoom(this, joinName);
                     break;
                 case "Raum Verlassen":
-                    String quitName = reader.readLine();
+                    String quitName = dataInReader.readUTF();
                     this.server.quitRoom(this ,quitName);
                     break;
                 case "Lösche den Raum":
-                    String oldRoom = reader.readLine();
+                    String oldRoom = dataInReader.readUTF();
                     boolean delete = this.server.deleteRoom(this, oldRoom);
                     if(delete){
                         this.server.sendMessageToAll(this, "[INFO] Raum " + oldRoom + " gelöscht");
@@ -203,10 +207,10 @@ public class ClientThread extends Thread {
 
     public void FilesClient(){
         try{
-            String msg = reader.readLine(); 
+            String msg = dataInReader.readUTF(); 
             switch(msg) {
                 case "Datei hochladen":
-                    String filename = reader.readLine(); // Client sendet Dateiname als Textzeile und danach die Dateigröße
+                    String filename = dataInReader.readUTF(); // Client sendet Dateiname als Textzeile und danach die Dateigröße
                     boolean ok = receiveFileToCurrentRoom(filename);
                     if (ok) this.write("[INFO] Upload erfolgreich: " + filename);
                     else this.write("[INFO] Upload fehlgeschlagen: " + filename);
@@ -233,7 +237,7 @@ public class ClientThread extends Thread {
             Path target = dir.resolve(filename);
 
             // Client sendet zuerst die Dateigröße
-            long size = dataIn.readLong();
+            long size = dataInReader.readLong();
             if (size < 0) return false;
 
             try (OutputStream out = new BufferedOutputStream(
@@ -243,7 +247,7 @@ public class ClientThread extends Thread {
                 long remaining = size;
 
                 while (remaining > 0) {
-                    int read = dataIn.read(buffer, 0, (int)Math.min(buffer.length, remaining));
+                    int read = dataInReader.read(buffer, 0, (int)Math.min(buffer.length, remaining));
                     if (read == -1) throw new EOFException("Stream ended early");
                     out.write(buffer, 0, read);
                     remaining -= read;

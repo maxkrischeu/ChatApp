@@ -11,8 +11,8 @@ import java.util.Set;
 public class ClientTest {
     private volatile boolean running;
     private Socket conn; 
-    private BufferedReader in;
-    private PrintWriter out;
+    private DataOutputStream dataOut;
+    private DataInputStream dataIn;
     private Scanner scanner;
     private StartFrame startframe;
     private Rueckmeldung meldung;
@@ -25,8 +25,8 @@ public class ClientTest {
     public ClientTest(){
         try{
             this.conn = new Socket("localhost", 5001);
-            this.in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-            this.out = new PrintWriter(conn.getOutputStream(), true);
+            this.dataOut = new DataOutputStream(new BufferedOutputStream(conn.getOutputStream()));
+            this.dataIn = new DataInputStream(new BufferedInputStream(conn.getInputStream()));
             this.scanner = new Scanner(System.in);
             this.running = false;
             this.startframe = new StartFrame(this);
@@ -45,7 +45,7 @@ public class ClientTest {
         this.startframe.frameStart();
         while(true) {
             String msg = read();
-            System.out.println(msg);
+            //System.out.println(msg);
             if(msg.equals("Registrierung erfolgreich.")){
                 this.meldung.meldungErfolgRegistrieren();
             }
@@ -162,7 +162,7 @@ public class ClientTest {
 
     public String read(){
         try{
-            String line = this.in.readLine();
+            String line = this.dataIn.readUTF();
             //while((line = this.in.readLine()) != null && this.startframe.lesen == true) {
                 return line;
             //}
@@ -175,32 +175,61 @@ public class ClientTest {
         }
     }
 
-    public void write(String msg) {
-            // while(this.running) {
-                this.out.println(msg);
-                // if(msg.equals("quit")){
-                //     this.stop();
-                // }
-            
+    public synchronized void write(String msg) {
+        try{
+            this.dataOut.writeUTF(msg);
+            this.dataOut.flush();
+        }
+        catch (IOException e) {
+            System.err.println("Write fehlgeschlagen: " + e.getMessage());
+        }
     }
 
-    public void stop(){
-        this.running = false;
-
-        try { if (this.out != null) this.out.flush(); } catch (Exception ignore) {}
-
-        // Halbseitig schließen -> Reader auf der Gegenseite bekommt EOF,
-        // und unser eigenes readLine() wacht i.d.R. auf
-        try { if (this.conn != null && !this.conn.isClosed()) this.conn.shutdownOutput(); } catch (Exception ignore) {}
-        try { if (this.conn != null && !this.conn.isClosed()) this.conn.shutdownInput();  } catch (Exception ignore) {}
-
-        // Streams/Socket schließen
-        try { if (this.in  != null) this.in.close(); }  catch (Exception ignore) {}
-        try { if (this.out != null) this.out.close(); } catch (Exception ignore) {}
-        try { if (this.conn!= null && !this.conn.isClosed()) this.conn.close(); } catch (Exception ignore) {}
-
-        System.out.println("Chat wurde beendet.");
+    public synchronized void writeLong(long value) {
+        try{
+            this.dataOut.writeLong(value);
+            this.dataOut.flush();
+        }
+        catch (IOException e) {
+            System.err.println("Write fehlgeschlagen: " + e.getMessage());
+        }
     }
+
+    public synchronized void writeBytes(byte[] buffer, int len) {
+        try{
+            this.dataOut.write(buffer, 0, len);
+        }
+        catch (IOException e) {
+            System.err.println("Write fehlgeschlagen: " + e.getMessage());
+        }
+    }
+
+    public void flush(){
+        try{
+            this.dataOut.flush();
+        }
+        catch (IOException e) {
+            System.err.println("Flush fehlgeschlagen: " + e.getMessage());
+        }
+    }
+
+    // public void stop(){
+    //     this.running = false;
+
+    //     try { if (this.out != null) this.out.flush(); } catch (Exception ignore) {}
+
+    //     // Halbseitig schließen -> Reader auf der Gegenseite bekommt EOF,
+    //     // und unser eigenes readLine() wacht i.d.R. auf
+    //     try { if (this.conn != null && !this.conn.isClosed()) this.conn.shutdownOutput(); } catch (Exception ignore) {}
+    //     try { if (this.conn != null && !this.conn.isClosed()) this.conn.shutdownInput();  } catch (Exception ignore) {}
+
+    //     // Streams/Socket schließen
+    //     try { if (this.in  != null) this.in.close(); }  catch (Exception ignore) {}
+    //     try { if (this.out != null) this.out.close(); } catch (Exception ignore) {}
+    //     try { if (this.conn!= null && !this.conn.isClosed()) this.conn.close(); } catch (Exception ignore) {}
+
+    //     System.out.println("Chat wurde beendet.");
+    // }
 
 
 

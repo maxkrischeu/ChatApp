@@ -68,6 +68,17 @@ public class RaumErstellenFrame{
 
     private void enterRoomName(){
         this.raumname = new TextField(20); 
+        raumname.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                char c = e.getKeyChar();
+
+                // Erlaubt: Buchstaben, Zahlen, Unterstrich
+                if (!Character.isLetterOrDigit(c) && c != '_') {
+                    e.consume(); // Zeichen wird NICHT ins TextField geschrieben
+                }
+            }
+        });
         this.frame.add(raumname, gbc);
     }
 

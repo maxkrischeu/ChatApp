@@ -8,6 +8,7 @@ import java.io.FileOutputStream;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.List;
+import java.io.*;
 
 public class DateiHochladen{
     private Chatfenster chat;
@@ -26,6 +27,7 @@ public class DateiHochladen{
 
         this.frame = new Frame("Datei hochladen");
         this.frame.setSize(600,400);
+        this.frame.setLayout(new GridBagLayout());
         this.gbc = new GridBagConstraints();
         this.gbc.fill = GridBagConstraints.BOTH;
 
@@ -45,12 +47,12 @@ public class DateiHochladen{
         this.dropArea.add(this.statusLabel, inner);
 
          // Drop-Area in die Mitte des Frames
-        gbc.gridx = 0;
-        gbc.gridy = 0;
-        gbc.gridwidth = 2;
-        gbc.weightx = 1.0;
-        gbc.weighty = 1.0;
-        gbc.insets = new Insets(20, 20, 10, 20);
+        this.gbc.gridx = 0;
+        this.gbc.gridy = 0;
+        this.gbc.gridwidth = 2;
+        this.gbc.weightx = 1.0;
+        this.gbc.weighty = 1.0;
+        this.gbc.insets = new Insets(20, 20, 10, 20);
         this.frame.add(this.dropArea, this.gbc);
 
         // ====== Unten: Buttons links/rechts ======
@@ -61,24 +63,25 @@ public class DateiHochladen{
         });
 
         this.hochladen = new Button("Hochladen");
+        setHochladenButton();
 
         // links unten: Abbrechen
-        gbc.gridx = 0;
-        gbc.gridy = 1;
-        gbc.gridwidth = 1;
-        gbc.weightx = 0.5;
-        gbc.weighty = 0.0;
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.anchor = GridBagConstraints.WEST;
-        gbc.insets = new Insets(10, 20, 20, 10);
+        this.gbc.gridx = 0;
+        this.gbc.gridy = 1;
+        this.gbc.gridwidth = 1;
+        this.gbc.weightx = 0.5;
+        this.gbc.weighty = 0.0;
+        this.gbc.fill = GridBagConstraints.HORIZONTAL;
+        this.gbc.anchor = GridBagConstraints.WEST;
+        this.gbc.insets = new Insets(10, 20, 20, 10);
         this.frame.add(this.abbrechen, this.gbc);
 
         // rechts unten: Hchladen
-        gbc.gridx = 1;
-        gbc.gridy = 1;
-        gbc.weightx = 0.5;
-        gbc.anchor = GridBagConstraints.EAST;
-        gbc.insets = new Insets(10, 10, 20, 20);
+        this.gbc.gridx = 1;
+        this.gbc.gridy = 1;
+        this.gbc.weightx = 0.5;
+        this.gbc.anchor = GridBagConstraints.EAST;
+        this.gbc.insets = new Insets(10, 10, 20, 20);
         this.frame.add(this.hochladen,this.gbc);
 
         //Wohin soll gedropped werden -> dropArea 
@@ -101,7 +104,7 @@ public class DateiHochladen{
                         //die Daten, die gedropped wurden in einer Liste
                         List<File> list_temp = (List<File>) t.getTransferData(DataFlavor.javaFileListFlavor);
                         setSelectedFiles(list_temp);
-                        setStatusLabel(list_temp);
+                        setStatusLabel();
                         dtde.dropComplete(true);
                     }
                     else{
@@ -125,13 +128,14 @@ public class DateiHochladen{
         }
     }
 
-    public void setStatusLabel(List<File> droppedFiles){
-        if(droppedFiles!=null && !droppedFiles.isEmpty()){
-            this.statusLabel.setText("Es wurden " + droppedFiles.size() + " Dateien zum Hochladen ausgewählt");
-        }
-        else{
-            this.statusLabel.setText("Es wurde keine Datei erkannt.");
-            this.selectedFiles = null;
+    public void setStatusLabel(){
+        int count = this.selectedFiles.size();
+        if (count == 0) {
+            this.statusLabel.setText("Datei hier reinziehen mit Drag & Drop");
+        } else if (count == 1) {
+            this.statusLabel.setText("Es wurde 1 Datei zum Hochladen ausgewählt");
+        } else {
+            this.statusLabel.setText("Es wurden " + count + " Dateien zum Hochladen ausgewählt");
         }
     }  
 
@@ -142,20 +146,33 @@ public class DateiHochladen{
             }
             else{
                 for(File file : this.selectedFiles){
-                    //upload(file);
-                    this.frame.setVisible(false);
+                    this.client.write("Files");
+                    this.client.write("Datei hochladen");
+                    upload(file);
                 }
             }
+            this.frame.setVisible(false);
+            this.frame.dispose();
         });
     }
 
-    //TODO:
-    // public void upload(File file){
-    //     try(FileOutputStream output = new FileOutputStream(file.getName)){
-    //         int b;
-    //         while(b )
-    //     }
-    // } 
+    public void upload(File file){
+        try(InputStream fileIn = new BufferedInputStream(new FileInputStream(file))){
+            this.client.write(file.getName());
+            this.client.writeLong(file.length());
+
+            byte[] buffer = new byte[8192];
+            int bytesRead;
+
+            while ((bytesRead = fileIn.read(buffer)) != -1) {
+                this.client.writeBytes(buffer, bytesRead);
+            }
+            this.client.flush();
+        }
+        catch (IOException e) {
+            System.out.println("Upload fehlgeschlagen: " + e.getMessage());
+        }
+    } 
 }
 
 

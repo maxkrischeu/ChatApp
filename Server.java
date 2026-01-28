@@ -173,7 +173,7 @@ public class Server {
     }
 
     private void log(String msg) {
-        System.out.println(msg);
+        //System.out.println(msg);
         logListener.accept(msg);
 
         try {

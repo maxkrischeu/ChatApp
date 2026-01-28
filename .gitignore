@@ -8,3 +8,4 @@ out/
 target/
 build/
 server-log.txt
+RoomData/

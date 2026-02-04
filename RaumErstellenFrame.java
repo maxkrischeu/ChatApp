@@ -2,18 +2,18 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class RaumErstellenFrame{
-    Frame frame;
-    Button ok;
-    Button abbrechen;
-    ClientTest client;
-    GridBagConstraints gbc;
-    Chatfenster chat;
-    TextField raumname;
-    Panel buttonPanel;
+    private Frame frame;
+    private Button ok;
+    private Button abbrechen;
+    private ClientTest client;
+    private GridBagConstraints gbc;
+    private Chatfenster chat;
+    private TextField raumname;
+    private Panel buttonPanel;
 
-    public RaumErstellenFrame(ClientTest client){
+    public RaumErstellenFrame(ClientTest client, Chatfenster chat){
         this.client = client;
-        this.chat = new Chatfenster(this.client);
+        this.chat = chat;
 
         this.frame = new Frame("Neuen Raum erstellen"); 
         this.frame.setSize(400,200);
@@ -28,7 +28,8 @@ public class RaumErstellenFrame{
         this.frame.add(new Label("Raumname eingeben: ", Label.CENTER), this.gbc);
 
         this.gbc.gridy = 1;
-        setRaumname();
+        // Eingabefeld für den neuen Raumnamen
+        enterRoomName();
 
         this.gbc.gridy = 2;
         this.buttonPanel = new Panel(new FlowLayout(FlowLayout.CENTER, 15, 0));
@@ -38,44 +39,52 @@ public class RaumErstellenFrame{
 
     }
 
-    public void raumErstellen(){
+    public void visible(){
         this.frame.setVisible(true); 
     }
 
-    public void okay(){
-        this.frame.setVisible(false);
-    }
 
-    public void abbrechen(){
-        this.frame.setVisible(false);
-    }
-
-    public void setOk(){
+    private void setOk(){
         this.ok = new Button("OK");
         this.ok.setSize(10,30);
         gbc.gridx = 0;
         this.ok.addActionListener(e -> {
-            okay();
+            // Button-Modus aktivieren, Aktion senden, danach den Raumnamen
+            this.client.write("Button gedrückt");
+            this.frame.setVisible(false);
+            this.client.write("Raum Erstellen");
+            this.client.write(this.getRoomName());
         });
         this.buttonPanel.add(this.ok);
     }
 
-    public void setAbbruch(){
+    private void setAbbruch(){
         this.abbrechen = new Button("Abbrechen");
         this.abbrechen.setSize(10,30);
          gbc.gridx = 1;
         this.abbrechen.addActionListener(e -> {
-            abbrechen();
+            this.frame.setVisible(false);
         });
         this.buttonPanel.add(this.abbrechen);
     }
 
-    public void setRaumname(){
+    private void enterRoomName(){
         this.raumname = new TextField(20); 
+        raumname.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                char c = e.getKeyChar();
+
+                // Erlaubt: Buchstaben, Zahlen, Unterstrich.
+                if (!Character.isLetterOrDigit(c) && c != '_') {
+                    e.consume(); // Unerlaubtes Zeichen wird verworfen.
+                }
+            }
+        });
         this.frame.add(raumname, gbc);
     }
 
-    public String getRaumname(){
+    public String getRoomName(){
         return this.raumname.getText();
     }
 }

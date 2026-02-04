@@ -1,23 +1,45 @@
 import java.awt.*;
 import java.awt.event.*;
+import java.io.*;
 
 public class Chatfenster {
-    Frame frame;
-    ClientTest client;
-    StartFrame startframe;
-    RaumErstellenFrame raumerstellen;
+    private Frame frame;
+    private ClientTest client;
+    private StartFrame startframe;
+    private RaumErstellenFrame raumerstellen;
+    private Label roomLabel;
+    private Panel chatFensterPanel;
+    private Panel chatverwaltung;
+    private GridBagConstraints c1;
+    private Button raumErstellen; 
+    private Button raumBeitreten; 
+    private Button raumVerlassen;
+    private Button dateiHochladen;
+    private Button dateienAnzeigen;
+    private Button dateiHerunterladen;
+    private List rooms;
+    private List user;
+    private List chatanzeige;
 
     public Chatfenster(ClientTest client) {
-        this.startframe = client.startframe;
+        this.client = client;
+        this.startframe = client.getStartFrame();
         this.frame = new Frame("Chatfenster-Client");
         this.frame.setSize(800, 600);
         this.frame.setLayout(new GridBagLayout());
-
-        /*
-         * -------------------------------------------------------
-         * 1. LINKE SPALTE – Chatbereich
-         * -------------------------------------------------------
-         */
+        this.chatverwaltung = new Panel(new GridBagLayout());
+        this.chatFensterPanel = new Panel(new FlowLayout(FlowLayout.CENTER));
+        this.roomLabel = new Label("", Label.CENTER);
+        this.c1 = new GridBagConstraints();
+        this.raumErstellen = new Button("Raum erstellen"); 
+        this.raumBeitreten = new Button("Raum beitreten"); 
+        this.raumVerlassen = new Button("Raum verlassen");
+        this.dateiHochladen = new Button("Datei hochladen");
+        this.dateienAnzeigen = new Button("Dateien anzeigen");
+        this.dateiHerunterladen = new Button("Datei herunterladen");
+        this.rooms = new List();
+        this.user = new List();
+        this.chatanzeige = new List();
 
         GridBagConstraints gbcChat = new GridBagConstraints();
         gbcChat.gridx = 0;
@@ -26,21 +48,18 @@ public class Chatfenster {
         gbcChat.weighty = 1.0;
         gbcChat.fill = GridBagConstraints.BOTH;
 
-        Panel chatverwaltung = new Panel(new GridBagLayout());
+        // Überschrift 
+        this.c1.gridx = 0;
+        this.c1.gridy = 0;
+        this.c1.weightx = 1.0;
+        this.c1.weighty = 0.0;
+        this.c1.fill = GridBagConstraints.HORIZONTAL;
+        this.roomLabel.setText("Aktueller Raum: Lobby");
+        this.roomLabel.setFont(new Font("SansSerif", Font.BOLD, 14));
+        this.chatFensterPanel.add(this.roomLabel);
+        this.chatverwaltung.add(this.chatFensterPanel, this.c1);
 
-        // --- Zeile 0: Überschrift ---
-        GridBagConstraints c1 = new GridBagConstraints();
-        c1.gridx = 0;
-        c1.gridy = 0;
-        c1.weightx = 1.0;
-        c1.weighty = 0.0;
-        c1.fill = GridBagConstraints.HORIZONTAL;
-
-        Panel chatFensterPanel = new Panel(new FlowLayout(FlowLayout.CENTER));
-        chatFensterPanel.add(new Label("Aktueller Raum:", Label.CENTER));
-        chatverwaltung.add(chatFensterPanel, c1);
-
-        // --- Zeile 1: Chat-Anzeige ---
+        // Chat-Anzeige
         GridBagConstraints c2 = new GridBagConstraints();
         c2.gridx = 0;
         c2.gridy = 1;
@@ -48,13 +67,9 @@ public class Chatfenster {
         c2.weighty = 1.0;
         c2.fill = GridBagConstraints.BOTH;
 
-        TextArea chatanzeige = new TextArea();
-        chatanzeige.setEditable(false);
-        chatanzeige.setBackground(frame.getBackground());
-        chatanzeige.setForeground(Color.BLACK);
-        chatverwaltung.add(chatanzeige, c2);
+        this.chatverwaltung.add(this.chatanzeige, c2);
 
-        // --- Zeile 2: Eingabefeld + Button ---
+        // Eingabefeld + Button
         GridBagConstraints c3 = new GridBagConstraints();
         c3.gridx = 0;
         c3.gridy = 2;
@@ -66,21 +81,20 @@ public class Chatfenster {
         TextField chateingabe = new TextField(20);
         Button senden = new Button("Senden");
         senden.addActionListener(e -> {
-            chatanzeige.append("[" + client.startframe.getUsername() + "]" + ": " + chateingabe.getText() +"\n");
+            // Eigene Nachricht direkt lokal anzeigen
+            String msg = "[" + client.getStartFrame().getUsername() + "]" + ": " + chateingabe.getText();
+            this.chatanzeige.add(msg +"\n");
+            // An den Server wird nur der reine Text geschickt
+            this.client.write(chateingabe.getText());
             chateingabe.setText("");
         });
         chatPanel.add(chateingabe);
         chatPanel.add(senden);
-        chatverwaltung.add(chatPanel, c3);
+        this.chatverwaltung.add(chatPanel, c3);
 
-        frame.add(chatverwaltung, gbcChat);
+        frame.add(this.chatverwaltung, gbcChat);
 
-
-        /*
-         * -------------------------------------------------------
-         * 2. MITTLERE SPALTE – Räume + Nutzer
-         * -------------------------------------------------------
-         */
+        // Räume + Nutzer:
 
         GridBagConstraints gbcRaum = new GridBagConstraints();
         gbcRaum.gridx = 1;
@@ -96,47 +110,34 @@ public class Chatfenster {
         gbcInner.weightx = 1.0;
         gbcInner.fill = GridBagConstraints.BOTH;
 
-        // --- Räume-Label ---
+        // Räume-Label
         gbcInner.gridy = 0;
         gbcInner.weighty = 0.0;
         Panel labelRaume = new Panel(new FlowLayout(FlowLayout.CENTER));
         labelRaume.add(new Label("Räume:"));
         raumverwaltung.add(labelRaume, gbcInner);
 
-        // --- Räume-Anzeige ---
+        // Räume-Anzeige 
         gbcInner.gridy = 1;
         gbcInner.weighty = 1.0;
-        TextArea raumanzeige = new TextArea();
-        raumanzeige.setEditable(false);
-        raumanzeige.setBackground(frame.getBackground());
-        raumanzeige.setForeground(Color.BLACK);
-        raumverwaltung.add(raumanzeige, gbcInner);
+        raumverwaltung.add(this.rooms, gbcInner);
 
-        // --- Nutzer-Label ---
+        // Nutzer-Label
         gbcInner.gridy = 2;
         gbcInner.weighty = 0.0;
         Panel labelNutzer = new Panel(new FlowLayout(FlowLayout.CENTER));
         labelNutzer.add(new Label("Nutzer im Raum:"));
         raumverwaltung.add(labelNutzer, gbcInner);
 
-        // --- Nutzer-Anzeige ---
+        // Nutzer-Anzeige 
         gbcInner.gridy = 3;
         gbcInner.weighty = 1.0;
-        TextArea nutzeranzeige = new TextArea();
-        nutzeranzeige.setEditable(false);
-        nutzeranzeige.setBackground(frame.getBackground());
-        nutzeranzeige.setForeground(Color.BLACK);
-        raumverwaltung.add(nutzeranzeige, gbcInner);
+        raumverwaltung.add(this.user, gbcInner);
 
         frame.add(raumverwaltung, gbcRaum);
 
-
-        /*
-         * -------------------------------------------------------
-         * 3. RECHTE SPALTE – Buttons
-         * -------------------------------------------------------
-         */
-
+        // Buttons
+        
         GridBagConstraints gbcButtons = new GridBagConstraints();
         gbcButtons.gridx = 2;
         gbcButtons.gridy = 0;
@@ -146,31 +147,137 @@ public class Chatfenster {
 
         Panel buttons = new Panel(new GridLayout(0, 1));
 
-        Button raumErstellen = new Button("Raum erstellen"); 
-        buttons.add(raumErstellen);
-        raumErstellen.addActionListener(e -> {
-            this.raumerstellen = new RaumErstellenFrame(client);
+        this.raumErstellen.addActionListener(e -> {
+            this.raumerstellen = new RaumErstellenFrame(this.client, this);
+            this.raumerstellen.visible();
         });
 
-        Button raumBeitreten = new Button("Raum beitreten"); 
-        buttons.add(raumBeitreten);
+        this.raumBeitreten.addActionListener(e -> {
+            // Drei getrennte Nachrichten bilden zusammen den Server-Befehl
+            this.client.write("Button gedrückt");
+            this.client.write("Raum Beitreten");
+            String name = this.rooms.getSelectedItem();
+            this.client.write(name);
+            setRoomName(name);
+            this.chatanzeige.removeAll();
+        });
 
-        Button raumVerlassen = new Button("Raum verlassen");
-        buttons.add(raumVerlassen);
+        this.raumVerlassen.addActionListener(e -> {
+            this.client.write("Button gedrückt");
+            this.client.write("Raum Verlassen");
+            String name = this.rooms.getSelectedItem();
+            this.client.write(name);
+        });
 
-        Button dateiHochladen = new Button("Datei hochladen");
-        buttons.add(dateiHochladen);
+        this.dateiHochladen.addActionListener(e -> {
+            DateiHochladen upload = new DateiHochladen(this.client, this);
+        });
 
-        Button dateienAnzeigen = new Button("Dateien anzeigen");
-        buttons.add(dateienAnzeigen);
+        this.dateiHerunterladen.addActionListener(e -> {
+            String selected = this.chatanzeige.getSelectedItem();
+            if (selected == null) {
+                this.chatanzeige.add("[INFO] Bitte erst eine Datei in der Liste auswählen.");
+                return;
+            }
+            selected = selected.trim();
+            this.client.write("Files");
+            this.client.write("Datei herunterladen");
+            this.client.write(selected);
+        });
 
-        Button dateiHertunerladen = new Button("Datei herunterladen");
-        buttons.add(dateiHertunerladen); 
+        this.dateienAnzeigen.addActionListener(e -> {
+            // Startsignal für die Dateien verschicken
+            this.client.write("Files");
+            this.client.write("Dateien anzeigen");
+            this.client.write("FILES_LIST_BEGIN");
+        });
+
+        buttons.add(this.raumErstellen);
+
+        buttons.add(this.raumBeitreten);
+
+        buttons.add(this.raumVerlassen);
+
+        buttons.add(this.dateiHochladen);
+
+        buttons.add(this.dateienAnzeigen);
+
+        buttons.add(this.dateiHerunterladen); 
 
         frame.add(buttons, gbcButtons);
+
+        this.frame.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e){
+                frame.dispose();
+                client.write(client.getStartFrame().getUsername() + " ist abgemeldet");
+                System.exit(0);
+            }
+        });
     }
 
     public void anzeigen() {
         this.frame.setVisible(true);
+    }
+
+    public void nichtAnzeigen() {
+        this.frame.setVisible(false);
+    }
+
+    public void setRoomName(String roomName){
+        this.roomLabel.setText("Aktueller Raum: " + roomName);
+    }
+
+    public void addRoomName(String roomName) {
+        this.rooms.add(roomName.trim());
+    }
+
+    public void removeRoomName(String roomName){
+        this.rooms.remove(roomName.trim());
+    }
+
+    public void addUser(String userName){
+        this.user.add(userName.trim());
+    }
+
+    public void removeUser(String userName){
+        this.user.remove(userName.trim());
+    }
+
+    public RaumErstellenFrame getRaumErstellen(){
+        return this.raumerstellen;
+    }
+
+    public List getUser(){
+        return this.user;
+    }
+
+    public List getChatanzeige(){
+        return this.chatanzeige;
+    }
+
+    public List getRooms(){
+        return this.rooms;
+    }
+
+    public Label getRoomLabel(){
+        return this.roomLabel;
+    }
+
+   public void showAvailableFiles(java.util.List<String> files) {
+
+        this.chatanzeige.add("Verfügbare Dateien in diesem Raum:");
+
+        if (files == null || files.isEmpty()) {
+            this.chatanzeige.add("[INFO] Keine Dateien vorhanden.");
+            return;
+        }
+
+        for (String f : files) {
+            if (f == null) continue;
+            String name = f.trim();
+            if (name.isEmpty()) continue;
+
+            this.chatanzeige.add(name);
+        }
     }
 }

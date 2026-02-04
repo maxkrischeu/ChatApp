@@ -14,7 +14,6 @@ public class DataBase{
             }
         }
         catch (SQLException ex) {
-        // handle any errors
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
             System.out.println("VendorError: " + ex.getErrorCode());
@@ -36,7 +35,6 @@ public class DataBase{
             }
         }
         catch (SQLException ex) {
-        // handle any errors
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
             System.out.println("VendorError: " + ex.getErrorCode());
@@ -46,6 +44,7 @@ public class DataBase{
 
     public void registrieren(String name, String passwort){
         try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/clients", "root", "")){
+            // Ein neuer Benutzer wird in der Tabelle chatnutzer gespeichert
             try(PreparedStatement ps = conn.prepareStatement("INSERT INTO chatnutzer (name, passwort) VALUES (?, ?)")){
                 ps.setString(1, name);
                 ps.setString(2, passwort); 
@@ -55,7 +54,6 @@ public class DataBase{
             }
 
         catch (SQLException ex) {
-        // handle any errors
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
             System.out.println("VendorError: " + ex.getErrorCode());
@@ -64,13 +62,13 @@ public class DataBase{
 
     public void clear(){
         try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/clients", "root", "")){
+            // Für Tests/Neustarts: alle gespeicherten Chatnutzer löschen
             try(PreparedStatement ps = conn.prepareStatement("DELETE FROM chatnutzer")){
                 ps.executeUpdate();
                 System.out.println("Datenbank wurde geleert");
                 }
             }
         catch (SQLException ex) {
-        // handle any errors
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
             System.out.println("VendorError: " + ex.getErrorCode());

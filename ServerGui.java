@@ -1,10 +1,8 @@
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import javax.swing.SwingUtilities;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 public class ServerGui {
     private Server server;
@@ -12,7 +10,7 @@ public class ServerGui {
     private Button startServerButton;
     private Button stopServerButton;
     private Button removeUserButton;
-    private TextArea serverLogArea;
+    private java.awt.List serverLogList;
     private java.awt.List userList;
     private java.awt.List roomList;
 
@@ -24,14 +22,14 @@ public class ServerGui {
 
         Panel leftPanel = new Panel(new BorderLayout(0, 8));
 
-        this.serverLogArea = new TextArea("", 0, 0, TextArea.SCROLLBARS_VERTICAL_ONLY);
-        this.serverLogArea.setEditable(false);
-        leftPanel.add(serverLogArea, BorderLayout.CENTER);
+        this.serverLogList = new java.awt.List();
+        leftPanel.add(serverLogList, BorderLayout.CENTER);
 
         this.server.setLogListener(msg -> EventQueue.invokeLater(() -> writeServerLog(msg)));
         this.server.setUserAddedListener(id -> EventQueue.invokeLater(() -> addUserToList(id)));
         this.server.setUserRemovedListener(id -> EventQueue.invokeLater(() -> removeUserFromList(id)));
         this.server.setRoomAddedListener(roomName -> EventQueue.invokeLater(() -> addRoomToList(roomName)));
+        this.server.setRoomRemovedListener(roomName -> EventQueue.invokeLater(() -> removeRoomFromList(roomName)));
 
         Panel bottomButtons = new Panel(new FlowLayout(FlowLayout.CENTER, 12, 0));
         this.startServerButton = new Button("Server starten");
@@ -41,6 +39,7 @@ public class ServerGui {
 
         this.startServerButton.addActionListener(e -> 
             {
+                // Serverstart blockiert (accept-Loop), deshalb in eigenem Thread starten
                 new Thread(() -> this.server.start()).start();
                 this.startServerButton.setEnabled(false);
                 this.stopServerButton.setEnabled(true);
@@ -67,7 +66,7 @@ public class ServerGui {
         c.insets = new Insets(4, 6, 4, 6);
         c.fill = GridBagConstraints.BOTH;
 
-        // --- Angemeldete Nutzer ---
+        // Angemeldete Nutzer
         c.gridy = 0;
         c.weightx = 1;
         c.weighty = 0;
@@ -89,7 +88,7 @@ public class ServerGui {
         c.weighty = 0.55; // nimmt etwas mehr Platz als Rooms
         right.add(this.userList, c);
 
-        // --- Räume ---
+        // Räume 
         c.gridy = 2;
         c.weighty = 0;
         right.add(new Label("Räume"), c);
@@ -99,7 +98,7 @@ public class ServerGui {
         c.weighty = 0.45;
         right.add(this.roomList, c);
 
-        // --- Button unten ---
+        // Button unten 
         this.removeUserButton = new Button("Nutzer entfernen");
         this.removeUserButton.addActionListener(e -> onRemoveSelectedUser());
         c.gridy = 4;
@@ -110,11 +109,22 @@ public class ServerGui {
         this.frame.add(leftPanel, BorderLayout.CENTER);
         this.frame.add(right, BorderLayout.EAST);
 
+        this.frame.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e){
+                frame.dispose();
+                System.exit(0);
+            }
+        });
+
         this.frame.setVisible(true);
     }
 
     private void writeServerLog(String msg) {
-        this.serverLogArea.append(msg + "\n");
+        this.serverLogList.add(msg);
+        int lastIndex = this.serverLogList.getItemCount() - 1;
+        if (lastIndex >= 0) {
+            this.serverLogList.makeVisible(lastIndex);
+        }
     }
 
     private void addUserToList(String id) {
@@ -127,6 +137,10 @@ public class ServerGui {
 
     private void addRoomToList(String roomName) {
         roomList.add(roomName);
+    }
+
+    private void removeRoomFromList(String roomName) {
+        roomList.remove(roomName);
     }
 
     private void onRemoveSelectedUser() {
@@ -177,6 +191,7 @@ public class ServerGui {
             if (msg == null || msg.isEmpty()) {
                 return;
             }
+            // Server sendet die Admin-Nachricht direkt an den ausgewählten Client
             this.server.sendAdminMessageToUser(userId, msg);
 
             writeServerLog("[ADMIN -> " + userId + "]: " + msg);

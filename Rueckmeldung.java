@@ -2,13 +2,13 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class Rueckmeldung{
-    Frame frame;
-    Button button;
-    ClientTest client;
-    GridBagConstraints gbc;
-    Chatfenster chat;
+    private Frame frame;
+    private Button button;
+    private ClientTest client;
+    private GridBagConstraints gbc;
     
     public Rueckmeldung(ClientTest client){
+        // Ein gemeinsames kleines Fenster für alle Info-/Fehlermeldungen
         this.frame = new Frame("Meldung"); 
         this.frame.setSize(600,200);
         this.frame.setLayout(new GridBagLayout()); 
@@ -21,7 +21,6 @@ public class Rueckmeldung{
         this.button.setSize(10,10);
         this.frame.add(this.button, this.gbc);
         this.client = client;
-        this.chat = new Chatfenster(this.client);
     }
 
     public void meldungErfolgRegistrieren(){
@@ -43,14 +42,14 @@ public class Rueckmeldung{
         this.frame.add(erfolgsmeldungA, this.gbc); 
         this.frame.setVisible(true);
         this.button.addActionListener(e -> {
+            // Bei erfolgreichem Login wird StartFrame ausgeblendet und Chatfenster geöffnet
             this.frame.setVisible(false);
             this.frame.remove(erfolgsmeldungA);
-            this.client.startframe.frameEnd();
-            this.chat.anzeigen();
+            this.client.getStartFrame().frameEnd();
+            this.client.getChat().anzeigen();
         });
     }
 
-    //Wenn Registrierung nicht erfolgreich, dann muss ich noch Dinge ändern
     public void meldungErrorRegistrieren(){
         Label errorR = new Label("Dieser Benutzername existiert bereits. Gib bitte einen neuen Benutzernamen ein.");
         this.gbc.gridx = 0;
@@ -63,6 +62,18 @@ public class Rueckmeldung{
         });
     }
 
+    public void meldungErrorRegistrierenP(){
+    Label errorP = new Label("Du hast kein Passwort eingegeben.");
+    this.gbc.gridx = 0;
+    this.gbc.gridy = 0;
+    this.frame.add(errorP, this.gbc); 
+    this.frame.setVisible(true);
+    this.button.addActionListener(e -> {
+        this.frame.setVisible(false);
+        this.frame.remove(errorP);
+    });
+    }
+
     public void meldungErrorAnmelden(){
         this.gbc.gridx = 0;
         this.gbc.gridy = 0;
@@ -72,6 +83,46 @@ public class Rueckmeldung{
         this.button.addActionListener(e -> {
             this.frame.setVisible(false);
             this.frame.remove(errorA);
+        });
+    }
+
+    public void meldungErrorBeitreten(){
+        this.gbc.gridx = 0;
+        this.gbc.gridy = 0;
+        Label errorRaum = new Label("Es wurde kein Raum ausgewählt. Bitte wähle einen Raum aus.");
+        this.frame.add(errorRaum, this.gbc); 
+        this.frame.setVisible(true);
+        this.button.addActionListener(e -> {
+            this.frame.setVisible(false);
+            this.frame.remove(errorRaum);
+        });
+    }
+
+    public void meldungBannedAnmelden(){
+        this.gbc.gridx = 0;
+        this.gbc.gridy = 0;
+        Label errorBannedA = new Label("Du bist gebannt und kannst dich nicht anmelden.");
+        this.frame.add(errorBannedA, this.gbc); 
+        this.frame.setVisible(true);
+        this.button.addActionListener(e -> {
+            this.frame.setVisible(false);
+            this.frame.remove(errorBannedA);
+        });
+    }
+
+    public void meldungBanned(){
+        this.gbc.gridx = 0;
+        this.gbc.gridy = 0;
+        Label errorBanned = new Label("Du wurdest vom Server entfernt.");
+        this.frame.add(errorBanned, this.gbc); 
+        this.frame.setVisible(true);
+        // Beim Bann gibt es keinen OK-Button, nur Schließen beendet den Client
+        this.frame.remove(this.button);
+        this.frame.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e){
+                frame.dispose();
+                System.exit(0);
+            }
         });
     }
 }

@@ -2,16 +2,18 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class StartFrame{
-    Frame frame;
-    ClientTest client;
-    Rueckmeldung meldung;
-    Panel eingabePanel;
-    TextField bEingabe;
-    TextField pEingabe;
-    Button anmeldeButton;
-    Button registrierenButton;
+    private Frame frame;
+    private ClientTest client;
+    private Rueckmeldung meldung;
+    private Panel eingabePanel;
+    private TextField bEingabe;
+    private String benutzername;
+    private TextField pEingabe;
+    private Button anmeldeButton;
+    private Button registrierenButton;
 
     public StartFrame(ClientTest client){
+        // Konstruktor: Nur GUI-Bausteine erzeugen, noch nichts sichtbar machen
         this.frame = new Frame("Chat-Client");
         this.client = client;
         this.meldung = new Rueckmeldung(client);
@@ -23,7 +25,7 @@ public class StartFrame{
     }
 
     public void frameStart(){
-        //ganzes Startframe
+        // Hauptlayout des Fensters: ein zentriertes Start-Panel
         GridBagLayout frame_layout = new GridBagLayout();
         frame.setLayout(frame_layout);
 
@@ -32,7 +34,7 @@ public class StartFrame{
         gbc.gridy = 0;
         gbc.anchor = GridBagConstraints.CENTER;
 
-        //Organisiere Texteingabe etc. als Panel, das zentriert in frame_layout soll
+        // Dieses Panel enthält alle Eingaben und Buttons untereinander
         Panel startPanel = new Panel(); 
         GridLayout startPanel_layout = new GridLayout(0, 1); //1 Spalte, mehrere Zeilen
         startPanel.setLayout(startPanel_layout);
@@ -65,7 +67,7 @@ public class StartFrame{
         frame.setVisible(false);
     }
 
-    public void setEingabepanel(){
+    private void setEingabepanel(){
         Label benutzername = new Label("Benutzername: ", 1); 
         eingabePanel.add(benutzername);
         eingabePanel.add(bEingabe);
@@ -76,33 +78,21 @@ public class StartFrame{
         eingabePanel.add(pEingabe);
     }
 
-    public void setAnmeldeButton(){
+    private void setAnmeldeButton(){
         anmeldeButton.addActionListener(e -> {
+            // Protokoll mit dem Server: erst Aktion, dann Benutzername, dann Passwort
             this.client.write("anmelden");
             this.client.write(bEingabe.getText()); 
             this.client.write(pEingabe.getText());
-            String msg = this.client.read();
-            System.out.println(msg);
-            if(msg.equals("Anmeldung erfolgreich.")){
-                this.meldung.meldungErfolgAnmelden();
-            }
-            else{
-                this.meldung.meldungErrorAnmelden();
-            }
         });
     }
 
-    public void setRegistrierenButton(){
+    private void setRegistrierenButton(){
         registrierenButton.addActionListener(e -> {
+            // Gleiches Protokoll wie beim Login, aber mit Aktion "registrieren"
             this.client.write("registrieren");
             this.client.write(bEingabe.getText());
             this.client.write(pEingabe.getText());
-            if(this.client.read().equals("Registrierung erfolgreich.")){
-                this.meldung.meldungErfolgRegistrieren();
-            }
-            else{
-                this.meldung.meldungErrorRegistrieren();
-            }
         });
     }
 

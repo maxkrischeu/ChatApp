@@ -1,9 +1,9 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Room {
     private String name; 
-    private List<ClientThread> members = new ArrayList<>();
+    private Set<ClientThread> members = new HashSet<>();
 
     public Room(String name) {
         this.name = name;   
@@ -13,11 +13,16 @@ public class Room {
         return this.name;
     }
 
-    public List<ClientThread> getMembers() {
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Set<ClientThread> getMembers() {
         return this.members;
     }
 
     public void addMember(ClientThread client) {
+        // Set verhindert automatisch doppelte Einträge
         this.members.add(client);
     }
 

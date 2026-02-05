@@ -102,10 +102,19 @@ public class Server {
             }
         }
 
-        if (this.rooms.remove("Lobby") != null) {
-            this.log("Raum gelöscht: Lobby");
-            roomRemoved.accept("Lobby");
+        if (this.rooms != null && !this.rooms.isEmpty()) {
+            Set<String> roomNames = new HashSet<>(this.rooms.keySet());
+            for (String roomName : roomNames) {
+                this.rooms.remove(roomName);
+                this.log("Raum gelöscht: " + roomName);
+                roomRemoved.accept(roomName);
+            }
         }
+
+        // if (this.rooms.remove("Lobby") != null) {
+        //     this.log("Raum gelöscht: Lobby");
+        //     roomRemoved.accept("Lobby");
+        // }
     }
 
     public String getIdOfAvailableClients(ClientThread self) {
@@ -300,7 +309,7 @@ public class Server {
             }
             this.sendMessageToRoom(newRoom, client, "Mitglieder:" + roomMembers);
 
-            this.log(client.getID() + " wechselt von " + oldRoom + " nach " + newRoom);
+            this.log(client.getID() + " wechselt von " + oldRoom.getName() + " nach " + newRoom);
             if (oldRoom != null && !(oldRoom.getName().equals("Lobby"))) {
                 this.sendMessageToRoom(oldRoom.getName(), client, "[INFO] " + client.getID() + " hat den Raum verlassen.");
             }
@@ -340,11 +349,16 @@ public class Server {
 
     public void quitRoom(ClientThread client, String roomName){
         Room room = this.rooms.get(roomName);
+
+        if (roomName.equals("Lobby")) {
+            client.write("Die Lobby kann nicht verlassen werden.");
+            return;
+        }
+
         if (room == null) {
             client.write("[INFO] Raum existiert nicht.");
             return;
         }
-
         if((room.getMembers().size()>1)){
             this.joinRoom(client, "Lobby");
             this.log(client.getID() + " hat den Raum " + roomName + " verlassen");

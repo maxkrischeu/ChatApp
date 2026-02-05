@@ -83,6 +83,9 @@ public class Chatfenster {
         senden.addActionListener(e -> {
             // Eigene Nachricht direkt lokal anzeigen
             String msg = "[" + client.getStartFrame().getUsername() + "]" + ": " + chateingabe.getText();
+            if(chateingabe.getText().equals("")) {
+                return;
+            }
             this.chatanzeige.add(msg +"\n");
             // An den Server wird nur der reine Text geschickt
             this.client.write(chateingabe.getText());
@@ -165,6 +168,10 @@ public class Chatfenster {
         this.raumVerlassen.addActionListener(e -> {
             this.client.write("Button gedrückt");
             this.client.write("Raum Verlassen");
+            if (this.rooms.getSelectedIndex() == -1) {
+                this.client.write("Lobby");
+                return;
+            }
             String name = this.rooms.getSelectedItem();
             this.client.write(name);
         });
@@ -189,7 +196,6 @@ public class Chatfenster {
             // Startsignal für die Dateien verschicken
             this.client.write("Files");
             this.client.write("Dateien anzeigen");
-            this.client.write("FILES_LIST_BEGIN");
         });
 
         buttons.add(this.raumErstellen);
